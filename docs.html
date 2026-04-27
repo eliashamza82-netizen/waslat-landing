@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waslat Documentation</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0f1e; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  nav a.logo { color: #06b6d4; font-size: 1.5rem; font-weight: 800; text-decoration: none; }
+  nav a { color: #94a3b8; text-decoration: none; margin-left: 24px; font-size: 0.95rem; }
+  nav a:hover { color: #fff; }
+  .container { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 20px; gap: 40px; }
+  .sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 40px; height: fit-content; }
+  .sidebar h3 { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; margin-top: 24px; }
+  .sidebar a { display: block; color: #cbd5e1; text-decoration: none; padding: 6px 0; font-size: 0.9rem; border-left: 2px solid transparent; padding-left: 12px; }
+  .sidebar a:hover, .sidebar a.active { color: #06b6d4; border-left-color: #06b6d4; }
+  .content { flex: 1; }
+  .content h1 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+  .content h2 { font-size: 1.75rem; font-weight: 700; color: #fff; margin: 48px 0 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+  .content h3 { font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin: 24px 0 12px; }
+  .content p { color: #94a3b8; line-height: 1.8; margin-bottom: 16px; }
+  .content ul, .content ol { color: #94a3b8; padding-left: 24px; margin-bottom: 16px; line-height: 1.8; }
+  .badge { display: inline-block; background: rgba(6,182,212,0.15); color: #06b6d4; border: 1px solid rgba(6,182,212,0.3); border-radius: 6px; padding: 2px 10px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .card h3 { margin-top: 0; }
+  .step { display: flex; gap: 16px; margin-bottom: 20px; }
+  .step-num { background: #06b6d4; color: #000; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+  .step-content p { margin-bottom: 0; }
+  code { background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 0.9rem; color: #06b6d4; }
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+  .platform-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; }
+  .platform-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .platform-card h4 { color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
+  .platform-card p { font-size: 0.8rem; margin: 0; }
+  .alert { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2); border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+  .alert p { margin: 0; color: #7dd3fc; }
+  footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 40px; text-align: center; color: #475569; font-size: 0.85rem; margin-top: 80px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Waslat</a>
+  <div>
+    <a href="/">Home</a>
+    <a href="/docs.html">Docs</a>
+    <a href="/support.html">Support</a>
+    <a href="https://app.waslat.io/login">Sign In</a>
+    <a href="https://app.waslat.io/register" style="background:#06b6d4;color:#000;padding:8px 20px;border-radius:50px;font-weight:700;margin-left:12px;">Start Free</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="sidebar">
+    <h3>Getting Started</h3>
+    <a href="#introduction">Introduction</a>
+    <a href="#quick-start">Quick Start</a>
+    <a href="#account-setup">Account Setup</a>
+
+    <h3>Integrations</h3>
+    <a href="#whatsapp">WhatsApp Business</a>
+    <a href="#facebook">Facebook</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#tiktok">TikTok</a>
+    <a href="#linkedin">LinkedIn</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#gmb">Google My Business</a>
+    <a href="#telegram">Telegram</a>
+    <a href="#snapchat">Snapchat</a>
+
+    <h3>Features</h3>
+    <a href="#ai-agents">AI Agents</a>
+    <a href="#white-label">White Label</a>
+    <a href="#webhooks">Webhooks</a>
+    <a href="#billing">Billing</a>
+
+    <h3>Help</h3>
+    <a href="#faq">FAQ</a>
+    <a href="/support.html">Support</a>
+  </div>
+
+  <div class="content">
+    <div class="badge">Documentation</div>
+    <h1>Waslat Documentation</h1>
+    <p>Everything you need to connect, automate, and grow your business using the Waslat platform.</p>
+
+    <h2 id="introduction">Introduction</h2>
+    <p>Waslat is an all-in-one business operating system for marketing agencies and SMEs in the MENA region. It brings together social media management, customer conversations, AI automation, CRM, and analytics into a single powerful dashboard.</p>
+    <p>With Waslat you can connect all your social media channels, manage customer messages in one inbox, schedule and publish content, and deploy AI agents that work 24/7 on your behalf.</p>
+
+    <h2 id="quick-start">Quick Start</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><h3>Create your account</h3><p>Go to <a href="https://app.waslat.io/register" style="color:#06b6d4;">app.waslat.io/register</a> and sign up. You get a free 14-day trial with full access.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><h3>Connect your channels</h3><p>Navigate to <code>Integrations</code> in the sidebar and connect your social media accounts and messaging channels.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><h3>Set up your inbox</h3><p>Go to <code>Conversations</code> to start receiving and replying to messages from all connected channels in one place.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><h3>Enable AI agents</h3><p>Visit <code>AI Agents</code> to activate autonomous agents that handle inbox replies, content creation, and more.</p></div>
+    </div>
+
+    <h2 id="account-setup">Account Setup</h2>
+    <p>After signing up, complete your profile by adding your business name, logo, and timezone. If you are an agency, you can create subaccounts for each of your clients under <code>Settings → Subaccounts</code>.</p>
+
+    <h2 id="whatsapp">WhatsApp Business</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A WhatsApp Business account</li>
+        <li>A verified Facebook Business Manager account</li>
+        <li>A dedicated phone number not already on WhatsApp</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → WhatsApp Business</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Log in with your Facebook account and select your Business Manager.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Select or create a WhatsApp Business Account and add your phone number.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><p>Verify your phone number via OTP and complete setup.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Send and receive messages in the Conversations inbox</li>
+      <li>Schedule WhatsApp messages</li>
+      <li>Automated replies via AI InboxAgent</li>
+      <li>Broadcast messages to contact lists</li>
+      <li>Media sharing: images, videos, documents</li>
+    </ul>
+
+    <h2 id="facebook">Facebook</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A Facebook Page (not personal profile)</li>
+        <li>Page Admin access</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → Facebook</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Log in with Facebook and grant the requested permissions.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Select the Facebook Page you want to connect.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Publish posts to your Facebook Page</li>
+      <li>Receive and reply to Messenger messages</li>
+      <li>Schedule posts with the content calendar</li>
+      <li>View page engagement analytics</li>
+    </ul>
+
+    <h2 id="instagram">Instagram</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>An Instagram Business or Creator account</li>
+        <li>Connected to a Facebook Page</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → Instagram</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Authorize Waslat through Facebook OAuth — Instagram connects via your Facebook Page.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Select the Instagram account linked to your page.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Post photos and videos to Instagram</li>
+      <li>Schedule content via the content calendar</li>
+      <li>Manage and reply to comments</li>
+      <li>Receive DMs in the Conversations inbox</li>
+      <li>View reach and engagement analytics</li>
+    </ul>
+
+    <h2 id="tiktok">TikTok</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A TikTok Business account</li>
+        <li>Content creator or business profile</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → TikTok</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Log in with your TikTok account and authorize Waslat.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Your TikTok account will appear as connected with your username and avatar.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Upload and publish videos directly to TikTok</li>
+      <li>Post as draft for creator review or publish directly</li>
+      <li>View list of published videos</li>
+      <li>Schedule video posts</li>
+    </ul>
+
+    <h2 id="linkedin">LinkedIn</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A LinkedIn personal or company account</li>
+        <li>Company Page admin access (for company posts)</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → LinkedIn</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Authorize with your LinkedIn credentials.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Your profile name and avatar will appear confirming the connection.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Post text and image content to LinkedIn</li>
+      <li>Schedule posts via the content calendar</li>
+      <li>View post performance</li>
+    </ul>
+
+    <h2 id="youtube">YouTube</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A Google account with a YouTube channel</li>
+        <li>Channel must be verified for uploads over 15 minutes</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → YouTube</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Sign in with Google and grant YouTube permissions.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Your channel name and subscriber count will appear.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Upload videos to YouTube</li>
+      <li>Set title, description, and visibility (public/unlisted/private)</li>
+      <li>View uploaded videos list</li>
+      <li>Schedule uploads</li>
+    </ul>
+
+    <h2 id="gmb">Google My Business</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A verified Google Business Profile</li>
+        <li>Owner or manager access</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → Google My Business</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Sign in with the Google account that manages your business profile.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Select your business location.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Post updates, offers, and events to your Google listing</li>
+      <li>Add photos and call-to-action buttons</li>
+      <li>Schedule GMB posts</li>
+    </ul>
+
+    <h2 id="telegram">Telegram</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A Telegram Bot created via @BotFather</li>
+        <li>Bot token from BotFather</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Open Telegram and message <code>@BotFather</code>. Send <code>/newbot</code> and follow the prompts to create your bot.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Copy the Bot Token provided by BotFather.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>Go to <code>Integrations → Telegram</code>, paste your Bot Token and click Connect.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Send messages to Telegram chats and channels</li>
+      <li>Receive incoming messages in the Conversations inbox</li>
+      <li>Reply to customers via Telegram bot</li>
+      <li>Send images and media</li>
+    </ul>
+    <div class="alert"><p>💡 Your customers must message your bot first before you can send them messages — this is a Telegram policy.</p></div>
+
+    <h2 id="snapchat">Snapchat</h2>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul>
+        <li>A Snapchat Business account</li>
+        <li>Snapchat developer app approved</li>
+      </ul>
+    </div>
+    <h3>How to connect</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>Go to <code>Integrations → Snapchat</code> and click Connect.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>Log in with your Snapchat account and authorize Waslat.</p></div></div>
+    <h3>Features available</h3>
+    <ul>
+      <li>Post Stories to Snapchat</li>
+      <li>Schedule Snapchat content</li>
+      <li>Manage Snapchat ad campaigns</li>
+    </ul>
+
+    <h2 id="ai-agents">AI Agents</h2>
+    <p>Waslat includes 5 autonomous AI agents that work 24/7 on your behalf.</p>
+    <div class="platform-grid">
+      <div class="platform-card"><div class="icon">📥</div><h4>InboxAgent</h4><p>Auto-replies to incoming messages across all channels</p></div>
+      <div class="platform-card"><div class="icon">📣</div><h4>CampaignAgent</h4><p>Creates and manages marketing campaigns automatically</p></div>
+      <div class="platform-card"><div class="icon">✍️</div><h4>ContentAgent</h4><p>Generates social media content and captions</p></div>
+      <div class="platform-card"><div class="icon">📦</div><h4>InventoryAgent</h4><p>Monitors stock levels and sends alerts</p></div>
+      <div class="platform-card"><div class="icon">📊</div><h4>InsightAgent</h4><p>Analyzes performance data and generates reports</p></div>
+    </div>
+    <h3>Enabling an agent</h3>
+    <p>Go to <code>AI Agents</code> in the sidebar → select the agent → toggle it on → configure its behavior and response style.</p>
+
+    <h2 id="white-label">White Label</h2>
+    <p>Agencies can white label Waslat under their own brand. Go to <code>Settings → White Label</code> to configure:</p>
+    <ul>
+      <li>Custom logo and brand colors</li>
+      <li>Custom platform name</li>
+      <li>Custom domain (e.g. <code>app.youragency.com</code>)</li>
+      <li>Client login portal with your branding</li>
+    </ul>
+
+    <h2 id="webhooks">Webhooks</h2>
+    <p>Waslat supports incoming webhooks from all connected platforms. Webhooks are automatically configured when you connect a channel. For custom webhook endpoints contact support.</p>
+
+    <h2 id="billing">Billing & Subscription</h2>
+    <p>Your subscription is managed under <code>Settings → Billing & Subscription</code>. You can view your current plan, usage, and payment history. Waslat offers a 14-day free trial with no credit card required. Contact <a href="mailto:sales@waslat.io" style="color:#06b6d4;">sales@waslat.io</a> for pricing.</p>
+
+    <h2 id="faq">FAQ</h2>
+    <div class="card"><h3>Can I connect multiple accounts per platform?</h3><p>Yes — each subaccount can have its own connected channels. Agencies can manage multiple clients each with their own integrations.</p></div>
+    <div class="card"><h3>Is my data secure?</h3><p>Yes. All data is encrypted in transit and at rest. Waslat uses Firebase with strict security rules and never stores raw access tokens in plain text.</p></div>
+    <div class="card"><h3>What happens after my trial ends?</h3><p>Your account will be paused until you subscribe. Your data is retained for 30 days. Contact sales@waslat.io to continue.</p></div>
+    <div class="card"><h3>Can I cancel anytime?</h3><p>Yes — cancel anytime from Settings → Billing with no penalties.</p></div>
+    <div class="card"><h3>Do you support Arabic?</h3><p>Yes — Waslat is fully bilingual in Arabic and English. Switch languages from the top right of the dashboard.</p></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Waslat. All rights reserved. · <a href="/support.html" style="color:#06b6d4;">Support</a> · <a href="https://waslat.io/privacy" style="color:#06b6d4;">Privacy</a> · <a href="https://waslat.io/terms" style="color:#06b6d4;">Terms</a></p>
+</footer>
+</body>
+</html>
