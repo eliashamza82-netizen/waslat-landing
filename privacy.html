@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy Policy — Waslat | وصلات</title>
+<meta name="description" content="Waslat Privacy Policy — How we collect, use, and protect your data."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://waslat.io/privacy"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050508'/><text y='.9em' font-size='70' x='10'>W</text></svg>"/>
+<meta name="theme-color" content="#050508"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{--bg:#050508;--bg-card:#0D0D14;--bg-surface:#13131E;--border:#1E1E30;--border-light:#252538;--primary:#7DD3FC;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#4A5568;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.7;}
+  body.ar{font-family:'Cairo',sans-serif;direction:rtl;}
+  body.ar .en-only{display:none;}
+  body.ar .ar-only{display:block!important;}
+  body:not(.ar) .ar-only{display:none;}
+  .cursor{position:fixed;width:10px;height:10px;background:var(--primary);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.1s;mix-blend-mode:screen;}
+  .cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(125,211,252,0.35);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.3s,height 0.3s,border-color 0.3s;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;background:rgba(5,5,8,0.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text);}
+  .nav-logo span{color:var(--primary);}
+  .nav-right{display:flex;gap:12px;align-items:center;}
+  .lang-toggle{display:flex;align-items:center;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:100px;padding:3px;gap:2px;}
+  .lang-btn{padding:5px 14px;border-radius:100px;border:none;background:transparent;color:var(--text-secondary);font-size:12px;font-weight:700;cursor:none;transition:all 0.2s;font-family:inherit;}
+  .lang-btn.active{background:var(--primary);color:#000;}
+  .btn-ghost{padding:9px 20px;border:1px solid var(--border-light);background:transparent;color:var(--text);border-radius:10px;font-size:13px;font-weight:500;cursor:none;transition:all 0.2s;font-family:inherit;text-decoration:none;display:inline-block;}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary);}
+  .btn-primary{padding:9px 20px;background:var(--primary);color:#000;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:none;transition:all 0.2s;font-family:inherit;text-decoration:none;display:inline-block;}
+  .btn-primary:hover{transform:translateY(-1px);}
+  .page-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .pg-aurora{position:absolute;border-radius:50%;filter:blur(90px);animation:pgAurora ease-in-out infinite;opacity:0;}
+  .pg-a1{width:600px;height:400px;background:radial-gradient(ellipse,rgba(125,211,252,0.1) 0%,transparent 70%);top:-5%;right:-10%;animation-duration:20s;}
+  .pg-a2{width:400px;height:400px;background:radial-gradient(ellipse,rgba(14,165,233,0.08) 0%,transparent 70%);top:50%;left:-5%;animation-duration:25s;animation-delay:-8s;}
+  @keyframes pgAurora{0%{opacity:0;transform:translate(0,0) scale(1);}15%{opacity:1;}50%{transform:translate(40px,-30px) scale(1.15);opacity:0.8;}85%{opacity:1;}100%{opacity:0;transform:translate(0,0) scale(1);}}
+  .pg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(125,211,252,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(125,211,252,0.04) 1px,transparent 1px);background-size:64px 64px;animation:pgGridFade 8s ease-in-out infinite;}
+  @keyframes pgGridFade{0%,100%{opacity:0.4}50%{opacity:0.7}}
+  .hero{padding:140px 60px 80px;text-align:center;position:relative;z-index:1;}
+  .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.2);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:700;color:var(--primary);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;}
+  .hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;}
+  body.ar .hero h1{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .hero p{font-size:15px;color:var(--text-secondary);max-width:500px;margin:0 auto;}
+  .content{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 60px 100px;}
+  .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin-bottom:48px;}
+  .toc-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+  body.ar .toc-title{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .toc ol{padding-right:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .toc li{counter-increment:toc-item;}
+  .toc a{color:var(--text-secondary);text-decoration:none;font-size:13px;transition:color 0.2s;display:flex;align-items:center;gap:8px;}
+  .toc a:hover{color:var(--primary);}
+  .toc a::before{content:counter(toc-item) ".";color:var(--primary);font-weight:700;font-size:12px;min-width:20px;}
+  body.ar .toc a::before{content:none;}
+  .section{margin-bottom:48px;}
+  .section-num{font-size:11px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+  body.ar .section-num{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .section h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+  body.ar .section h2{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .section p{color:var(--text-secondary);font-size:14px;margin-bottom:12px;line-height:1.8;}
+  body.ar .section p{font-family:'Cairo',sans-serif;}
+  .section ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+  .section ul li{color:var(--text-secondary);font-size:14px;display:flex;align-items:flex-start;gap:10px;line-height:1.7;}
+  body.ar .section ul li{font-family:'Cairo',sans-serif;}
+  .section ul li::before{content:"→";color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;}
+  .highlight-box{background:rgba(125,211,252,0.05);border:1px solid rgba(125,211,252,0.15);border-radius:12px;padding:20px 24px;margin:16px 0;}
+  .highlight-box p{color:var(--text);margin:0;font-size:14px;}
+  body.ar .highlight-box p{font-family:'Cairo',sans-serif;}
+  .data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+  .data-table th{background:var(--bg-surface);color:var(--primary);padding:12px 16px;text-align:left;font-weight:700;border-bottom:1px solid var(--border);}
+  body.ar .data-table th{text-align:right;font-family:'Cairo',sans-serif;}
+  .data-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top;}
+  body.ar .data-table td{text-align:right;font-family:'Cairo',sans-serif;}
+  .data-table tr:last-child td{border-bottom:none;}
+  .last-updated{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:12px;margin-bottom:48px;}
+  footer{border-top:1px solid var(--border);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,13,20,0.7);backdrop-filter:blur(8px);position:relative;z-index:1;flex-wrap:wrap;gap:20px;}
+  .foot-logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;text-decoration:none;color:var(--text);}
+  .foot-logo span{color:var(--primary);}
+  .foot-links{display:flex;gap:24px;list-style:none;}
+  .foot-links a{color:var(--text-muted);text-decoration:none;font-size:12px;transition:color 0.2s;}
+  body.ar .foot-links a{font-family:'Cairo',sans-serif;}
+  .foot-links a:hover{color:var(--primary);}
+  .foot-copy{font-size:12px;color:var(--text-muted);}
+  body.ar .foot-copy{font-family:'Cairo',sans-serif;}
+  @media(max-width:768px){nav{padding:16px 24px;}.hero{padding:120px 24px 60px;}.content{padding:0 24px 80px;}footer{padding:24px;}.data-table{font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="page-bg">
+  <div class="pg-aurora pg-a1"></div>
+  <div class="pg-aurora pg-a2"></div>
+  <div class="pg-grid"></div>
+</div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="https://waslat.io" class="nav-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnAr" onclick="setLang('ar')">ع</button>
+    </div>
+    <a href="https://ecolor-fixed.vercel.app/subaccount/login" class="btn-ghost"><span class="en-only">Sign In</span><span class="ar-only">تسجيل الدخول</span></a>
+    <a href="https://ecolor-fixed.vercel.app/subaccount/signup" class="btn-primary"><span class="en-only">Start Free →</span><span class="ar-only">ابدأ مجاناً ←</span></a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag"><span class="en-only">Legal</span><span class="ar-only">قانوني</span></div>
+  <h1><span class="en-only">Privacy Policy</span><span class="ar-only">سياسة الخصوصية</span></h1>
+  <p><span class="en-only">We are committed to protecting your privacy and being transparent about how we use your data.</span><span class="ar-only">نحن ملتزمون بحماية خصوصيتك والشفافية حول كيفية استخدام بياناتك.</span></p>
+</div>
+
+<div class="content">
+  <div class="last-updated">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span class="en-only">Last updated: April 2026</span>
+    <span class="ar-only">آخر تحديث: أبريل 2026</span>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title"><span class="en-only">Table of Contents</span><span class="ar-only">جدول المحتويات</span></div>
+    <ol style="counter-reset:toc-item;">
+      <li><a href="#collect"><span class="en-only">Information We Collect</span><span class="ar-only">المعلومات التي نجمعها</span></a></li>
+      <li><a href="#use"><span class="en-only">How We Use Your Information</span><span class="ar-only">كيف نستخدم معلوماتك</span></a></li>
+      <li><a href="#sharing"><span class="en-only">Information Sharing</span><span class="ar-only">مشاركة المعلومات</span></a></li>
+      <li><a href="#storage"><span class="en-only">Data Storage & Security</span><span class="ar-only">تخزين البيانات وأمانها</span></a></li>
+      <li><a href="#rights"><span class="en-only">Your Rights</span><span class="ar-only">حقوقك</span></a></li>
+      <li><a href="#cookies"><span class="en-only">Cookies</span><span class="ar-only">ملفات تعريف الارتباط</span></a></li>
+      <li><a href="#third-party"><span class="en-only">Third-Party Services</span><span class="ar-only">خدمات الطرف الثالث</span></a></li>
+      <li><a href="#children"><span class="en-only">Children's Privacy</span><span class="ar-only">خصوصية الأطفال</span></a></li>
+      <li><a href="#pdpl"><span class="en-only">Saudi PDPL Compliance</span><span class="ar-only">الامتثال لنظام حماية البيانات السعودي</span></a></li>
+      <li><a href="#contact"><span class="en-only">Contact Us</span><span class="ar-only">تواصل معنا</span></a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="collect">
+    <div class="section-num"><span class="en-only">Section 01</span><span class="ar-only">القسم ١</span></div>
+    <h2><span class="en-only">Information We Collect</span><span class="ar-only">المعلومات التي نجمعها</span></h2>
+    <p><span class="en-only">We collect the following types of information when you use Waslat:</span><span class="ar-only">نجمع أنواع المعلومات التالية عند استخدامك لوصلات:</span></p>
+    <table class="data-table">
+      <tr>
+        <th><span class="en-only">Category</span><span class="ar-only">الفئة</span></th>
+        <th><span class="en-only">Examples</span><span class="ar-only">أمثلة</span></th>
+        <th><span class="en-only">Purpose</span><span class="ar-only">الغرض</span></th>
+      </tr>
+      <tr>
+        <td><span class="en-only">Account Data</span><span class="ar-only">بيانات الحساب</span></td>
+        <td><span class="en-only">Name, email, phone, password hash</span><span class="ar-only">الاسم، البريد الإلكتروني، الهاتف، تشفير كلمة المرور</span></td>
+        <td><span class="en-only">Authentication & account management</span><span class="ar-only">المصادقة وإدارة الحساب</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-only">Business Data</span><span class="ar-only">بيانات الأعمال</span></td>
+        <td><span class="en-only">Business name, sector, VAT number</span><span class="ar-only">اسم النشاط، القطاع، الرقم الضريبي</span></td>
+        <td><span class="en-only">Platform personalization, invoicing</span><span class="ar-only">تخصيص المنصة، الفوترة</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-only">Customer Data</span><span class="ar-only">بيانات العملاء</span></td>
+        <td><span class="en-only">Your customers' names, phones, emails, purchase history</span><span class="ar-only">أسماء عملائك وهواتفهم وبريدهم الإلكتروني وتاريخ الشراء</span></td>
+        <td><span class="en-only">CRM, automation, communications</span><span class="ar-only">إدارة علاقات العملاء، الأتمتة، الاتصالات</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-only">Usage Data</span><span class="ar-only">بيانات الاستخدام</span></td>
+        <td><span class="en-only">Pages visited, features used, clicks, session duration</span><span class="ar-only">الصفحات المزارة، الميزات المستخدمة، النقرات، مدة الجلسة</span></td>
+        <td><span class="en-only">Product improvement, analytics</span><span class="ar-only">تحسين المنتج، التحليلات</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-only">Payment Data</span><span class="ar-only">بيانات الدفع</span></td>
+        <td><span class="en-only">Subscription plan, payment status (no card details stored)</span><span class="ar-only">خطة الاشتراك، حالة الدفع (لا يتم تخزين بيانات البطاقة)</span></td>
+        <td><span class="en-only">Billing management</span><span class="ar-only">إدارة الفوترة</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-only">Integration Data</span><span class="ar-only">بيانات التكامل</span></td>
+        <td><span class="en-only">API tokens for Meta, Salla, Zid, WhatsApp</span><span class="ar-only">رموز API لميتا وسلة وزد وواتساب</span></td>
+        <td><span class="en-only">Platform integrations</span><span class="ar-only">تكاملات المنصة</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 2 -->
+  <div class="section" id="use">
+    <div class="section-num"><span class="en-only">Section 02</span><span class="ar-only">القسم ٢</span></div>
+    <h2><span class="en-only">How We Use Your Information</span><span class="ar-only">كيف نستخدم معلوماتك</span></h2>
+    <p><span class="en-only">We use your information to:</span><span class="ar-only">نستخدم معلوماتك من أجل:</span></p>
+    <ul>
+      <li><span class="en-only">Provide, maintain, and improve the Waslat platform</span><span class="ar-only">تقديم منصة وصلات وصيانتها وتحسينها</span></li>
+      <li><span class="en-only">Power AI features including WaslatBrain, reply suggestions, and business insights</span><span class="ar-only">تشغيل ميزات الذكاء الاصطناعي بما فيها وصلات Brain واقتراحات الرد والرؤى التجارية</span></li>
+      <li><span class="en-only">Send service notifications, billing alerts, and security updates</span><span class="ar-only">إرسال إشعارات الخدمة وتنبيهات الفوترة وتحديثات الأمان</span></li>
+      <li><span class="en-only">Process payments and manage subscriptions</span><span class="ar-only">معالجة المدفوعات وإدارة الاشتراكات</span></li>
+      <li><span class="en-only">Comply with legal obligations in Saudi Arabia</span><span class="ar-only">الامتثال للالتزامات القانونية في المملكة العربية السعودية</span></li>
+      <li><span class="en-only">Prevent fraud, abuse, and security threats</span><span class="ar-only">منع الاحتيال والإساءة والتهديدات الأمنية</span></li>
+    </ul>
+    <div class="highlight-box">
+      <p><span class="en-only">🔒 We do NOT sell your personal data or your customers' data to third parties. Your data is never used for advertising purposes.</span><span class="ar-only">🔒 نحن لا نبيع بياناتك الشخصية أو بيانات عملائك لأطراف ثالثة. لا تُستخدم بياناتك أبدًا لأغراض إعلانية.</span></p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="section" id="sharing">
+    <div class="section-num"><span class="en-only">Section 03</span><span class="ar-only">القسم ٣</span></div>
+    <h2><span class="en-only">Information Sharing</span><span class="ar-only">مشاركة المعلومات</span></h2>
+    <p><span class="en-only">We may share your information only in these limited circumstances:</span><span class="ar-only">قد نشارك معلوماتك فقط في هذه الظروف المحدودة:</span></p>
+    <ul>
+      <li><span class="en-only">Service providers: Firebase (Google), Vercel, Anthropic Claude API, Resend — strictly for operating the platform</span><span class="ar-only">مزودو الخدمات: Firebase (Google) وVercel وAnthropic Claude API وResend — فقط لتشغيل المنصة</span></li>
+      <li><span class="en-only">Integration partners: Meta, Salla, Zid, WhatsApp — only data required for the integration you activate</span><span class="ar-only">شركاء التكامل: ميتا وسلة وزد وواتساب — فقط البيانات المطلوبة للتكامل الذي تفعّله</span></li>
+      <li><span class="en-only">Legal requirements: When required by Saudi law or competent government authorities</span><span class="ar-only">المتطلبات القانونية: عند الاقتضاء بموجب القانون السعودي أو السلطات الحكومية المختصة</span></li>
+      <li><span class="en-only">Business transfers: In the event of a merger or acquisition, with prior notice to users</span><span class="ar-only">عمليات الأعمال: في حالة الاندماج أو الاستحواذ، مع إشعار مسبق للمستخدمين</span></li>
+    </ul>
+  </div>
+
+  <!-- 4 -->
+  <div class="section" id="storage">
+    <div class="section-num"><span class="en-only">Section 04</span><span class="ar-only">القسم ٤</span></div>
+    <h2><span class="en-only">Data Storage & Security</span><span class="ar-only">تخزين البيانات وأمانها</span></h2>
+    <ul>
+      <li><span class="en-only">Data is stored on Google Cloud Firestore with AES-256 encryption at rest</span><span class="ar-only">يتم تخزين البيانات على Google Cloud Firestore مع تشفير AES-256 في حالة التخزين</span></li>
+      <li><span class="en-only">All data transmission uses TLS 1.3 encryption in transit</span><span class="ar-only">تستخدم جميع عمليات نقل البيانات تشفير TLS 1.3 أثناء النقل</span></li>
+      <li><span class="en-only">Access is controlled by Firebase Authentication with role-based permissions</span><span class="ar-only">يتم التحكم في الوصول من خلال مصادقة Firebase مع أذونات قائمة على الأدوار</span></li>
+      <li><span class="en-only">API keys and secrets are stored as environment variables, never in source code</span><span class="ar-only">يتم تخزين مفاتيح API والأسرار كمتغيرات بيئية، وليس في الكود المصدري أبدًا</span></li>
+      <li><span class="en-only">We conduct regular security reviews and vulnerability assessments</span><span class="ar-only">نجري مراجعات أمنية منتظمة وتقييمات للثغرات</span></li>
+      <li><span class="en-only">Data retention: Active account data is retained for the duration of the subscription. Deleted data is purged within 90 days.</span><span class="ar-only">الاحتفاظ بالبيانات: يتم الاحتفاظ ببيانات الحساب النشط طوال فترة الاشتراك. يتم حذف البيانات المحذوفة خلال 90 يومًا.</span></li>
+    </ul>
+  </div>
+
+  <!-- 5 -->
+  <div class="section" id="rights">
+    <div class="section-num"><span class="en-only">Section 05</span><span class="ar-only">القسم ٥</span></div>
+    <h2><span class="en-only">Your Rights</span><span class="ar-only">حقوقك</span></h2>
+    <p><span class="en-only">You have the following rights regarding your personal data:</span><span class="ar-only">لديك الحقوق التالية فيما يتعلق ببياناتك الشخصية:</span></p>
+    <ul>
+      <li><span class="en-only"><strong style="color:#fff">Access:</strong> Request a copy of all personal data we hold about you</span><span class="ar-only"><strong style="color:#fff">الوصول:</strong> طلب نسخة من جميع البيانات الشخصية التي نحتفظ بها عنك</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Correction:</strong> Request correction of inaccurate or incomplete data</span><span class="ar-only"><strong style="color:#fff">التصحيح:</strong> طلب تصحيح البيانات غير الدقيقة أو الناقصة</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Deletion:</strong> Request deletion of your account and associated data</span><span class="ar-only"><strong style="color:#fff">الحذف:</strong> طلب حذف حسابك والبيانات المرتبطة به</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Export:</strong> Receive your data in a portable format (JSON/CSV)</span><span class="ar-only"><strong style="color:#fff">التصدير:</strong> استلام بياناتك بصيغة قابلة للنقل (JSON/CSV)</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Restriction:</strong> Request restriction of processing in certain circumstances</span><span class="ar-only"><strong style="color:#fff">التقييد:</strong> طلب تقييد المعالجة في ظروف معينة</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Objection:</strong> Object to processing of your data for specific purposes</span><span class="ar-only"><strong style="color:#fff">الاعتراض:</strong> الاعتراض على معالجة بياناتك لأغراض محددة</span></li>
+    </ul>
+    <p><span class="en-only">To exercise any of these rights, contact us at <a href="mailto:support@waslat.io" style="color:var(--primary)">support@waslat.io</a>. We will respond within 30 days.</span><span class="ar-only">لممارسة أي من هذه الحقوق، تواصل معنا على <a href="mailto:support@waslat.io" style="color:var(--primary)">support@waslat.io</a>. سنرد خلال 30 يومًا.</span></p>
+  </div>
+
+  <!-- 6 -->
+  <div class="section" id="cookies">
+    <div class="section-num"><span class="en-only">Section 06</span><span class="ar-only">القسم ٦</span></div>
+    <h2><span class="en-only">Cookies</span><span class="ar-only">ملفات تعريف الارتباط</span></h2>
+    <p><span class="en-only">Waslat uses minimal cookies:</span><span class="ar-only">تستخدم وصلات ملفات تعريف ارتباط محدودة:</span></p>
+    <ul>
+      <li><span class="en-only"><strong style="color:#fff">Essential cookies:</strong> Firebase Authentication session tokens — required for login to work</span><span class="ar-only"><strong style="color:#fff">ملفات تعريف الارتباط الأساسية:</strong> رموز جلسة Firebase Authentication — مطلوبة لعمل تسجيل الدخول</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Preference cookies:</strong> Language preference (Arabic/English) stored in localStorage</span><span class="ar-only"><strong style="color:#fff">ملفات تعريف ارتباط التفضيلات:</strong> تفضيل اللغة (عربي/إنجليزي) مخزن في localStorage</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Cache cookies:</strong> AI response caching to reduce API calls — stored locally, never sent to our servers</span><span class="ar-only"><strong style="color:#fff">ملفات تعريف ارتباط التخزين المؤقت:</strong> تخزين مؤقت لاستجابات الذكاء الاصطناعي — مخزنة محليًا، ولا تُرسل إلى خوادمنا</span></li>
+    </ul>
+    <p><span class="en-only">We do not use advertising cookies, tracking pixels, or third-party analytics cookies.</span><span class="ar-only">نحن لا نستخدم ملفات تعريف ارتباط الإعلانات أو بكسلات التتبع أو ملفات تعريف ارتباط التحليلات الخارجية.</span></p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section" id="third-party">
+    <div class="section-num"><span class="en-only">Section 07</span><span class="ar-only">القسم ٧</span></div>
+    <h2><span class="en-only">Third-Party Services</span><span class="ar-only">خدمات الطرف الثالث</span></h2>
+    <p><span class="en-only">Waslat integrates with the following third-party services, each with their own privacy policies:</span><span class="ar-only">تتكامل وصلات مع خدمات الطرف الثالث التالية، ولكل منها سياسة خصوصية خاصة بها:</span></p>
+    <ul>
+      <li><span class="en-only"><strong style="color:#fff">Google Firebase</strong> — Authentication and database storage (policies.google.com)</span><span class="ar-only"><strong style="color:#fff">Google Firebase</strong> — المصادقة وتخزين قاعدة البيانات</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Anthropic Claude</strong> — AI features processing (anthropic.com/privacy)</span><span class="ar-only"><strong style="color:#fff">Anthropic Claude</strong> — معالجة ميزات الذكاء الاصطناعي</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Vercel</strong> — Platform hosting and serverless functions (vercel.com/legal/privacy-policy)</span><span class="ar-only"><strong style="color:#fff">Vercel</strong> — استضافة المنصة والوظائف السحابية</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Meta (Facebook/Instagram)</strong> — When you connect these platforms (facebook.com/privacy)</span><span class="ar-only"><strong style="color:#fff">Meta (فيسبوك/إنستغرام)</strong> — عند ربط هذه المنصات</span></li>
+      <li><span class="en-only"><strong style="color:#fff">Salla / Zid</strong> — E-commerce platform integrations</span><span class="ar-only"><strong style="color:#fff">سلة / زد</strong> — تكاملات منصات التجارة الإلكترونية</span></li>
+      <li><span class="en-only"><strong style="color:#fff">WhatsApp Business</strong> — Messaging integration (whatsapp.com/legal)</span><span class="ar-only"><strong style="color:#fff">واتساب بيزنس</strong> — تكامل المراسلة</span></li>
+    </ul>
+  </div>
+
+  <!-- 8 -->
+  <div class="section" id="children">
+    <div class="section-num"><span class="en-only">Section 08</span><span class="ar-only">القسم ٨</span></div>
+    <h2><span class="en-only">Children's Privacy</span><span class="ar-only">خصوصية الأطفال</span></h2>
+    <p><span class="en-only">Waslat is a business platform intended for users aged 18 and above. We do not knowingly collect personal information from individuals under 18 years of age. If you believe a minor has provided us with personal data, please contact us immediately at support@waslat.io and we will delete the information.</span><span class="ar-only">وصلات منصة أعمال مخصصة للمستخدمين الذين تبلغ أعمارهم 18 عامًا فأكثر. نحن لا نجمع معلومات شخصية عن قصد من الأفراد الذين تقل أعمارهم عن 18 عامًا. إذا كنت تعتقد أن قاصرًا قدم لنا بيانات شخصية، يرجى التواصل معنا على الفور على support@waslat.io وسنحذف المعلومات.</span></p>
+  </div>
+
+  <!-- 9 -->
+  <div class="section" id="pdpl">
+    <div class="section-num"><span class="en-only">Section 09</span><span class="ar-only">القسم ٩</span></div>
+    <h2><span class="en-only">Saudi PDPL Compliance</span><span class="ar-only">الامتثال لنظام حماية البيانات الشخصية السعودي</span></h2>
+    <p><span class="en-only">Waslat is committed to complying with the Saudi Personal Data Protection Law (PDPL) issued by Royal Decree No. M/19 dated 09/02/1443H. As part of our compliance:</span><span class="ar-only">وصلات ملتزمة بالامتثال لنظام حماية البيانات الشخصية السعودي الصادر بالمرسوم الملكي رقم م/19 بتاريخ 09/02/1443هـ. كجزء من التزامنا:</span></p>
+    <ul>
+      <li><span class="en-only">We collect only data necessary for the stated purpose (data minimization)</span><span class="ar-only">نجمع فقط البيانات الضرورية للغرض المحدد (تقليل البيانات)</span></li>
+      <li><span class="en-only">We obtain consent before processing sensitive personal data</span><span class="ar-only">نحصل على الموافقة قبل معالجة البيانات الشخصية الحساسة</span></li>
+      <li><span class="en-only">We notify users and authorities of data breaches within the required timeframe</span><span class="ar-only">نُخطر المستخدمين والجهات المختصة بخروقات البيانات خلال الإطار الزمني المطلوب</span></li>
+      <li><span class="en-only">We are working toward storing Saudi user data in Saudi Arabia (planned Vultr Riyadh migration)</span><span class="ar-only">نعمل على تخزين بيانات المستخدمين السعوديين في المملكة العربية السعودية (ترحيل Vultr الرياض المخطط)</span></li>
+      <li><span class="en-only">A Data Protection Officer (DPO) can be reached at: privacy@waslat.io</span><span class="ar-only">يمكن التواصل مع مسؤول حماية البيانات على: privacy@waslat.io</span></li>
+    </ul>
+  </div>
+
+  <!-- 10 -->
+  <div class="section" id="contact">
+    <div class="section-num"><span class="en-only">Section 10</span><span class="ar-only">القسم ١٠</span></div>
+    <h2><span class="en-only">Contact Us</span><span class="ar-only">تواصل معنا</span></h2>
+    <p><span class="en-only">For privacy-related questions or requests:</span><span class="ar-only">للأسئلة أو الطلبات المتعلقة بالخصوصية:</span></p>
+    <div class="highlight-box">
+      <p><span class="en-only">📧 Privacy: privacy@waslat.io<br/>📧 Support: support@waslat.io<br/>🌐 Website: waslat.io<br/>📍 Riyadh, Kingdom of Saudi Arabia</span><span class="ar-only">📧 الخصوصية: privacy@waslat.io<br/>📧 الدعم: support@waslat.io<br/>🌐 الموقع: waslat.io<br/>📍 الرياض، المملكة العربية السعودية</span></p>
+    </div>
+    <p><span class="en-only">We may update this Privacy Policy from time to time. We will notify you of significant changes via email or a prominent notice on the platform. Continued use of Waslat after changes constitutes acceptance of the updated policy.</span><span class="ar-only">قد نحدّث سياسة الخصوصية هذه من وقت لآخر. سنُخطرك بالتغييرات الجوهرية عبر البريد الإلكتروني أو إشعار بارز على المنصة. الاستمرار في استخدام وصلات بعد التغييرات يُعد قبولًا للسياسة المحدّثة.</span></p>
+  </div>
+</div>
+
+<footer>
+  <a href="https://waslat.io" class="foot-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></a>
+  <ul class="foot-links">
+    <li><a href="https://waslat.io/privacy"><span class="en-only">Privacy Policy</span><span class="ar-only">سياسة الخصوصية</span></a></li>
+    <li><a href="https://waslat.io/terms"><span class="en-only">Terms of Service</span><span class="ar-only">شروط الخدمة</span></a></li>
+    <li><a href="https://waslat.io"><span class="en-only">Home</span><span class="ar-only">الرئيسية</span></a></li>
+  </ul>
+  <div class="foot-copy"><span class="en-only">© 2026 Waslat</span><span class="ar-only">© 2026 وصلات</span></div>
+</footer>
+
+<script>
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-5+'px';cursor.style.top=my-5+'px';});
+  (function animRing(){rx+=(mx-rx-17)*0.12;ry+=(my-ry-17)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+  document.querySelectorAll('button,a').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2)';ring.style.width='48px';ring.style.height='48px';ring.style.borderColor='rgba(125,211,252,0.6)';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.width='34px';ring.style.height='34px';ring.style.borderColor='rgba(125,211,252,0.35)';});
+  });
+  function setLang(lang){
+    const body=document.body,btnEn=document.getElementById('btnEn'),btnAr=document.getElementById('btnAr');
+    if(lang==='ar'){body.classList.add('ar');body.setAttribute('dir','rtl');body.setAttribute('lang','ar');btnAr.classList.add('active');btnEn.classList.remove('active');}
+    else{body.classList.remove('ar');body.setAttribute('dir','ltr');body.setAttribute('lang','en');btnEn.classList.add('active');btnAr.classList.remove('active');}
+  }
+</script>
+</body>
+</html>
