@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Terms of Service — Waslat | وصلات</title>
+<meta name="description" content="Waslat Terms of Service — Read our terms and conditions for using the Waslat platform."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://waslat.io/terms"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050508'/><text y='.9em' font-size='70' x='10'>W</text></svg>"/>
+<meta name="theme-color" content="#050508"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{--bg:#050508;--bg-card:#0D0D14;--bg-surface:#13131E;--border:#1E1E30;--border-light:#252538;--primary:#7DD3FC;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#4A5568;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.7;}
+  body.ar{font-family:'Cairo',sans-serif;direction:rtl;}
+  body.ar .en-only{display:none;}
+  body.ar .ar-only{display:block!important;}
+  body:not(.ar) .ar-only{display:none;}
+  .cursor{position:fixed;width:10px;height:10px;background:var(--primary);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.1s;mix-blend-mode:screen;}
+  .cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(125,211,252,0.35);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.3s,height 0.3s,border-color 0.3s;}
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;background:rgba(5,5,8,0.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text);}
+  .nav-logo span{color:var(--primary);}
+  .nav-right{display:flex;gap:12px;align-items:center;}
+  .lang-toggle{display:flex;align-items:center;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:100px;padding:3px;gap:2px;}
+  .lang-btn{padding:5px 14px;border-radius:100px;border:none;background:transparent;color:var(--text-secondary);font-size:12px;font-weight:700;cursor:none;transition:all 0.2s;font-family:inherit;}
+  .lang-btn.active{background:var(--primary);color:#000;}
+  .btn-ghost{padding:9px 20px;border:1px solid var(--border-light);background:transparent;color:var(--text);border-radius:10px;font-size:13px;font-weight:500;cursor:none;transition:all 0.2s;font-family:inherit;text-decoration:none;display:inline-block;}
+  .btn-ghost:hover{border-color:var(--primary);color:var(--primary);}
+  .btn-primary{padding:9px 20px;background:var(--primary);color:#000;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:none;transition:all 0.2s;font-family:inherit;text-decoration:none;display:inline-block;}
+  .btn-primary:hover{transform:translateY(-1px);}
+  /* PAGE BG */
+  .page-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .pg-aurora{position:absolute;border-radius:50%;filter:blur(90px);animation:pgAurora ease-in-out infinite;opacity:0;}
+  .pg-a1{width:600px;height:400px;background:radial-gradient(ellipse,rgba(125,211,252,0.1) 0%,transparent 70%);top:-5%;left:-10%;animation-duration:20s;}
+  .pg-a2{width:400px;height:400px;background:radial-gradient(ellipse,rgba(14,165,233,0.08) 0%,transparent 70%);top:30%;right:-5%;animation-duration:25s;animation-delay:-8s;}
+  @keyframes pgAurora{0%{opacity:0;transform:translate(0,0) scale(1);}15%{opacity:1;}50%{transform:translate(40px,-30px) scale(1.15);opacity:0.8;}85%{opacity:1;}100%{opacity:0;transform:translate(0,0) scale(1);}}
+  .pg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(125,211,252,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(125,211,252,0.04) 1px,transparent 1px);background-size:64px 64px;animation:pgGridFade 8s ease-in-out infinite;}
+  @keyframes pgGridFade{0%,100%{opacity:0.4}50%{opacity:0.7}}
+  /* HERO */
+  .hero{padding:140px 60px 80px;text-align:center;position:relative;z-index:1;}
+  .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.2);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:700;color:var(--primary);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;}
+  .hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;}
+  body.ar .hero h1{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .hero p{font-size:15px;color:var(--text-secondary);max-width:500px;margin:0 auto;}
+  /* CONTENT */
+  .content{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 60px 100px;}
+  .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin-bottom:48px;}
+  .toc-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+  body.ar .toc-title{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .toc ol{padding-right:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .toc li{counter-increment:toc-item;}
+  .toc a{color:var(--text-secondary);text-decoration:none;font-size:13px;transition:color 0.2s;display:flex;align-items:center;gap:8px;}
+  .toc a:hover{color:var(--primary);}
+  .toc a::before{content:counter(toc-item) ".";color:var(--primary);font-weight:700;font-size:12px;min-width:20px;}
+  body.ar .toc a::before{content:none;}
+  .section{margin-bottom:48px;}
+  .section-num{font-size:11px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+  body.ar .section-num{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .section h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+  body.ar .section h2{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .section p{color:var(--text-secondary);font-size:14px;margin-bottom:12px;line-height:1.8;}
+  body.ar .section p{font-family:'Cairo',sans-serif;}
+  .section ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+  .section ul li{color:var(--text-secondary);font-size:14px;padding-right:0;display:flex;align-items:flex-start;gap:10px;line-height:1.7;}
+  body.ar .section ul li{font-family:'Cairo',sans-serif;}
+  .section ul li::before{content:"→";color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;}
+  .highlight-box{background:rgba(125,211,252,0.05);border:1px solid rgba(125,211,252,0.15);border-radius:12px;padding:20px 24px;margin:16px 0;}
+  .highlight-box p{color:var(--text);margin:0;font-size:14px;}
+  body.ar .highlight-box p{font-family:'Cairo',sans-serif;}
+  .warning-box{background:rgba(255,165,0,0.05);border:1px solid rgba(255,165,0,0.2);border-radius:12px;padding:20px 24px;margin:16px 0;}
+  .warning-box p{color:#FFA500;margin:0;font-size:14px;}
+  body.ar .warning-box p{font-family:'Cairo',sans-serif;}
+  .last-updated{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:12px;margin-bottom:48px;}
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,13,20,0.7);backdrop-filter:blur(8px);position:relative;z-index:1;flex-wrap:wrap;gap:20px;}
+  .foot-logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;text-decoration:none;color:var(--text);}
+  .foot-logo span{color:var(--primary);}
+  .foot-links{display:flex;gap:24px;list-style:none;}
+  .foot-links a{color:var(--text-muted);text-decoration:none;font-size:12px;transition:color 0.2s;}
+  body.ar .foot-links a{font-family:'Cairo',sans-serif;}
+  .foot-links a:hover{color:var(--primary);}
+  .foot-copy{font-size:12px;color:var(--text-muted);}
+  body.ar .foot-copy{font-family:'Cairo',sans-serif;}
+  @media(max-width:768px){nav{padding:16px 24px;}.hero{padding:120px 24px 60px;}.content{padding:0 24px 80px;}footer{padding:24px;}}
+</style>
+</head>
+<body>
+<div class="page-bg">
+  <div class="pg-aurora pg-a1"></div>
+  <div class="pg-aurora pg-a2"></div>
+  <div class="pg-grid"></div>
+</div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="https://waslat.io" class="nav-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnAr" onclick="setLang('ar')">ع</button>
+    </div>
+    <a href="https://ecolor-fixed.vercel.app/subaccount/login" class="btn-ghost"><span class="en-only">Sign In</span><span class="ar-only">تسجيل الدخول</span></a>
+    <a href="https://ecolor-fixed.vercel.app/subaccount/signup" class="btn-primary"><span class="en-only">Start Free →</span><span class="ar-only">ابدأ مجاناً ←</span></a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag"><span class="en-only">Legal</span><span class="ar-only">قانوني</span></div>
+  <h1><span class="en-only">Terms of Service</span><span class="ar-only">شروط الخدمة</span></h1>
+  <p><span class="en-only">Please read these terms carefully before using the Waslat platform.</span><span class="ar-only">يرجى قراءة هذه الشروط بعناية قبل استخدام منصة وصلات.</span></p>
+</div>
+
+<div class="content">
+  <div class="last-updated">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span class="en-only">Last updated: April 2026</span>
+    <span class="ar-only">آخر تحديث: أبريل 2026</span>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title"><span class="en-only">Table of Contents</span><span class="ar-only">جدول المحتويات</span></div>
+    <ol style="counter-reset:toc-item;">
+      <li><a href="#acceptance"><span class="en-only">Acceptance of Terms</span><span class="ar-only">قبول الشروط</span></a></li>
+      <li><a href="#services"><span class="en-only">Description of Services</span><span class="ar-only">وصف الخدمات</span></a></li>
+      <li><a href="#account"><span class="en-only">Account Registration</span><span class="ar-only">تسجيل الحساب</span></a></li>
+      <li><a href="#payment"><span class="en-only">Payment & Billing</span><span class="ar-only">الدفع والفوترة</span></a></li>
+      <li><a href="#usage"><span class="en-only">Acceptable Use</span><span class="ar-only">الاستخدام المقبول</span></a></li>
+      <li><a href="#data"><span class="en-only">Data & Privacy</span><span class="ar-only">البيانات والخصوصية</span></a></li>
+      <li><a href="#ip"><span class="en-only">Intellectual Property</span><span class="ar-only">الملكية الفكرية</span></a></li>
+      <li><a href="#termination"><span class="en-only">Termination</span><span class="ar-only">إنهاء الخدمة</span></a></li>
+      <li><a href="#liability"><span class="en-only">Limitation of Liability</span><span class="ar-only">تحديد المسؤولية</span></a></li>
+      <li><a href="#contact"><span class="en-only">Contact Us</span><span class="ar-only">تواصل معنا</span></a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="acceptance">
+    <div class="section-num"><span class="en-only">Section 01</span><span class="ar-only">القسم ١</span></div>
+    <h2><span class="en-only">Acceptance of Terms</span><span class="ar-only">قبول الشروط</span></h2>
+    <p><span class="en-only">By accessing or using the Waslat platform ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Service.</span><span class="ar-only">باستخدامك منصة وصلات ("الخدمة")، فإنك توافق على الالتزام بشروط الخدمة هذه ("الشروط"). إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام الخدمة.</span></p>
+    <p><span class="en-only">These Terms apply to all users, including agencies, sub-account holders, and staff members. By creating an account, you confirm that you are at least 18 years old and have the legal authority to enter into this agreement on behalf of yourself or your organization.</span><span class="ar-only">تنطبق هذه الشروط على جميع المستخدمين، بما في ذلك الوكالات وأصحاب الحسابات الفرعية وأعضاء الفريق. بإنشاء حساب، تؤكد أنك تجاوزت الثامنة عشرة من عمرك وتمتلك الصلاحية القانونية للدخول في هذه الاتفاقية.</span></p>
+  </div>
+
+  <!-- 2 -->
+  <div class="section" id="services">
+    <div class="section-num"><span class="en-only">Section 02</span><span class="ar-only">القسم ٢</span></div>
+    <h2><span class="en-only">Description of Services</span><span class="ar-only">وصف الخدمات</span></h2>
+    <p><span class="en-only">Waslat provides a business management platform that includes:</span><span class="ar-only">توفر وصلات منصة إدارة أعمال تشمل:</span></p>
+    <ul>
+      <li><span class="en-only">Social media management and scheduling across multiple platforms</span><span class="ar-only">إدارة وجدولة وسائل التواصل الاجتماعي عبر منصات متعددة</span></li>
+      <li><span class="en-only">WhatsApp Business automation and messaging</span><span class="ar-only">أتمتة ورسائل واتساب بيزنس</span></li>
+      <li><span class="en-only">Customer Relationship Management (CRM)</span><span class="ar-only">إدارة علاقات العملاء (CRM)</span></li>
+      <li><span class="en-only">Point of Sale (POS) system</span><span class="ar-only">نظام نقاط البيع (POS)</span></li>
+      <li><span class="en-only">Booking and appointment management</span><span class="ar-only">إدارة الحجوزات والمواعيد</span></li>
+      <li><span class="en-only">Accounting and invoicing (ZATCA-compliant)</span><span class="ar-only">المحاسبة والفوترة (متوافقة مع هيئة الزكاة والضريبة)</span></li>
+      <li><span class="en-only">AI-powered business intelligence and automation agents</span><span class="ar-only">ذكاء اصطناعي وعملاء أتمتة مدعومون بالذكاء الاصطناعي</span></li>
+      <li><span class="en-only">White-label reselling capabilities for agencies</span><span class="ar-only">إمكانيات إعادة البيع بالعلامة البيضاء للوكالات</span></li>
+    </ul>
+    <p><span class="en-only">We reserve the right to modify, suspend, or discontinue any part of the Service at any time with reasonable notice.</span><span class="ar-only">نحتفظ بالحق في تعديل أو تعليق أو إيقاف أي جزء من الخدمة في أي وقت مع إشعار معقول.</span></p>
+  </div>
+
+  <!-- 3 -->
+  <div class="section" id="account">
+    <div class="section-num"><span class="en-only">Section 03</span><span class="ar-only">القسم ٣</span></div>
+    <h2><span class="en-only">Account Registration</span><span class="ar-only">تسجيل الحساب</span></h2>
+    <p><span class="en-only">To use Waslat, you must create an account. You agree to:</span><span class="ar-only">لاستخدام وصلات، يجب عليك إنشاء حساب. أنت توافق على:</span></p>
+    <ul>
+      <li><span class="en-only">Provide accurate, current, and complete registration information</span><span class="ar-only">تقديم معلومات تسجيل دقيقة وحالية وكاملة</span></li>
+      <li><span class="en-only">Maintain the security of your password and account credentials</span><span class="ar-only">الحفاظ على أمان كلمة المرور وبيانات اعتماد حسابك</span></li>
+      <li><span class="en-only">Notify us immediately of any unauthorized access or security breach</span><span class="ar-only">إخطارنا فورًا بأي وصول غير مصرح به أو خرق أمني</span></li>
+      <li><span class="en-only">Accept responsibility for all activities under your account</span><span class="ar-only">قبول المسؤولية عن جميع الأنشطة التي تتم تحت حسابك</span></li>
+    </ul>
+    <div class="highlight-box">
+      <p><span class="en-only">⚡ New accounts receive a 14-day free trial with full access to all features. No credit card is required to start your trial.</span><span class="ar-only">⚡ تحصل الحسابات الجديدة على تجربة مجانية مدتها 14 يومًا مع وصول كامل إلى جميع الميزات. لا يلزم وجود بطاقة ائتمانية لبدء تجربتك.</span></p>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="section" id="payment">
+    <div class="section-num"><span class="en-only">Section 04</span><span class="ar-only">القسم ٤</span></div>
+    <h2><span class="en-only">Payment & Billing</span><span class="ar-only">الدفع والفوترة</span></h2>
+    <p><span class="en-only">After the 14-day free trial, continued use of Waslat requires a paid subscription. Pricing varies by sector and plan level (Starter, Agency, Pro).</span><span class="ar-only">بعد انتهاء التجربة المجانية البالغة 14 يومًا، يتطلب الاستمرار في استخدام وصلات اشتراكًا مدفوعًا. تختلف الأسعار حسب القطاع ومستوى الخطة (مبتدئ، وكالة، احترافي).</span></p>
+    <ul>
+      <li><span class="en-only">All prices are in Saudi Riyals (SAR) unless otherwise stated</span><span class="ar-only">جميع الأسعار بالريال السعودي (SAR) ما لم يُذكر خلاف ذلك</span></li>
+      <li><span class="en-only">Subscriptions are billed monthly and renew automatically</span><span class="ar-only">تُفوتر الاشتراكات شهريًا وتتجدد تلقائيًا</span></li>
+      <li><span class="en-only">You may cancel your subscription at any time before the next billing cycle</span><span class="ar-only">يمكنك إلغاء اشتراكك في أي وقت قبل دورة الفوترة التالية</span></li>
+      <li><span class="en-only">No refunds are provided for partial months of service</span><span class="ar-only">لا تُقدم استردادات للأشهر الجزئية من الخدمة</span></li>
+      <li><span class="en-only">We reserve the right to change pricing with 30 days' notice</span><span class="ar-only">نحتفظ بحق تغيير الأسعار مع إشعار مدته 30 يومًا</span></li>
+    </ul>
+  </div>
+
+  <!-- 5 -->
+  <div class="section" id="usage">
+    <div class="section-num"><span class="en-only">Section 05</span><span class="ar-only">القسم ٥</span></div>
+    <h2><span class="en-only">Acceptable Use</span><span class="ar-only">الاستخدام المقبول</span></h2>
+    <p><span class="en-only">You agree not to use Waslat to:</span><span class="ar-only">أنت توافق على عدم استخدام وصلات من أجل:</span></p>
+    <ul>
+      <li><span class="en-only">Send spam, unsolicited messages, or bulk marketing without consent</span><span class="ar-only">إرسال رسائل غير مرغوب فيها أو تسويق جماعي بدون موافقة</span></li>
+      <li><span class="en-only">Violate any applicable laws or regulations in Saudi Arabia or the MENA region</span><span class="ar-only">انتهاك أي قوانين أو أنظمة سارية في المملكة العربية السعودية أو منطقة الشرق الأوسط</span></li>
+      <li><span class="en-only">Distribute malicious code, viruses, or harmful content</span><span class="ar-only">توزيع رموز ضارة أو فيروسات أو محتوى مؤذٍ</span></li>
+      <li><span class="en-only">Attempt to gain unauthorized access to our systems or other accounts</span><span class="ar-only">محاولة الوصول غير المصرح به إلى أنظمتنا أو حسابات أخرى</span></li>
+      <li><span class="en-only">Use the platform for illegal activities including fraud or money laundering</span><span class="ar-only">استخدام المنصة في أنشطة غير قانونية بما في ذلك الاحتيال أو غسيل الأموال</span></li>
+      <li><span class="en-only">Resell or redistribute the Service without written authorization</span><span class="ar-only">إعادة بيع أو توزيع الخدمة دون إذن كتابي (إلا لمستخدمي الخطة الاحترافية)</span></li>
+    </ul>
+    <div class="warning-box">
+      <p><span class="en-only">⚠️ Violation of acceptable use policies may result in immediate account suspension without refund.</span><span class="ar-only">⚠️ قد يؤدي انتهاك سياسات الاستخدام المقبول إلى تعليق الحساب فورًا دون استرداد.</span></p>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section" id="data">
+    <div class="section-num"><span class="en-only">Section 06</span><span class="ar-only">القسم ٦</span></div>
+    <h2><span class="en-only">Data & Privacy</span><span class="ar-only">البيانات والخصوصية</span></h2>
+    <p><span class="en-only">Your privacy is important to us. By using Waslat, you acknowledge:</span><span class="ar-only">خصوصيتك مهمة لنا. باستخدام وصلات، فإنك تقر بما يلي:</span></p>
+    <ul>
+      <li><span class="en-only">We collect and process data as described in our Privacy Policy</span><span class="ar-only">نجمع ونعالج البيانات كما هو موضح في سياسة الخصوصية لدينا</span></li>
+      <li><span class="en-only">You retain ownership of all customer data you upload to the platform</span><span class="ar-only">تحتفظ بملكية جميع بيانات العملاء التي ترفعها إلى المنصة</span></li>
+      <li><span class="en-only">We store data on secure cloud infrastructure with encryption at rest and in transit</span><span class="ar-only">نخزن البيانات على بنية تحتية سحابية آمنة مع تشفير في حالة التخزين والنقل</span></li>
+      <li><span class="en-only">We comply with applicable data protection regulations including Saudi PDPL</span><span class="ar-only">نلتزم بأنظمة حماية البيانات المعمول بها بما فيها نظام حماية البيانات الشخصية السعودي</span></li>
+      <li><span class="en-only">Upon account termination, you may request export of your data within 30 days</span><span class="ar-only">عند إنهاء الحساب، يمكنك طلب تصدير بياناتك خلال 30 يومًا</span></li>
+    </ul>
+    <p><span class="en-only">For full details, please read our <a href="https://waslat.io/privacy" style="color:var(--primary)">Privacy Policy</a>.</span><span class="ar-only">لمزيد من التفاصيل، يرجى قراءة <a href="https://waslat.io/privacy" style="color:var(--primary)">سياسة الخصوصية</a>.</span></p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section" id="ip">
+    <div class="section-num"><span class="en-only">Section 07</span><span class="ar-only">القسم ٧</span></div>
+    <h2><span class="en-only">Intellectual Property</span><span class="ar-only">الملكية الفكرية</span></h2>
+    <p><span class="en-only">The Waslat platform, including its software, design, logos, and content, is owned by Waslat and protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.</span><span class="ar-only">منصة وصلات، بما في ذلك برامجها وتصميمها وشعاراتها ومحتواها، مملوكة لوصلات ومحمية بقوانين الملكية الفكرية. لا يجوز لك نسخ أو تعديل أو توزيع أو إنشاء أعمال مشتقة بدون إذن كتابي منا.</span></p>
+    <p><span class="en-only">Content you create and upload using the platform (posts, campaigns, reports) remains your intellectual property. You grant Waslat a limited license to process and display this content solely to provide the Service.</span><span class="ar-only">المحتوى الذي تنشئه وترفعه باستخدام المنصة (المنشورات والحملات والتقارير) يبقى ملكيتك الفكرية. أنت تمنح وصلات ترخيصًا محدودًا لمعالجة وعرض هذا المحتوى فقط لتقديم الخدمة.</span></p>
+  </div>
+
+  <!-- 8 -->
+  <div class="section" id="termination">
+    <div class="section-num"><span class="en-only">Section 08</span><span class="ar-only">القسم ٨</span></div>
+    <h2><span class="en-only">Termination</span><span class="ar-only">إنهاء الخدمة</span></h2>
+    <p><span class="en-only">Either party may terminate this agreement:</span><span class="ar-only">يحق لأي طرف إنهاء هذه الاتفاقية:</span></p>
+    <ul>
+      <li><span class="en-only">You may cancel your account at any time from the billing settings page</span><span class="ar-only">يمكنك إلغاء حسابك في أي وقت من صفحة إعدادات الفوترة</span></li>
+      <li><span class="en-only">We may suspend or terminate accounts that violate these Terms</span><span class="ar-only">يجوز لنا تعليق أو إنهاء الحسابات التي تنتهك هذه الشروط</span></li>
+      <li><span class="en-only">Upon termination, your access to the platform ends immediately</span><span class="ar-only">عند الإنهاء، يتوقف وصولك إلى المنصة فورًا</span></li>
+      <li><span class="en-only">Data export is available for 30 days after cancellation upon request</span><span class="ar-only">يتاح تصدير البيانات لمدة 30 يومًا بعد الإلغاء عند الطلب</span></li>
+    </ul>
+  </div>
+
+  <!-- 9 -->
+  <div class="section" id="liability">
+    <div class="section-num"><span class="en-only">Section 09</span><span class="ar-only">القسم ٩</span></div>
+    <h2><span class="en-only">Limitation of Liability</span><span class="ar-only">تحديد المسؤولية</span></h2>
+    <p><span class="en-only">The Service is provided "as is" without warranties of any kind. To the maximum extent permitted by law, Waslat shall not be liable for:</span><span class="ar-only">تُقدم الخدمة "كما هي" دون أي ضمانات. إلى أقصى حد يسمح به القانون، لن تكون وصلات مسؤولة عن:</span></p>
+    <ul>
+      <li><span class="en-only">Loss of revenue, profits, or business opportunities</span><span class="ar-only">خسارة الإيرادات أو الأرباح أو فرص العمل</span></li>
+      <li><span class="en-only">Loss or corruption of data</span><span class="ar-only">فقدان أو تلف البيانات</span></li>
+      <li><span class="en-only">Service interruptions or downtime</span><span class="ar-only">انقطاع الخدمة أو وقت التعطل</span></li>
+      <li><span class="en-only">Actions of third-party integrations (Meta, Salla, Zid, WhatsApp)</span><span class="ar-only">إجراءات التكاملات الخارجية (ميتا، سلة، زد، واتساب)</span></li>
+    </ul>
+    <p><span class="en-only">Our total liability shall not exceed the amount you paid for the Service in the 3 months prior to the claim.</span><span class="ar-only">لن تتجاوز مسؤوليتنا الإجمالية المبلغ الذي دفعته مقابل الخدمة في الأشهر الثلاثة السابقة للمطالبة.</span></p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section" id="contact">
+    <div class="section-num"><span class="en-only">Section 10</span><span class="ar-only">القسم ١٠</span></div>
+    <h2><span class="en-only">Contact Us</span><span class="ar-only">تواصل معنا</span></h2>
+    <p><span class="en-only">If you have questions about these Terms, please contact us:</span><span class="ar-only">إذا كان لديك أسئلة حول هذه الشروط، يرجى التواصل معنا:</span></p>
+    <div class="highlight-box">
+      <p><span class="en-only">📧 Email: support@waslat.io<br/>🌐 Website: waslat.io<br/>📍 Riyadh, Saudi Arabia</span><span class="ar-only">📧 البريد الإلكتروني: support@waslat.io<br/>🌐 الموقع: waslat.io<br/>📍 الرياض، المملكة العربية السعودية</span></p>
+    </div>
+    <p><span class="en-only">These Terms are governed by the laws of the Kingdom of Saudi Arabia. Any disputes shall be resolved through the competent courts in Riyadh.</span><span class="ar-only">تخضع هذه الشروط لقوانين المملكة العربية السعودية. يتم حل أي نزاعات من خلال المحاكم المختصة في الرياض.</span></p>
+  </div>
+</div>
+
+<footer>
+  <a href="https://waslat.io" class="foot-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></a>
+  <ul class="foot-links">
+    <li><a href="https://waslat.io/privacy"><span class="en-only">Privacy Policy</span><span class="ar-only">سياسة الخصوصية</span></a></li>
+    <li><a href="https://waslat.io/terms"><span class="en-only">Terms of Service</span><span class="ar-only">شروط الخدمة</span></a></li>
+    <li><a href="https://waslat.io"><span class="en-only">Home</span><span class="ar-only">الرئيسية</span></a></li>
+  </ul>
+  <div class="foot-copy"><span class="en-only">© 2026 Waslat</span><span class="ar-only">© 2026 وصلات</span></div>
+</footer>
+
+<script>
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-5+'px';cursor.style.top=my-5+'px';});
+  (function animRing(){rx+=(mx-rx-17)*0.12;ry+=(my-ry-17)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+  document.querySelectorAll('button,a').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2)';ring.style.width='48px';ring.style.height='48px';ring.style.borderColor='rgba(125,211,252,0.6)';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.width='34px';ring.style.height='34px';ring.style.borderColor='rgba(125,211,252,0.35)';});
+  });
+  function setLang(lang){
+    const body=document.body,btnEn=document.getElementById('btnEn'),btnAr=document.getElementById('btnAr');
+    if(lang==='ar'){body.classList.add('ar');body.setAttribute('dir','rtl');body.setAttribute('lang','ar');btnAr.classList.add('active');btnEn.classList.remove('active');}
+    else{body.classList.remove('ar');body.setAttribute('dir','ltr');body.setAttribute('lang','en');btnEn.classList.add('active');btnAr.classList.remove('active');}
+  }
+</script>
+</body>
+</html>
