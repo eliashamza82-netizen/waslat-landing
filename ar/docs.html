@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>توثيق وصلات — الإعداد والتكاملات والأدلة</title>
+<meta name="description" content="توثيق وصلات: اربط واتساب وإنستغرام وفيسبوك وتيك توك والمزيد، وفعّل وكلاء الذكاء الاصطناعي، والعلامة البيضاء، والفوترة، والـ webhooks. أدلة خطوة بخطوة للوكالات والعلامات التجارية.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://waslat.io/ar/docs">
+<link rel="alternate" hreflang="en" href="https://waslat.io/docs">
+<link rel="alternate" hreflang="ar" href="https://waslat.io/ar/docs">
+<link rel="alternate" hreflang="x-default" href="https://waslat.io/docs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0f1e; color: #e2e8f0; font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; direction: rtl; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  nav a.logo { color: #06b6d4; font-size: 1.5rem; font-weight: 800; text-decoration: none; }
+  nav a { color: #94a3b8; text-decoration: none; margin-right: 24px; margin-left: 0; font-size: 0.95rem; }
+  nav a:hover { color: #fff; }
+  .container { display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 20px; gap: 40px; }
+  .sidebar { width: 260px; flex-shrink: 0; position: sticky; top: 40px; height: fit-content; }
+  .sidebar h3 { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; margin-top: 24px; }
+  .sidebar a { display: block; color: #cbd5e1; text-decoration: none; padding: 6px 0; font-size: 0.9rem; border-right: 2px solid transparent; padding-right: 12px; }
+  .sidebar a:hover, .sidebar a.active { color: #06b6d4; border-right-color: #06b6d4; }
+  .content { flex: 1; }
+  .content h1 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+  .content h2 { font-size: 1.75rem; font-weight: 700; color: #fff; margin: 48px 0 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+  .content h3 { font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin: 24px 0 12px; }
+  .content p { color: #94a3b8; line-height: 1.9; margin-bottom: 16px; }
+  .content ul, .content ol { color: #94a3b8; padding-right: 24px; padding-left: 0; margin-bottom: 16px; line-height: 1.9; }
+  .badge { display: inline-block; background: rgba(6,182,212,0.15); color: #06b6d4; border: 1px solid rgba(6,182,212,0.3); border-radius: 6px; padding: 2px 10px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .card h3 { margin-top: 0; }
+  .step { display: flex; gap: 16px; margin-bottom: 20px; }
+  .step-num { background: #06b6d4; color: #000; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+  .step-content p { margin-bottom: 0; }
+  code { background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 0.9rem; color: #06b6d4; direction: ltr; display: inline-block; }
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+  .platform-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; }
+  .platform-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .platform-card h4 { color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
+  .platform-card p { font-size: 0.8rem; margin: 0; color: #94a3b8; line-height: 1.7; }
+  .alert { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2); border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+  .alert p { margin: 0; color: #7dd3fc; }
+  footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 40px; text-align: center; color: #475569; font-size: 0.85rem; margin-top: 80px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/ar" class="logo">وصلات</a>
+  <div>
+    <a href="/ar">الرئيسية</a>
+    <a href="/ar/docs">التوثيق</a>
+    <a href="/ar/support">الدعم</a>
+    <a href="/docs" hreflang="en">English</a>
+    <a href="https://app.waslat.io/login">تسجيل الدخول</a>
+    <a href="https://app.waslat.io/register" style="background:#06b6d4;color:#000;padding:8px 20px;border-radius:50px;font-weight:700;margin-right:12px;">ابدأ مجاناً</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="sidebar">
+    <h3>البداية</h3>
+    <a href="#introduction">مقدمة</a>
+    <a href="#quick-start">البدء السريع</a>
+    <a href="#account-setup">إعداد الحساب</a>
+
+    <h3>التكاملات</h3>
+    <a href="#whatsapp">واتساب بزنس</a>
+    <a href="#facebook">فيسبوك</a>
+    <a href="#instagram">إنستغرام</a>
+    <a href="#tiktok">تيك توك</a>
+    <a href="#linkedin">لينكدإن</a>
+    <a href="#youtube">يوتيوب</a>
+    <a href="#gmb">نشاطي التجاري على Google</a>
+    <a href="#telegram">تيليجرام</a>
+    <a href="#snapchat">سناب شات</a>
+
+    <h3>المميزات</h3>
+    <a href="#ai-agents">وكلاء الذكاء الاصطناعي</a>
+    <a href="#white-label">العلامة البيضاء</a>
+    <a href="#webhooks">Webhooks</a>
+    <a href="#billing">الفوترة</a>
+
+    <h3>المساعدة</h3>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="/ar/support">الدعم</a>
+  </div>
+
+  <div class="content">
+    <div class="badge">التوثيق</div>
+    <h1>توثيق وصلات</h1>
+    <p>كل ما تحتاجه للربط والأتمتة وتنمية نشاطك التجاري باستخدام منصة وصلات.</p>
+
+    <h2 id="introduction">مقدمة</h2>
+    <p>وصلات هو نظام تشغيل متكامل للأعمال موجّه لوكالات التسويق والشركات الصغيرة والمتوسطة في منطقة الشرق الأوسط. يجمع إدارة وسائل التواصل الاجتماعي، ومحادثات العملاء، وأتمتة الذكاء الاصطناعي، وإدارة علاقات العملاء (CRM)، والتحليلات في لوحة تحكم واحدة قوية.</p>
+    <p>مع وصلات يمكنك ربط جميع قنوات التواصل الاجتماعي، وإدارة رسائل العملاء في صندوق وارد واحد، وجدولة المحتوى ونشره، وتشغيل وكلاء ذكاء اصطناعي يعملون نيابةً عنك على مدار الساعة.</p>
+
+    <h2 id="quick-start">البدء السريع</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><h3>أنشئ حسابك</h3><p>انتقل إلى <a href="https://app.waslat.io/register" style="color:#06b6d4;">app.waslat.io/register</a> وسجّل. تحصل على تجربة مجانية لمدة 14 يومًا بوصول كامل.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><h3>اربط قنواتك</h3><p>انتقل إلى <code>Integrations</code> في الشريط الجانبي واربط حسابات التواصل الاجتماعي وقنوات المراسلة الخاصة بك.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><h3>جهّز صندوق الوارد</h3><p>انتقل إلى <code>Conversations</code> لبدء استقبال الرسائل والرد عليها من جميع القنوات المتصلة في مكان واحد.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><h3>فعّل وكلاء الذكاء الاصطناعي</h3><p>زر <code>AI Agents</code> لتفعيل الوكلاء المستقلين الذين يتولّون الرد على الرسائل، وإنشاء المحتوى، والمزيد.</p></div>
+    </div>
+
+    <h2 id="account-setup">إعداد الحساب</h2>
+    <p>بعد التسجيل، أكمل ملفك التعريفي بإضافة اسم نشاطك التجاري وشعاره والمنطقة الزمنية. وإن كنت وكالة، يمكنك إنشاء حسابات فرعية لكل عميل من عملائك ضمن <code>Settings → Subaccounts</code>.</p>
+
+    <h2 id="whatsapp">واتساب بزنس</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>حساب واتساب بزنس</li>
+        <li>حساب Facebook Business Manager موثّق</li>
+        <li>رقم هاتف مخصّص غير مستخدم مسبقًا على واتساب</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → WhatsApp Business</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>سجّل الدخول بحساب فيسبوك واختر Business Manager الخاص بك.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>اختر أو أنشئ حساب واتساب بزنس وأضف رقم هاتفك.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><p>وثّق رقم هاتفك عبر رمز التحقق (OTP) وأكمل الإعداد.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>إرسال واستقبال الرسائل في صندوق وارد المحادثات</li>
+      <li>جدولة رسائل واتساب</li>
+      <li>الردود التلقائية عبر وكيل صندوق الوارد بالذكاء الاصطناعي</li>
+      <li>البث الجماعي للرسائل إلى قوائم جهات الاتصال</li>
+      <li>مشاركة الوسائط: الصور والفيديو والمستندات</li>
+    </ul>
+
+    <h2 id="facebook">فيسبوك</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>صفحة فيسبوك (وليس ملفًا شخصيًا)</li>
+        <li>صلاحية مسؤول على الصفحة</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → Facebook</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>سجّل الدخول بفيسبوك وامنح الأذونات المطلوبة.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>اختر صفحة فيسبوك التي تريد ربطها.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>نشر المنشورات على صفحتك في فيسبوك</li>
+      <li>استقبال رسائل ماسنجر والرد عليها</li>
+      <li>جدولة المنشورات عبر تقويم المحتوى</li>
+      <li>عرض تحليلات تفاعل الصفحة</li>
+    </ul>
+
+    <h2 id="instagram">إنستغرام</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>حساب إنستغرام تجاري أو حساب منشئ محتوى</li>
+        <li>مرتبط بصفحة فيسبوك</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → Instagram</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>امنح وصلات الإذن عبر ربط فيسبوك (OAuth) — يتم ربط إنستغرام من خلال صفحة فيسبوك الخاصة بك.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>اختر حساب إنستغرام المرتبط بصفحتك.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>نشر الصور والفيديو على إنستغرام</li>
+      <li>جدولة المحتوى عبر تقويم المحتوى</li>
+      <li>إدارة التعليقات والرد عليها</li>
+      <li>استقبال الرسائل المباشرة في صندوق وارد المحادثات</li>
+      <li>عرض تحليلات الوصول والتفاعل</li>
+    </ul>
+
+    <h2 id="tiktok">تيك توك</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>حساب تيك توك للأعمال</li>
+        <li>ملف منشئ محتوى أو ملف تجاري</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → TikTok</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>سجّل الدخول بحساب تيك توك وامنح وصلات الإذن.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>سيظهر حساب تيك توك متصلاً مع اسم المستخدم والصورة الرمزية.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>رفع الفيديوهات ونشرها مباشرةً على تيك توك</li>
+      <li>النشر كمسودة لمراجعة المنشئ أو النشر المباشر</li>
+      <li>عرض قائمة الفيديوهات المنشورة</li>
+      <li>جدولة نشر الفيديوهات</li>
+    </ul>
+
+    <h2 id="linkedin">لينكدإن</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>حساب لينكدإن شخصي أو حساب شركة</li>
+        <li>صلاحية مسؤول على صفحة الشركة (لمنشورات الشركة)</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → LinkedIn</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>امنح الإذن باستخدام بيانات اعتماد لينكدإن الخاصة بك.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>سيظهر اسم ملفك التعريفي وصورتك الرمزية لتأكيد الاتصال.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>نشر محتوى نصي ومصوّر على لينكدإن</li>
+      <li>جدولة المنشورات عبر تقويم المحتوى</li>
+      <li>عرض أداء المنشورات</li>
+    </ul>
+
+    <h2 id="youtube">يوتيوب</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>حساب Google لديه قناة يوتيوب</li>
+        <li>يجب توثيق القناة لرفع مقاطع تتجاوز 15 دقيقة</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → YouTube</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>سجّل الدخول بحساب Google وامنح أذونات يوتيوب.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>سيظهر اسم قناتك وعدد المشتركين.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>رفع الفيديوهات إلى يوتيوب</li>
+      <li>ضبط العنوان والوصف ومستوى الظهور (عام/غير مدرج/خاص)</li>
+      <li>عرض قائمة الفيديوهات المرفوعة</li>
+      <li>جدولة عمليات الرفع</li>
+    </ul>
+
+    <h2 id="gmb">نشاطي التجاري على Google</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>ملف نشاط تجاري موثّق على Google</li>
+        <li>صلاحية مالك أو مدير</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → Google My Business</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>سجّل الدخول بحساب Google الذي يدير ملف نشاطك التجاري.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>اختر موقع نشاطك التجاري.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>نشر التحديثات والعروض والفعاليات على قائمتك في Google</li>
+      <li>إضافة الصور وأزرار الحث على اتخاذ إجراء</li>
+      <li>جدولة منشورات النشاط التجاري على Google</li>
+    </ul>
+
+    <h2 id="telegram">تيليجرام</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>بوت تيليجرام تم إنشاؤه عبر <code>@BotFather</code></li>
+        <li>رمز البوت (Bot Token) من BotFather</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>افتح تيليجرام وراسل <code>@BotFather</code>. أرسل <code>/newbot</code> واتبع التعليمات لإنشاء البوت.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>انسخ رمز البوت (Bot Token) الذي يوفّره BotFather.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><p>انتقل إلى <code>Integrations → Telegram</code>، الصق رمز البوت واضغط على "ربط".</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>إرسال الرسائل إلى محادثات وقنوات تيليجرام</li>
+      <li>استقبال الرسائل الواردة في صندوق وارد المحادثات</li>
+      <li>الرد على العملاء عبر بوت تيليجرام</li>
+      <li>إرسال الصور والوسائط</li>
+    </ul>
+    <div class="alert"><p>💡 يجب أن يراسلك عملاؤك عبر البوت أولًا قبل أن تتمكن من إرسال رسائل إليهم — هذه سياسة من تيليجرام.</p></div>
+
+    <h2 id="snapchat">سناب شات</h2>
+    <div class="card">
+      <h3>المتطلبات</h3>
+      <ul>
+        <li>حساب سناب شات للأعمال</li>
+        <li>تطبيق مطوّر معتمد على سناب شات</li>
+      </ul>
+    </div>
+    <h3>طريقة الربط</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><p>انتقل إلى <code>Integrations → Snapchat</code> واضغط على "ربط".</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><p>سجّل الدخول بحساب سناب شات وامنح وصلات الإذن.</p></div></div>
+    <h3>المميزات المتاحة</h3>
+    <ul>
+      <li>نشر القصص (Stories) على سناب شات</li>
+      <li>جدولة محتوى سناب شات</li>
+      <li>إدارة الحملات الإعلانية على سناب شات</li>
+    </ul>
+
+    <h2 id="ai-agents">وكلاء الذكاء الاصطناعي</h2>
+    <p>يتضمّن وصلات 5 وكلاء ذكاء اصطناعي مستقلين يعملون نيابةً عنك على مدار الساعة.</p>
+    <div class="platform-grid">
+      <div class="platform-card"><div class="icon">📥</div><h4>InboxAgent</h4><p>يرد تلقائيًا على الرسائل الواردة عبر جميع القنوات</p></div>
+      <div class="platform-card"><div class="icon">📣</div><h4>CampaignAgent</h4><p>ينشئ الحملات التسويقية ويديرها تلقائيًا</p></div>
+      <div class="platform-card"><div class="icon">✍️</div><h4>ContentAgent</h4><p>ينشئ محتوى ونصوص وسائل التواصل الاجتماعي</p></div>
+      <div class="platform-card"><div class="icon">📦</div><h4>InventoryAgent</h4><p>يراقب مستويات المخزون ويرسل التنبيهات</p></div>
+      <div class="platform-card"><div class="icon">📊</div><h4>InsightAgent</h4><p>يحلّل بيانات الأداء وينشئ التقارير</p></div>
+    </div>
+    <h3>تفعيل وكيل</h3>
+    <p>انتقل إلى <code>AI Agents</code> في الشريط الجانبي ← اختر الوكيل ← فعّله ← اضبط سلوكه وأسلوب ردّه.</p>
+
+    <h2 id="white-label">العلامة البيضاء</h2>
+    <p>يمكن للوكالات تشغيل وصلات بعلامتها التجارية الخاصة (White Label). انتقل إلى <code>Settings → White Label</code> لضبط:</p>
+    <ul>
+      <li>شعار وألوان علامة تجارية مخصّصة</li>
+      <li>اسم منصة مخصّص</li>
+      <li>نطاق مخصّص (مثل <code>app.youragency.com</code>)</li>
+      <li>بوابة تسجيل دخول للعملاء بعلامتك التجارية</li>
+    </ul>
+
+    <h2 id="webhooks">Webhooks</h2>
+    <p>يدعم وصلات الـ webhooks الواردة من جميع المنصات المتصلة. تُضبط الـ webhooks تلقائيًا عند ربط أي قناة. للحصول على نقاط نهاية webhook مخصّصة، تواصل مع الدعم.</p>
+
+    <h2 id="billing">الفوترة والاشتراك</h2>
+    <p>تُدار اشتراكاتك ضمن <code>Settings → Billing & Subscription</code>. يمكنك عرض باقتك الحالية والاستخدام وسجل المدفوعات. يوفّر وصلات تجربة مجانية لمدة 14 يومًا دون الحاجة إلى بطاقة ائتمانية. تواصل مع <a href="mailto:sales@waslat.io" style="color:#06b6d4;">sales@waslat.io</a> للاطلاع على الأسعار.</p>
+
+    <h2 id="faq">الأسئلة الشائعة</h2>
+    <div class="card"><h3>هل يمكنني ربط حسابات متعددة لكل منصة؟</h3><p>نعم — يمكن لكل حساب فرعي أن يمتلك قنواته المتصلة الخاصة. وتستطيع الوكالات إدارة عدة عملاء، لكلٍّ منهم تكاملاته الخاصة.</p></div>
+    <div class="card"><h3>هل بياناتي آمنة؟</h3><p>نعم. جميع البيانات مشفّرة أثناء النقل وفي حالة التخزين. يستخدم وصلات Firebase مع قواعد أمان صارمة، ولا يخزّن رموز الوصول الخام كنص صريح أبدًا.</p></div>
+    <div class="card"><h3>ماذا يحدث بعد انتهاء فترتي التجريبية؟</h3><p>سيتم إيقاف حسابك مؤقتًا حتى تشترك. تُحفظ بياناتك لمدة 30 يومًا. تواصل مع sales@waslat.io للمتابعة.</p></div>
+    <div class="card"><h3>هل يمكنني الإلغاء في أي وقت؟</h3><p>نعم — يمكنك الإلغاء في أي وقت من الإعدادات ← الفوترة دون أي غرامات.</p></div>
+    <div class="card"><h3>هل تدعمون اللغة العربية؟</h3><p>نعم — وصلات ثنائي اللغة بالكامل بالعربية والإنجليزية. بدّل اللغة من أعلى يمين لوحة التحكم.</p></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 وصلات. جميع الحقوق محفوظة. · <a href="/ar/support" style="color:#06b6d4;">الدعم</a> · <a href="https://waslat.io/ar/privacy" style="color:#06b6d4;">الخصوصية</a> · <a href="https://waslat.io/ar/terms" style="color:#06b6d4;">الشروط</a></p>
+</footer>
+</body>
+</html>
