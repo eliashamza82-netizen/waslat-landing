@@ -1,0 +1,8 @@
+# robots.txt for waslat.io
+User-agent: *
+Allow: /
+
+# Block nothing public — this is a marketing site.
+# (App/auth pages live on a separate host.)
+
+Sitemap: https://waslat.io/sitemap.xml

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home — English (x-default) with Arabic alternate -->
+  <url>
+    <loc>https://waslat.io/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/"/>
+  </url>
+
+  <!-- Home — Arabic -->
+  <url>
+    <loc>https://waslat.io/ar</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/"/>
+  </url>
+
+  <url>
+    <loc>https://waslat.io/docs</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://waslat.io/support</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://waslat.io/privacy</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://waslat.io/terms</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
