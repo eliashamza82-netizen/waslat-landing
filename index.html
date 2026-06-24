@@ -175,8 +175,8 @@
     backdrop-filter:blur(24px);
     border-bottom:1px solid var(--border);
   }
-  .nav-logo { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.5px; }
-  .nav-logo span { color:var(--primary); }
+  .nav-logo { display:inline-flex; align-items:center; }
+  .nav-logo img { height:36px; width:auto; object-fit:contain; display:block; }
   .nav-links { display:flex; gap:32px; list-style:none; }
   .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.2s; }
   .nav-links a:hover { color:var(--white); }
@@ -459,8 +459,8 @@
 
   /* FOOTER */
   footer { border-top:1px solid var(--border); padding:36px 60px; display:flex; align-items:center; justify-content:space-between; background:var(--bg-card); flex-wrap:wrap; gap:20px; }
-  .foot-logo { font-family:'Syne',sans-serif; font-size:17px; font-weight:800; color:var(--white); }
-  .foot-logo span { color:var(--primary); }
+  .foot-logo { display:inline-flex; align-items:center; }
+  .foot-logo img { height:32px; width:auto; object-fit:contain; display:block; }
   .foot-links { display:flex; gap:24px; list-style:none; }
   .foot-links a { color:var(--white); text-decoration:none; font-size:12px; transition:color 0.2s; }
   body.ar .foot-links a { font-family:'Cairo',sans-serif; }
@@ -681,7 +681,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></div>
+  <a href="/" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="eager"></a>
   <ul class="nav-links">
     <li><a href="#features"><span class="en-only">Features</span><span class="ar-only">المميزات</span></a></li>
     <li><a href="#platforms"><span class="en-only">Platforms</span><span class="ar-only">المنصات</span></a></li>
@@ -1020,7 +1020,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></div>
+  <div class="foot-logo"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></div>
   <ul class="foot-links">
     <li><a href="/privacy.html"><span class="en-only">Privacy</span><span class="ar-only">الخصوصية</span></a></li>
     <li><a href="/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a></li>
