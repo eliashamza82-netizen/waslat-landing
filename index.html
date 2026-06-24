@@ -467,6 +467,10 @@
   .foot-links a:hover { color:var(--primary); }
   .foot-copy { font-size:12px; color:var(--text-muted); }
   body.ar .foot-copy { font-family:'Cairo',sans-serif; }
+  .foot-powered { flex-basis:100%; width:100%; text-align:center; margin-top:4px; font-size:11px; color:var(--text-muted); opacity:0.7; }
+  .foot-powered a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+  .foot-powered a:hover { color:var(--primary); }
+  body.ar .foot-powered { font-family:'Cairo',sans-serif; }
 
   /* ANIMATIONS */
   @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
@@ -1019,11 +1023,12 @@
   <div class="foot-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></div>
   <ul class="foot-links">
     <li><a href="/privacy.html"><span class="en-only">Privacy</span><span class="ar-only">الخصوصية</span></a></li>
-    <li><<a href="/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a></li>
+    <li><a href="/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a></li>
     <li><a href="/docs.html"><span class="en-only">Docs</span><span class="ar-only">التوثيق</span></a></li>
     <li><a href="/support.html"><span class="en-only">Support</span><span class="ar-only">الدعم</span></a></li>
   </ul>
-  <div class="foot-copy"><span clas$s="en-only">© 2026 Waslat</span><span class="ar-only">© 2026 وصلات</span></div>
+  <div class="foot-copy"><span class="en-only">© 2026 Waslat</span><span class="ar-only">© 2026 وصلات</span></div>
+  <div class="foot-powered"><span class="en-only">Powered by <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span><span class="ar-only">مدعوم من <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span></div>
 </footer>
 
 <script>
