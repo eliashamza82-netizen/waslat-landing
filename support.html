@@ -87,6 +87,7 @@
   .foot-links a:hover{color:var(--primary);}
   .foot-copy{font-size:12px;color:var(--text-muted);}
   @media(max-width:768px){nav{padding:16px 24px;}.nav-right .btn-ghost{display:none;}.hero{padding:120px 24px 40px;}.content{padding:20px 24px 80px;}.panel{padding:28px 22px;}footer{padding:24px;}}
+.nav-logo{display:inline-flex;align-items:center;}.nav-logo img{height:34px;width:auto;object-fit:contain;display:block;}.foot-logo{display:inline-flex;align-items:center;}.foot-logo img{height:30px;width:auto;object-fit:contain;display:block;}
 </style>
 </head>
 <body>
@@ -99,14 +100,14 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav>
-  <a href="https://waslat.io" class="nav-logo">Was<span>lat</span></a>
+  <a href="https://waslat.io" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="eager"></a>
   <div class="nav-right">
     <div class="lang-toggle">
       <a class="lang-btn active" id="btnEn" href="/support" hreflang="en" aria-label="English">EN</a>
       <a class="lang-btn" id="btnAr" href="/ar/support" hreflang="ar" aria-label="العربية">ع</a>
     </div>
     <a href="https://app.waslat.io/login" class="btn-ghost">Sign In</a>
-    <a href="https://app.waslat.io/register" class="btn-primary">Start Free →</a>
+    <a href="https://app.waslat.io/register" class="btn-primary">Register Now →</a>
   </div>
 </nav>
 
@@ -195,7 +196,7 @@
 </div>
 
 <footer>
-  <a href="https://waslat.io" class="foot-logo">Was<span>lat</span></a>
+  <a href="https://waslat.io" class="foot-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></a>
   <ul class="foot-links">
     <li><a href="/docs">Docs</a></li>
     <li><a href="https://waslat.io/privacy">Privacy</a></li>

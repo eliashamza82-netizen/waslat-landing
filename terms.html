@@ -92,6 +92,7 @@
   .foot-copy{font-size:12px;color:var(--text-muted);}
   body.ar .foot-copy{font-family:'Cairo',sans-serif;}
   @media(max-width:768px){nav{padding:16px 24px;}.hero{padding:120px 24px 60px;}.content{padding:0 24px 80px;}footer{padding:24px;}}
+.nav-logo{display:inline-flex;align-items:center;}.nav-logo img{height:34px;width:auto;object-fit:contain;display:block;}.foot-logo{display:inline-flex;align-items:center;}.foot-logo img{height:30px;width:auto;object-fit:contain;display:block;}
 </style>
 </head>
 <body>
@@ -104,14 +105,14 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav>
-  <a href="https://waslat.io" class="nav-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></a>
+  <a href="https://waslat.io" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="eager"></a>
   <div class="nav-right">
     <div class="lang-toggle">
       <a class="lang-btn active" id="btnEn" href="/terms" hreflang="en" aria-label="English">EN</a>
       <a class="lang-btn" id="btnAr" href="/ar/terms" hreflang="ar" aria-label="العربية">ع</a>
     </div>
     <a href="https://app.waslat.io/login" class="btn-ghost"><span class="en-only">Sign In</span><span class="ar-only">تسجيل الدخول</span></a>
-    <a href="https://app.waslat.io/register" class="btn-primary"><span class="en-only">Start Free →</span><span class="ar-only">ابدأ مجاناً ←</span></a>
+    <a href="https://app.waslat.io/register" class="btn-primary"><span class="en-only">Register Now →</span><span class="ar-only">سجّل الآن ←</span></a>
   </div>
 </nav>
 
@@ -282,7 +283,7 @@
 </div>
 
 <footer>
-  <a href="https://waslat.io" class="foot-logo"><span class="en-only">Was<span style="color:var(--primary)">lat</span></span><span class="ar-only" style="font-family:Cairo,sans-serif">وص<span style="color:var(--primary)">لات</span></span></a>
+  <a href="https://waslat.io" class="foot-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></a>
   <ul class="foot-links">
     <li><a href="https://waslat.io/privacy"><span class="en-only">Privacy Policy</span><span class="ar-only">سياسة الخصوصية</span></a></li>
     <li><a href="https://waslat.io/terms"><span class="en-only">Terms of Service</span><span class="ar-only">شروط الخدمة</span></a></li>
