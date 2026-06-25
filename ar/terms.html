@@ -93,6 +93,22 @@
   body.ar .foot-copy{font-family:'Cairo',sans-serif;}
   @media(max-width:768px){nav{padding:16px 24px;}.hero{padding:120px 24px 60px;}.content{padding:0 24px 80px;}footer{padding:24px;}}
 .nav-logo{display:inline-flex;align-items:center;}.nav-logo img{height:34px;width:auto;object-fit:contain;display:block;}.foot-logo{display:inline-flex;align-items:center;}.foot-logo img{height:30px;width:auto;object-fit:contain;display:block;}
+
+  /* enhanced home-like animated background */
+  .pg-aurora.pg-a3{width:520px;height:520px;background:radial-gradient(ellipse,rgba(56,189,248,0.09) 0%,transparent 70%);bottom:-8%;right:6%;animation-duration:28s;animation-delay:-5s;}
+  .pg-aurora.pg-a4{width:440px;height:300px;background:radial-gradient(ellipse,rgba(125,211,252,0.08) 0%,transparent 70%);top:38%;left:32%;animation-duration:23s;animation-delay:-12s;}
+  .pg-grid{animation:pgGridScroll 24s linear infinite, pgGridFade 8s ease-in-out infinite;}
+  @keyframes pgGridScroll{from{background-position:0 0}to{background-position:64px 64px}}
+  .pg-orb{position:absolute;border-radius:50%;filter:blur(50px);animation:pgOrbDrift ease-in-out infinite;opacity:0.4;}
+  .pg-orb.o1{width:300px;height:300px;background:rgba(125,211,252,0.07);top:12%;left:5%;animation-duration:16s;}
+  .pg-orb.o2{width:200px;height:200px;background:rgba(56,189,248,0.08);top:58%;right:9%;animation-duration:20s;animation-delay:-6s;}
+  @keyframes pgOrbDrift{0%,100%{transform:translate(0,0) scale(1);opacity:0.3}33%{transform:translate(30px,-20px) scale(1.1);opacity:0.55}66%{transform:translate(-20px,15px) scale(0.95);opacity:0.4}}
+  .pg-star{position:absolute;height:1px;width:140px;background:linear-gradient(90deg,rgba(125,211,252,0.85),transparent);border-radius:1px;opacity:0;animation:pgShoot linear infinite;}
+  .pg-star.s1{top:14%;left:-12%;animation-duration:7s;animation-delay:1s;}
+  .pg-star.s2{top:64%;left:-12%;animation-duration:9s;animation-delay:4s;}
+  .pg-star.s3{top:32%;left:-12%;animation-duration:12s;animation-delay:8s;}
+  @keyframes pgShoot{0%{opacity:0;transform:translateX(0) translateY(0)}6%{opacity:1}94%{opacity:1}100%{opacity:0;transform:translateX(125vw) translateY(60px)}}
+  @media (prefers-reduced-motion: reduce){.pg-orb,.pg-star,.pg-aurora{animation:none!important;}.pg-grid{animation:none!important;}}
 </style>
 </head>
 <body class="ar" dir="rtl">
@@ -100,6 +116,13 @@
   <div class="pg-aurora pg-a1"></div>
   <div class="pg-aurora pg-a2"></div>
   <div class="pg-grid"></div>
+  <div class="pg-aurora pg-a3"></div>
+  <div class="pg-aurora pg-a4"></div>
+  <div class="pg-orb o1"></div>
+  <div class="pg-orb o2"></div>
+  <div class="pg-star s1"></div>
+  <div class="pg-star s2"></div>
+  <div class="pg-star s3"></div>
 </div>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
@@ -276,7 +299,7 @@
     <h2><span class="en-only">Contact Us</span><span class="ar-only">تواصل معنا</span></h2>
     <p><span class="en-only">If you have questions about these Terms, please contact us:</span><span class="ar-only">إذا كان لديك أسئلة حول هذه الشروط، يرجى التواصل معنا:</span></p>
     <div class="highlight-box">
-      <p><span class="en-only">📧 Email: support@waslat.io<br/>🌐 Website: waslat.io<br/>📍 Riyadh, Saudi Arabia</span><span class="ar-only">📧 البريد الإلكتروني: support@waslat.io<br/>🌐 الموقع: waslat.io<br/>📍 الرياض، المملكة العربية السعودية</span></p>
+      <p><span class="en-only">📞 Phone: <a href="tel:+966534230604" dir="ltr" style="color:var(--primary)">+966534230604</a><br/>📧 Support: <a href="mailto:support@waslat.io" style="color:var(--primary)">support@waslat.io</a><br/>📍 2842 Sheikh Abdullah bin Jibrin — Al Qairawan District, Riyadh 13531-7035, Kingdom of Saudi Arabia</span><span class="ar-only">📞 الهاتف: <a href="tel:+966534230604" dir="ltr" style="color:var(--primary)">+966534230604</a><br/>📧 الدعم: <a href="mailto:support@waslat.io" style="color:var(--primary)">support@waslat.io</a><br/>📍 2842 الشيخ عبدالله بن جبرين — حي القيروان، الرياض 13531-7035، المملكة العربية السعودية</span></p>
     </div>
     <p><span class="en-only">These Terms are governed by the laws of the Kingdom of Saudi Arabia. Any disputes shall be resolved through the competent courts in Riyadh.</span><span class="ar-only">تخضع هذه الشروط لقوانين المملكة العربية السعودية. يتم حل أي نزاعات من خلال المحاكم المختصة في الرياض.</span></p>
   </div>

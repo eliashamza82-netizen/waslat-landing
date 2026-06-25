@@ -91,6 +91,22 @@
   body.ar .foot-copy{font-family:'Cairo',sans-serif;}
   @media(max-width:768px){nav{padding:16px 24px;}.hero{padding:120px 24px 60px;}.content{padding:0 24px 80px;}footer{padding:24px;}.data-table{font-size:12px;}}
 .nav-logo{display:inline-flex;align-items:center;}.nav-logo img{height:34px;width:auto;object-fit:contain;display:block;}.foot-logo{display:inline-flex;align-items:center;}.foot-logo img{height:30px;width:auto;object-fit:contain;display:block;}
+
+  /* enhanced home-like animated background */
+  .pg-aurora.pg-a3{width:520px;height:520px;background:radial-gradient(ellipse,rgba(56,189,248,0.09) 0%,transparent 70%);bottom:-8%;right:6%;animation-duration:28s;animation-delay:-5s;}
+  .pg-aurora.pg-a4{width:440px;height:300px;background:radial-gradient(ellipse,rgba(125,211,252,0.08) 0%,transparent 70%);top:38%;left:32%;animation-duration:23s;animation-delay:-12s;}
+  .pg-grid{animation:pgGridScroll 24s linear infinite, pgGridFade 8s ease-in-out infinite;}
+  @keyframes pgGridScroll{from{background-position:0 0}to{background-position:64px 64px}}
+  .pg-orb{position:absolute;border-radius:50%;filter:blur(50px);animation:pgOrbDrift ease-in-out infinite;opacity:0.4;}
+  .pg-orb.o1{width:300px;height:300px;background:rgba(125,211,252,0.07);top:12%;left:5%;animation-duration:16s;}
+  .pg-orb.o2{width:200px;height:200px;background:rgba(56,189,248,0.08);top:58%;right:9%;animation-duration:20s;animation-delay:-6s;}
+  @keyframes pgOrbDrift{0%,100%{transform:translate(0,0) scale(1);opacity:0.3}33%{transform:translate(30px,-20px) scale(1.1);opacity:0.55}66%{transform:translate(-20px,15px) scale(0.95);opacity:0.4}}
+  .pg-star{position:absolute;height:1px;width:140px;background:linear-gradient(90deg,rgba(125,211,252,0.85),transparent);border-radius:1px;opacity:0;animation:pgShoot linear infinite;}
+  .pg-star.s1{top:14%;left:-12%;animation-duration:7s;animation-delay:1s;}
+  .pg-star.s2{top:64%;left:-12%;animation-duration:9s;animation-delay:4s;}
+  .pg-star.s3{top:32%;left:-12%;animation-duration:12s;animation-delay:8s;}
+  @keyframes pgShoot{0%{opacity:0;transform:translateX(0) translateY(0)}6%{opacity:1}94%{opacity:1}100%{opacity:0;transform:translateX(125vw) translateY(60px)}}
+  @media (prefers-reduced-motion: reduce){.pg-orb,.pg-star,.pg-aurora{animation:none!important;}.pg-grid{animation:none!important;}}
 </style>
 </head>
 <body class="ar" dir="rtl">
@@ -98,6 +114,13 @@
   <div class="pg-aurora pg-a1"></div>
   <div class="pg-aurora pg-a2"></div>
   <div class="pg-grid"></div>
+  <div class="pg-aurora pg-a3"></div>
+  <div class="pg-aurora pg-a4"></div>
+  <div class="pg-orb o1"></div>
+  <div class="pg-orb o2"></div>
+  <div class="pg-star s1"></div>
+  <div class="pg-star s2"></div>
+  <div class="pg-star s3"></div>
 </div>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
@@ -293,7 +316,7 @@
       <li><span class="en-only">We obtain consent before processing sensitive personal data</span><span class="ar-only">نحصل على الموافقة قبل معالجة البيانات الشخصية الحساسة</span></li>
       <li><span class="en-only">We notify users and authorities of data breaches within the required timeframe</span><span class="ar-only">نُخطر المستخدمين والجهات المختصة بخروقات البيانات خلال الإطار الزمني المطلوب</span></li>
       <li><span class="en-only">We are working toward storing Saudi user data in Saudi Arabia (planned Vultr Riyadh migration)</span><span class="ar-only">نعمل على تخزين بيانات المستخدمين السعوديين في المملكة العربية السعودية (ترحيل Vultr الرياض المخطط)</span></li>
-      <li><span class="en-only">A Data Protection Officer (DPO) can be reached at: privacy@waslat.io</span><span class="ar-only">يمكن التواصل مع مسؤول حماية البيانات على: privacy@waslat.io</span></li>
+      <li><span class="en-only">A Data Protection Officer (DPO) can be reached at: support@waslat.io</span><span class="ar-only">يمكن التواصل مع مسؤول حماية البيانات على: support@waslat.io</span></li>
     </ul>
   </div>
 
@@ -303,7 +326,7 @@
     <h2><span class="en-only">Contact Us</span><span class="ar-only">تواصل معنا</span></h2>
     <p><span class="en-only">For privacy-related questions or requests:</span><span class="ar-only">للأسئلة أو الطلبات المتعلقة بالخصوصية:</span></p>
     <div class="highlight-box">
-      <p><span class="en-only">📧 Privacy: privacy@waslat.io<br/>📧 Support: support@waslat.io<br/>🌐 Website: waslat.io<br/>📍 Riyadh, Kingdom of Saudi Arabia</span><span class="ar-only">📧 الخصوصية: privacy@waslat.io<br/>📧 الدعم: support@waslat.io<br/>🌐 الموقع: waslat.io<br/>📍 الرياض، المملكة العربية السعودية</span></p>
+      <p><span class="en-only">📞 Phone: <a href="tel:+966534230604" dir="ltr" style="color:var(--primary)">+966534230604</a><br/>📧 Support: <a href="mailto:support@waslat.io" style="color:var(--primary)">support@waslat.io</a><br/>📍 2842 Sheikh Abdullah bin Jibrin — Al Qairawan District, Riyadh 13531-7035, Kingdom of Saudi Arabia</span><span class="ar-only">📞 الهاتف: <a href="tel:+966534230604" dir="ltr" style="color:var(--primary)">+966534230604</a><br/>📧 الدعم: <a href="mailto:support@waslat.io" style="color:var(--primary)">support@waslat.io</a><br/>📍 2842 الشيخ عبدالله بن جبرين — حي القيروان، الرياض 13531-7035، المملكة العربية السعودية</span></p>
     </div>
     <p><span class="en-only">We may update this Privacy Policy from time to time. We will notify you of significant changes via email or a prominent notice on the platform. Continued use of Waslat after changes constitutes acceptance of the updated policy.</span><span class="ar-only">قد نحدّث سياسة الخصوصية هذه من وقت لآخر. سنُخطرك بالتغييرات الجوهرية عبر البريد الإلكتروني أو إشعار بارز على المنصة. الاستمرار في استخدام وصلات بعد التغييرات يُعد قبولًا للسياسة المحدّثة.</span></p>
   </div>
