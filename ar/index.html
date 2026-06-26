@@ -1060,7 +1060,7 @@
         <div class="st-value"><span id="totalNum">210</span> <span class="cur"><span class="en-only">SAR</span><span class="ar-only">ريال</span></span><span class="st-per"><span class="en-only">/mo</span><span class="ar-only">/شهر</span></span></div>
       </div>
       <div class="sum-vat"><span class="en-only">VAT included</span><span class="ar-only">شامل الضريبة</span><span id="annualNote"></span></div>
-      <a href="https://app.waslat.io/register" class="btn-primary" style="width:100%;padding:14px;border-radius:12px;display:block;text-align:center;box-shadow:0 0 30px rgba(125,211,252,0.2)"><span class="en-only">Register Now →</span><span class="ar-only">سجّل الآن ←</span></a>
+      <a id="calcCta" href="https://app.waslat.io/register" class="btn-primary" style="width:100%;padding:14px;border-radius:12px;display:block;text-align:center;box-shadow:0 0 30px rgba(125,211,252,0.2)"><span class="en-only">Register Now →</span><span class="ar-only">سجّل الآن ←</span></a>
       <div class="sum-setup"><span class="en-only">One-time setup from 1,000 SAR · Not sure? </span><span class="ar-only">رسوم تأسيس تبدأ من 1,000 ريال · غير متأكد؟ </span><a href="/contact" class="calc-contact"><span class="en-only">Contact us</span><span class="ar-only">تواصل معنا</span></a></div>
     </div>
   </div>
@@ -1269,6 +1269,7 @@
     const linesEl=document.getElementById('sumLines');
     const totalEl=document.getElementById('totalNum');
     const annualEl=document.getElementById('annualNote');
+    const cta=document.getElementById('calcCta');
     function render(){
       const s=sel();
       const modTotal=s.reduce((a,m)=>a+ +m.dataset.price,0);
@@ -1282,6 +1283,7 @@
       if(extraUsers>0){const lbl=isAr()?(extraUsers+' مستخدم إضافي'):(extraUsers+' extra user'+(extraUsers>1?'s':''));html+='<div class="sl"><span>'+lbl+'</span><span>'+fmt(extra)+' '+cur()+'</span></div>';}
       linesEl.innerHTML=html;
       totalEl.textContent=fmt(perMonth);
+      if(cta){const ids=s.map(m=>m.dataset.id).join(',');cta.href='https://app.waslat.io/register'+(ids?('?modules='+encodeURIComponent(ids)):'');}
       document.getElementById('uCount').value=users;
       if(billing==='annual'){const yr=perMonth*12;annualEl.textContent=isAr()?('يُدفع سنوياً ('+fmt(yr)+' ريال/سنة)'):('billed annually ('+fmt(yr)+' SAR/yr)');}
       else annualEl.textContent='';
