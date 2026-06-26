@@ -1302,9 +1302,9 @@
 
 <!-- ===== WATCH DEMO MODAL (animated recreation of the Waslat app) ===== -->
 <style>
-  .wd-overlay{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;font-family:'Inter','Syne',system-ui,sans-serif;}
+  .wd-overlay{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease;font-family:'Inter','Syne',system-ui,sans-serif;}
   body.ar .wd-overlay{font-family:'Cairo',sans-serif;}
-  .wd-overlay.open{opacity:1;visibility:visible;}
+  .wd-overlay.open{opacity:1;visibility:visible;pointer-events:auto;}
   .wd-overlay,.wd-overlay *{cursor:auto !important;}
   .wd-overlay [data-wd-close],.wd-close,.wd-cta a{cursor:pointer !important;}
   .wd-backdrop{position:absolute;inset:0;background:rgba(3,3,8,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
