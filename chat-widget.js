@@ -38,7 +38,7 @@ const db = getFirestore(app, DB_ID);
 // (no user-supplied data), so innerHTML is safe here — no XSS vector.
 const root = document.createElement('div');
 root.innerHTML = `
-  <button id="wc-bubble" aria-label="${T.title}">${T.bubble}</button>
+  <button id="wc-bubble" aria-label="${T.title}"><img src="/favicon.png" alt="Waslat"></button>
   <div id="wc-panel" dir="${AR ? 'rtl' : 'ltr'}">
     <div id="wc-head">${T.title}</div>
     <form id="wc-form">
