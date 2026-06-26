@@ -638,6 +638,58 @@
     background: linear-gradient(145deg,rgba(125,211,252,0.08),rgba(13,13,20,0.85)) !important;
   }
 
+
+  /* PRICING CALCULATOR */
+  .calc-billing{display:flex;justify-content:center;gap:4px;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:100px;padding:4px;width:max-content;margin:0 auto 34px;}
+  .bill-opt{padding:9px 22px;border:none;background:transparent;color:var(--text-secondary);font-size:13px;font-weight:700;border-radius:100px;cursor:none;font-family:inherit;transition:all 0.2s;}
+  .bill-opt b{color:var(--primary);font-weight:800;}
+  .bill-opt.active{background:var(--primary);color:#000;}
+  .bill-opt.active b{color:#000;}
+  .calc-wrap{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;max-width:1080px;margin:0 auto;align-items:start;}
+  .calc-modules{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mod{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;cursor:none;transition:all 0.2s;}
+  .mod:hover{border-color:rgba(125,211,252,0.4);transform:translateY(-2px);}
+  .mod.sel{border-color:var(--primary);background:rgba(125,211,252,0.06);box-shadow:0 0 30px rgba(125,211,252,0.12);}
+  .mod-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .mod-check{width:22px;height:22px;border-radius:7px;border:1.5px solid var(--border-light);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+  .mod.sel .mod-check{background:var(--primary);border-color:var(--primary);}
+  .mod.sel .mod-check::after{content:"✓";color:#000;font-size:13px;font-weight:800;line-height:1;}
+  .mod-name{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;flex:1;}
+  body.ar .mod-name{font-family:'Cairo',sans-serif;}
+  .mod-price{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--primary);white-space:nowrap;}
+  .mod-price .cur{font-size:10px;color:var(--text-secondary);font-weight:600;}
+  .mod-feats{font-size:12px;color:var(--text-secondary);line-height:1.6;}
+  body.ar .mod-feats{font-family:'Cairo',sans-serif;}
+  .mod-soon{display:inline-block;font-size:10px;font-weight:700;color:var(--primary);background:rgba(125,211,252,0.1);border:1px solid rgba(125,211,252,0.25);border-radius:100px;padding:1px 9px;margin-top:7px;}
+  .calc-summary{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:26px;position:sticky;top:92px;}
+  .sum-title{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin-bottom:18px;}
+  body.ar .sum-title{font-family:'Cairo',sans-serif;}
+  .sum-users{border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:16px;}
+  .su-label{font-size:13px;font-weight:600;margin-bottom:10px;}
+  .su-stepper{display:flex;align-items:center;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:10px;overflow:hidden;width:max-content;}
+  .su-stepper button{width:40px;height:40px;border:none;background:transparent;color:var(--primary);font-size:20px;font-weight:700;cursor:none;font-family:inherit;transition:background 0.2s;}
+  .su-stepper button:hover{background:rgba(125,211,252,0.12);}
+  .su-stepper input{width:56px;text-align:center;background:transparent;border:none;color:var(--text);font-size:15px;font-weight:700;font-family:inherit;outline:none;}
+  .su-note{font-size:11px;color:var(--text-muted);margin-top:9px;}
+  body.ar .su-note{font-family:'Cairo',sans-serif;}
+  .sum-lines{display:flex;flex-direction:column;gap:9px;padding:15px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:16px;min-height:30px;}
+  .sl{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--text-secondary);}
+  body.ar .sl{font-family:'Cairo',sans-serif;}
+  .sl span:last-child{color:var(--text);font-weight:600;white-space:nowrap;}
+  .sum-total{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px;}
+  .st-label{font-size:14px;font-weight:600;}
+  .st-value{font-family:'Syne',sans-serif;font-weight:800;font-size:30px;color:var(--primary);white-space:nowrap;}
+  .st-value .cur{font-size:14px;color:var(--text-secondary);}
+  .st-per{font-size:13px;color:var(--text-secondary);font-weight:600;}
+  .sum-vat{font-size:11px;color:var(--text-muted);margin-bottom:18px;min-height:16px;}
+  body.ar .sum-vat{font-family:'Cairo',sans-serif;}
+  #annualNote:not(:empty)::before{content:" · ";}
+  .sum-setup{font-size:11px;color:var(--text-muted);margin-top:14px;text-align:center;line-height:1.7;}
+  body.ar .sum-setup{font-family:'Cairo',sans-serif;}
+  .sum-setup a{color:var(--text-secondary);text-decoration:none;cursor:none;}
+  .sum-setup a:hover{color:var(--primary);}
+  @media(max-width:860px){.calc-wrap{grid-template-columns:1fr;}.calc-summary{position:static;}}
+  @media(max-width:560px){.calc-modules{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -919,72 +971,97 @@
 
 <!-- PRICING -->
 <section class="pricing-sec" id="pricing">
-  <div class="reveal" style="text-align:center;margin-bottom:60px">
+  <div class="reveal" style="text-align:center;margin-bottom:34px">
     <div class="section-tag" style="display:inline-block"><span class="en-only">Pricing</span><span class="ar-only">الأسعار</span></div>
-    <div class="section-title"><span class="en-only">Simple. Transparent. Scalable.</span><span class="ar-only">بسيط. شفاف. قابل للتوسع.</span></div>
-    <div class="section-sub" style="margin:12px auto 0"><span class="en-only">One flat price per business. No per-user fees. No surprises.</span><span class="ar-only">سعر واحد ثابت لعملك. بدون رسوم لكل مستخدم. بدون مفاجآت.</span></div>
-  </div>
-  <div class="price-grid">
-
-    <div class="price-card reveal d1">
-      <div class="price-name"><span class="en-only">Basic</span><span class="ar-only">أساسي</span></div>
-      <div class="price-num">299<sup class="en-only"> SAR</sup><sup class="ar-only"> ريال</sup></div>
-      <div class="price-per"><span class="en-only">/ month</span><span class="ar-only">/ شهرياً</span></div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:20px"><span class="en-only">For retail shops &amp; small businesses</span><span class="ar-only">للمتاجر والمحلات الصغيرة</span></div>
-      <ul class="price-feats">
-        <li><span class="en-only">POS &amp; ZATCA e-invoicing</span><span class="ar-only">نقاط البيع والفوترة الإلكترونية (متوافق مع هيئة الزكاة)</span></li>
-        <li><span class="en-only">Unified WhatsApp inbox</span><span class="ar-only">صندوق واتساب موحّد</span></li>
-        <li><span class="en-only">1 social platform</span><span class="ar-only">منصة تواصل واحدة</span></li>
-        <li><span class="en-only">2 team members</span><span class="ar-only">مستخدمان</span></li>
-      </ul>
-      <a href="https://app.waslat.io/register" class="btn-ghost" style="width:100%;padding:13px;border-radius:12px;display:block;text-align:center"><span class="en-only">Register Now</span><span class="ar-only">سجّل الآن</span></a>
-    </div>
-
-    <div class="price-card featured reveal d2">
-      <div class="price-badge"><span class="en-only">Most Popular</span><span class="ar-only">الأكثر طلباً</span></div>
-      <div class="price-name" style="color:var(--primary)"><span class="en-only">Growth</span><span class="ar-only">نمو</span></div>
-      <div class="price-num" style="color:var(--primary)">599<sup class="en-only"> SAR</sup><sup class="ar-only"> ريال</sup></div>
-      <div class="price-per"><span class="en-only">/ month</span><span class="ar-only">/ شهرياً</span></div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:20px"><span class="en-only">For Salla/Zid merchants &amp; growing businesses</span><span class="ar-only">لمتاجر سلة وزد والأعمال النامية</span></div>
-      <ul class="price-feats">
-        <li><span class="en-only">Everything in Basic</span><span class="ar-only">كل مزايا أساسي</span></li>
-        <li><span class="en-only">Salla &amp; Zid sync</span><span class="ar-only">ربط مباشر مع سلة وزد</span></li>
-        <li><span class="en-only">All social platforms</span><span class="ar-only">جميع منصات التواصل</span></li>
-        <li><span class="en-only">CRM &amp; sales pipeline</span><span class="ar-only">إدارة علاقات العملاء والمبيعات</span></li>
-        <li><span class="en-only">Automated campaigns</span><span class="ar-only">حملات إعلانية مؤتمتة</span></li>
-        <li><span class="en-only">5 team members</span><span class="ar-only">5 مستخدمين</span></li>
-      </ul>
-      <a href="https://app.waslat.io/register" class="btn-primary" style="width:100%;padding:13px;border-radius:12px;display:block;text-align:center"><span class="en-only">Register Now →</span><span class="ar-only">سجّل الآن ←</span></a>
-    </div>
-
-    <div class="price-card reveal d3">
-      <div class="price-name"><span class="en-only">Agency</span><span class="ar-only">وكالات</span></div>
-      <div class="price-num">1,499<sup class="en-only"> SAR</sup><sup class="ar-only"> ريال</sup></div>
-      <div class="price-per"><span class="en-only">/ month</span><span class="ar-only">/ شهرياً</span></div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:20px"><span class="en-only">For marketing agencies</span><span class="ar-only">لوكالات التسويق</span></div>
-      <ul class="price-feats">
-        <li><span class="en-only">White-label with your brand</span><span class="ar-only">علامة بيضاء بشعارك</span></li>
-        <li><span class="en-only">Separate workspace per client</span><span class="ar-only">مساحة عمل منفصلة لكل عميل</span></li>
-        <li><span class="en-only">10 client slots, +99 SAR per extra</span><span class="ar-only">10 عملاء، ثم 99 ريال لكل عميل إضافي</span></li>
-        <li><span class="en-only">Client-ready Arabic reports</span><span class="ar-only">تقارير عربية جاهزة للعملاء</span></li>
-        <li><span class="en-only">Unlimited team members</span><span class="ar-only">أعضاء فريق غير محدودين</span></li>
-      </ul>
-      <a href="/support.html" class="btn-ghost" style="width:100%;padding:13px;border-radius:12px;display:block;text-align:center"><span class="en-only">Book a Demo</span><span class="ar-only">احجز عرضاً تجريبياً</span></a>
-    </div>
-
+    <div class="section-title"><span class="en-only">Build Your Plan</span><span class="ar-only">ابنِ باقتك</span></div>
+    <div class="section-sub" style="margin:12px auto 0"><span class="en-only">Pick the modules you need. 15 users included. Scale anytime.</span><span class="ar-only">اختر الوحدات التي تحتاجها. 15 مستخدماً مشمولين. وسّع في أي وقت.</span></div>
   </div>
 
-  <div class="reveal" style="text-align:center;margin-top:40px">
-    <p style="font-size:14px;color:var(--text-muted)">
-      <a href="/support.html" style="color:var(--text-secondary);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-secondary)'">
-        <span class="en-only">Beauty clinics &amp; multi-branch enterprises: custom plans — contact us</span>
-        <span class="ar-only">عيادات التجميل والشركات متعددة الفروع: باقات مخصصة — تواصل معنا</span>
-      </a>
-    </p>
-    <p style="font-size:12px;color:var(--text-muted);margin-top:12px">
-      <span class="en-only">One-time setup from 1,000 SAR · Save 20% with annual billing</span>
-      <span class="ar-only">رسوم تأسيس تبدأ من 1,000 ريال · وفّر 20% عند الدفع السنوي</span>
-    </p>
+  <div class="calc-billing reveal">
+    <button type="button" class="bill-opt active" data-bill="monthly"><span class="en-only">Monthly</span><span class="ar-only">شهري</span></button>
+    <button type="button" class="bill-opt" data-bill="annual"><span class="en-only">Annual <b>−20%</b></span><span class="ar-only">سنوي <b>−20%</b></span></button>
+  </div>
+
+  <div class="calc-wrap reveal">
+    <div class="calc-modules" id="calcModules">
+        <div class="mod" data-id="conversation" data-price="210" data-name-en="Conversation" data-name-ar="المحادثات">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">Conversation</span><span class="ar-only">المحادثات</span></div>
+            <div class="mod-price">210<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">Social media messages · CRM · Opportunities</span><span class="ar-only">رسائل وسائل التواصل · إدارة العملاء (CRM) · الفرص</span></div>
+        </div>
+        <div class="mod" data-id="whatsapp" data-price="375" data-name-en="WhatsApp API" data-name-ar="واتساب API">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">WhatsApp API</span><span class="ar-only">واتساب API</span></div>
+            <div class="mod-price">375<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">Official WhatsApp Business API — works standalone</span><span class="ar-only">واجهة واتساب للأعمال الرسمية — تعمل بمفردها</span></div>
+        </div>
+        <div class="mod" data-id="marketing" data-price="210" data-name-en="Marketing" data-name-ar="التسويق">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">Marketing</span><span class="ar-only">التسويق</span></div>
+            <div class="mod-price">210<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">Pages, insights, publish &amp; schedule, comments, trigger links, automation</span><span class="ar-only">الصفحات، التحليلات، النشر والجدولة، التعليقات، روابط التتبّع، الأتمتة</span><br><span class="mod-soon"><span class="en-only">Campaigns coming soon</span><span class="ar-only">الحملات قريباً</span></span></div>
+        </div>
+        <div class="mod" data-id="calendar" data-price="375" data-name-en="Calendar & Booking" data-name-ar="التقويم والحجوزات">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">Calendar &amp; Booking</span><span class="ar-only">التقويم والحجوزات</span></div>
+            <div class="mod-price">375<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">Appointments, services, staff, embeddable booking link</span><span class="ar-only">المواعيد، الخدمات، الموظفون، رابط حجز قابل للتضمين</span></div>
+        </div>
+        <div class="mod" data-id="operations" data-price="210" data-name-en="Operations" data-name-ar="العمليات">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">Operations</span><span class="ar-only">العمليات</span></div>
+            <div class="mod-price">210<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">POS · Inventory · Projects · Ecommerce manager</span><span class="ar-only">نقاط البيع · المخزون · المشاريع · إدارة المتجر</span></div>
+        </div>
+        <div class="mod" data-id="hr" data-price="210" data-name-en="HR" data-name-ar="الموارد البشرية">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">HR</span><span class="ar-only">الموارد البشرية</span></div>
+            <div class="mod-price">210<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">Human resources management</span><span class="ar-only">إدارة الموارد البشرية</span></div>
+        </div>
+        <div class="mod" data-id="accounting" data-price="210" data-name-en="Accounting" data-name-ar="المحاسبة">
+          <div class="mod-head">
+            <div class="mod-check"></div>
+            <div class="mod-name"><span class="en-only">Accounting</span><span class="ar-only">المحاسبة</span></div>
+            <div class="mod-price">210<span class="cur"><span class="en-only"> SAR</span><span class="ar-only"> ريال</span></span></div>
+          </div>
+          <div class="mod-feats"><span class="en-only">Accounting &amp; bookkeeping</span><span class="ar-only">المحاسبة والدفاتر المالية</span></div>
+        </div>
+    </div>
+
+    <div class="calc-summary">
+      <div class="sum-title"><span class="en-only">Your Plan</span><span class="ar-only">باقتك</span></div>
+      <div class="sum-users">
+        <div class="su-label"><span class="en-only">Users</span><span class="ar-only">المستخدمون</span></div>
+        <div class="su-stepper">
+          <button type="button" id="uMinus" aria-label="-">−</button>
+          <input id="uCount" value="15" readonly>
+          <button type="button" id="uPlus" aria-label="+">+</button>
+        </div>
+        <div class="su-note"><span class="en-only">15 included · +99 SAR per extra user</span><span class="ar-only">15 مشمولين · +99 ريال لكل مستخدم إضافي</span></div>
+      </div>
+      <div class="sum-lines" id="sumLines"></div>
+      <div class="sum-total">
+        <div class="st-label"><span class="en-only">Total</span><span class="ar-only">الإجمالي</span></div>
+        <div class="st-value"><span id="totalNum">210</span> <span class="cur"><span class="en-only">SAR</span><span class="ar-only">ريال</span></span><span class="st-per"><span class="en-only">/mo</span><span class="ar-only">/شهر</span></span></div>
+      </div>
+      <div class="sum-vat"><span class="en-only">VAT included</span><span class="ar-only">شامل الضريبة</span><span id="annualNote"></span></div>
+      <a href="https://app.waslat.io/register" class="btn-primary" style="width:100%;padding:14px;border-radius:12px;display:block;text-align:center;box-shadow:0 0 30px rgba(125,211,252,0.2)"><span class="en-only">Register Now →</span><span class="ar-only">سجّل الآن ←</span></a>
+      <div class="sum-setup"><span class="en-only">One-time setup from 1,000 SAR · Not sure? </span><span class="ar-only">رسوم تأسيس تبدأ من 1,000 ريال · غير متأكد؟ </span><a href="/contact" class="calc-contact"><span class="en-only">Contact us</span><span class="ar-only">تواصل معنا</span></a></div>
+    </div>
   </div>
 </section>
 
@@ -1175,5 +1252,49 @@
     → Meta Pixel: paste Facebook Pixel if running ads
 ═══════════════════════════════════════════════════════
 -->
+
+<script>
+  // Pricing calculator
+  (function(){
+    const MIN=15, EXTRA=99, ANNUAL=0.8;
+    let users=15, billing='monthly';
+    const modsEl=document.getElementById('calcModules');
+    if(!modsEl) return;
+    const mods=[...modsEl.querySelectorAll('.mod')];
+    const isAr=()=>document.body.classList.contains('ar');
+    const cur=()=>isAr()?'ريال':'SAR';
+    const fmt=n=>n.toLocaleString('en-US');
+    const sel=()=>mods.filter(m=>m.classList.contains('sel'));
+    const linesEl=document.getElementById('sumLines');
+    const totalEl=document.getElementById('totalNum');
+    const annualEl=document.getElementById('annualNote');
+    function render(){
+      const s=sel();
+      const modTotal=s.reduce((a,m)=>a+ +m.dataset.price,0);
+      const extraUsers=Math.max(0,users-MIN);
+      const extra=extraUsers*EXTRA;
+      const baseMonthly=modTotal+extra;
+      const perMonth=billing==='annual'?Math.round(baseMonthly*ANNUAL):baseMonthly;
+      // breakdown
+      let html='';
+      s.forEach(m=>{const name=isAr()?m.dataset.nameAr:m.dataset.nameEn;html+='<div class="sl"><span>'+name+'</span><span>'+m.dataset.price+' '+cur()+'</span></div>';});
+      if(extraUsers>0){const lbl=isAr()?(extraUsers+' مستخدم إضافي'):(extraUsers+' extra user'+(extraUsers>1?'s':''));html+='<div class="sl"><span>'+lbl+'</span><span>'+fmt(extra)+' '+cur()+'</span></div>';}
+      linesEl.innerHTML=html;
+      totalEl.textContent=fmt(perMonth);
+      document.getElementById('uCount').value=users;
+      if(billing==='annual'){const yr=perMonth*12;annualEl.textContent=isAr()?('يُدفع سنوياً ('+fmt(yr)+' ريال/سنة)'):('billed annually ('+fmt(yr)+' SAR/yr)');}
+      else annualEl.textContent='';
+    }
+    mods.forEach(m=>m.addEventListener('click',()=>{
+      if(m.classList.contains('sel') && sel().length===1) return; // keep at least one
+      m.classList.toggle('sel'); render();
+    }));
+    document.getElementById('uPlus').addEventListener('click',()=>{users++;render();});
+    document.getElementById('uMinus').addEventListener('click',()=>{if(users>MIN){users--;render();}});
+    document.querySelectorAll('.bill-opt').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.bill-opt').forEach(x=>x.classList.remove('active'));b.classList.add('active');billing=b.dataset.bill;render();}));
+    const def=modsEl.querySelector('.mod[data-id="conversation"]'); if(def) def.classList.add('sel');
+    render();
+  })();
+</script>
 </body>
 </html>
