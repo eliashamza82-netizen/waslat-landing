@@ -792,7 +792,7 @@
 
   <div class="hero-actions">
     <a href="https://app.waslat.io/register" class="btn-hero"><span class="en-only">Register Now →</span><span class="ar-only">سجّل الآن ←</span></a>
-    <button class="btn-demo"><span class="en-only">▶ Watch Demo</span><span class="ar-only">▶ شاهد العرض</span></button>
+    <button class="btn-demo" data-demo><span class="en-only">▶ Watch Demo</span><span class="ar-only">▶ شاهد العرض</span></button>
   </div>
 
   <!-- ORBIT -->
@@ -1299,5 +1299,383 @@
     render();
   })();
 </script>
+
+<!-- ===== WATCH DEMO MODAL (animated recreation of the Waslat app) ===== -->
+<style>
+  .wd-overlay{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;font-family:'Inter','Syne',system-ui,sans-serif;}
+  body.ar .wd-overlay{font-family:'Cairo',sans-serif;}
+  .wd-overlay.open{opacity:1;visibility:visible;}
+  .wd-overlay,.wd-overlay *{cursor:auto !important;}
+  .wd-overlay [data-wd-close],.wd-close,.wd-cta a{cursor:pointer !important;}
+  .wd-backdrop{position:absolute;inset:0;background:rgba(3,3,8,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+  .wd-dialog{position:relative;width:100%;max-width:960px;transform:translateY(18px) scale(.97);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s ease;}
+  .wd-overlay.open .wd-dialog{transform:translateY(0) scale(1);opacity:1;}
+  .wd-close{position:absolute;top:-14px;right:-14px;z-index:5;width:38px;height:38px;border-radius:50%;border:1px solid var(--border-light);background:var(--bg-card);color:var(--white);font-size:16px;cursor:none;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .wd-close:hover{border-color:var(--primary);color:var(--primary);transform:rotate(90deg);}
+  body.ar .wd-close{right:auto;left:-14px;}
+  .wd-window{background:#fff;border:1px solid var(--border-light);border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 80px rgba(125,211,252,.08);}
+  .wd-bar{display:flex;align-items:center;gap:8px;padding:11px 16px;background:#0b0b10;border-bottom:1px solid #1c1c26;}
+  .wd-dot{width:11px;height:11px;border-radius:50%;}
+  .wd-dot.r{background:#FF5F57;}.wd-dot.y{background:#FEBC2E;}.wd-dot.g{background:#28C840;}
+  .wd-urlpill{margin:0 auto;background:#17171f;color:#8a8aa0;font-size:11.5px;padding:4px 16px;border-radius:7px;letter-spacing:.02em;}
+
+  /* ====== app frame ====== */
+  .wd-app{display:flex;height:472px;background:#f6f7f9;color:#0f172a;direction:ltr;}
+  body.ar .wd-app{direction:rtl;}
+  .wd-side{width:188px;flex-shrink:0;background:#0a0a0f;color:#c7c7d1;padding:12px 10px;display:flex;flex-direction:column;gap:3px;overflow:hidden;}
+  .wd-brand{display:flex;align-items:center;gap:9px;padding:6px 8px 12px;}
+  .wd-brandlogo{width:30px;height:30px;border-radius:8px;background:#16a34a;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;font-family:'Syne',sans-serif;}
+  .wd-brandtxt b{display:block;font-size:12.5px;color:#fff;line-height:1.2;}
+  .wd-brandtxt span{font-size:9px;color:#6b6b78;letter-spacing:.08em;}
+  .wd-nav{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;font-size:12.5px;font-weight:500;color:#b9b9c4;transition:background .35s ease,color .35s ease;white-space:nowrap;}
+  .wd-nav svg{width:16px;height:16px;flex-shrink:0;opacity:.8;}
+  .wd-nav.on{background:#16a34a;color:#fff;}
+  .wd-nav.on svg{opacity:1;}
+  .wd-navsub{font-size:9px;color:#55555f;letter-spacing:.1em;padding:10px 10px 4px;font-weight:700;}
+
+  .wd-main{flex:1;display:flex;flex-direction:column;min-width:0;}
+  .wd-top{height:50px;flex-shrink:0;background:#fff;border-bottom:1px solid #eceef1;display:flex;align-items:center;padding:0 18px;gap:14px;}
+  .wd-ttl{font-size:15px;font-weight:700;}
+  .wd-search{margin-left:auto;background:#f1f2f4;border:1px solid #e6e8ec;border-radius:8px;height:30px;width:180px;display:flex;align-items:center;padding:0 10px;font-size:11px;color:#9aa0ab;gap:6px;}
+  body.ar .wd-search{margin-left:0;margin-right:auto;}
+  .wd-globe{font-size:11.5px;color:#16a34a;font-weight:600;}
+  .wd-bell{width:24px;height:24px;border-radius:50%;background:#f1f2f4;display:flex;align-items:center;justify-content:center;font-size:12px;}
+
+  .wd-canvas{position:relative;flex:1;overflow:hidden;}
+  .wd-pane{position:absolute;inset:0;padding:18px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .55s ease,transform .55s ease,visibility .55s;overflow:hidden;}
+  .wd-overlay .wd-app[data-step="0"] .wd-pane[data-p="0"],
+  .wd-overlay .wd-app[data-step="1"] .wd-pane[data-p="1"],
+  .wd-overlay .wd-app[data-step="2"] .wd-pane[data-p="2"]{opacity:1;visibility:visible;transform:translateY(0);}
+
+  /* ---- dashboard ---- */
+  .wd-hello{font-size:9px;font-weight:700;letter-spacing:.1em;color:#94a3b8;}
+  .wd-greet{font-size:19px;font-weight:800;margin:3px 0 2px;}
+  .wd-greetsub{font-size:11.5px;color:#7a8290;margin-bottom:14px;}
+  .wd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:13px;}
+  .wd-card{background:#fff;border:1px solid #eceef1;border-radius:13px;padding:13px 14px;}
+  .wd-cico{width:30px;height:30px;border-radius:9px;background:#eef2ff;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:14px;}
+  .wd-clab{font-size:9px;font-weight:700;letter-spacing:.06em;color:#8b94a3;}
+  .wd-cnum{font-size:23px;font-weight:800;margin-top:3px;letter-spacing:-.01em;}
+  .wd-csub{font-size:9.5px;color:#9aa2b0;margin-top:2px;}
+  .wd-charts{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+  .wd-chartt{font-size:12.5px;font-weight:700;margin-bottom:1px;}
+  .wd-charts2{font-size:9.5px;color:#9aa2b0;margin-bottom:10px;}
+  .wd-donutwrap{display:flex;align-items:center;gap:16px;}
+  .wd-donut{width:104px;height:104px;border-radius:50%;flex-shrink:0;background:conic-gradient(#1877F2 0 40%,#E4405F 40% 64%,#25D366 64% 89%,#cbd5e1 89% 100%);position:relative;transform:scale(.7) rotate(-90deg);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .6s;}
+  .wd-app[data-step="0"] .wd-donut{transform:scale(1) rotate(0);opacity:1;}
+  .wd-donut::after{content:"";position:absolute;inset:21px;background:#fff;border-radius:50%;}
+  .wd-leg{display:flex;flex-direction:column;gap:7px;}
+  .wd-legi{display:flex;align-items:center;gap:7px;font-size:10.5px;color:#5b6473;}
+  .wd-legd{width:9px;height:9px;border-radius:3px;}
+  .wd-bars{display:flex;align-items:flex-end;gap:6px;height:104px;padding-top:6px;}
+  .wd-bar{flex:1;background:#e2e8f0;border-radius:4px 4px 0 0;height:8%;transition:height .7s cubic-bezier(.2,.8,.2,1);}
+  .wd-bar.tall{background:#6366f1;}
+  .wd-app[data-step="0"] .wd-bar{height:var(--h);}
+
+  /* ---- conversations ---- */
+  .wd-conv{display:grid;grid-template-columns:230px 1fr;gap:0;height:100%;border:1px solid #eceef1;border-radius:13px;overflow:hidden;background:#fff;}
+  .wd-clist{border-right:1px solid #eceef1;padding:12px 10px;overflow:hidden;}
+  body.ar .wd-clist{border-right:none;border-left:1px solid #eceef1;}
+  .wd-chips{display:flex;gap:6px;margin-bottom:10px;}
+  .wd-chip{font-size:10px;padding:4px 10px;border-radius:20px;background:#f1f2f4;color:#5b6473;font-weight:600;}
+  .wd-chip.on{background:#16a34a;color:#fff;}
+  .wd-conv-item{display:flex;align-items:center;gap:9px;padding:8px 8px;border-radius:9px;margin-bottom:3px;opacity:0;transform:translateX(-12px);transition:opacity .4s ease,transform .4s ease;}
+  body.ar .wd-conv-item{transform:translateX(12px);}
+  .wd-app[data-step="1"] .wd-conv-item{opacity:1;transform:translateX(0);}
+  .wd-app[data-step="1"] .wd-conv-item:nth-child(3){transition-delay:.08s;}
+  .wd-app[data-step="1"] .wd-conv-item:nth-child(4){transition-delay:.18s;}
+  .wd-app[data-step="1"] .wd-conv-item:nth-child(5){transition-delay:.28s;}
+  .wd-conv-item.on{background:#f0f9f3;}
+  .wd-cav{width:32px;height:32px;border-radius:8px;background:#eef2ff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#475569;flex-shrink:0;position:relative;}
+  .wd-cbadge{position:absolute;bottom:-3px;right:-3px;width:14px;height:14px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;}
+  .wd-cbadge svg{width:8px;height:8px;}
+  .wd-cmeta{min-width:0;flex:1;}
+  .wd-cname{font-size:11.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .wd-cprev{font-size:10px;color:#94a3b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .wd-cwhen{font-size:9px;color:#b3bac6;}
+
+  .wd-chat{display:flex;flex-direction:column;min-width:0;}
+  .wd-chathdr{padding:11px 14px;border-bottom:1px solid #eceef1;display:flex;align-items:center;gap:9px;}
+  .wd-chatname{font-size:12.5px;font-weight:700;}
+  .wd-chattag{font-size:9px;color:#1877F2;font-weight:700;display:flex;align-items:center;gap:3px;}
+  .wd-resolved{margin-left:auto;font-size:8.5px;font-weight:700;color:#16a34a;background:#eafaf0;padding:2px 7px;border-radius:5px;}
+  body.ar .wd-resolved{margin-left:0;margin-right:auto;}
+  .wd-cmsgs{flex:1;padding:14px;display:flex;flex-direction:column;gap:8px;justify-content:flex-end;background:#fafbfc;}
+  .wd-b{max-width:76%;padding:8px 12px;font-size:11.5px;line-height:1.45;border-radius:13px;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;}
+  .wd-bi{align-self:flex-start;background:#fff;border:1px solid #e6e8ec;color:#334155;border-bottom-left-radius:4px;}
+  body.ar .wd-bi{align-self:flex-end;border-bottom-left-radius:13px;border-bottom-right-radius:4px;}
+  .wd-bo{align-self:flex-end;background:#16a34a;color:#fff;border-bottom-right-radius:4px;}
+  body.ar .wd-bo{align-self:flex-start;border-bottom-right-radius:13px;border-bottom-left-radius:4px;}
+  .wd-app[data-step="1"] .wd-bi{opacity:1;transform:translateY(0);transition-delay:.4s;}
+  .wd-app[data-step="1"] .wd-bo{opacity:1;transform:translateY(0);transition-delay:1.4s;}
+  .wd-ai{padding:8px 14px 4px;background:#fafbfc;}
+  .wd-ailab{font-size:9.5px;font-weight:700;color:#6366f1;margin-bottom:6px;display:flex;align-items:center;gap:4px;}
+  .wd-aichips{display:flex;gap:6px;flex-wrap:wrap;}
+  .wd-aichip{font-size:10px;padding:5px 11px;border-radius:18px;background:#eef0ff;color:#4f46e5;border:1px solid #e0e3ff;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s;}
+  .wd-app[data-step="1"] .wd-aichip{opacity:1;transform:translateY(0);}
+  .wd-app[data-step="1"] .wd-aichip:nth-child(1){transition-delay:1.9s;}
+  .wd-app[data-step="1"] .wd-aichip:nth-child(2){transition-delay:2.05s;}
+  .wd-app[data-step="1"] .wd-aichip:nth-child(3){transition-delay:2.2s;}
+  .wd-composer{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid #eceef1;}
+  .wd-cinput{flex:1;height:32px;border-radius:9px;background:#f1f2f4;font-size:11px;color:#9aa0ab;display:flex;align-items:center;padding:0 12px;}
+  .wd-csend{width:32px;height:32px;border-radius:9px;background:#16a34a;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .wd-csend svg{width:14px;height:14px;}
+
+  /* ---- social ---- */
+  .wd-spills{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:14px;}
+  .wd-spill{background:#fff;border:1px solid #eceef1;border-radius:13px;padding:13px 16px;display:flex;align-items:center;gap:12px;}
+  .wd-spnum{font-size:22px;font-weight:800;}
+  .wd-splab{font-size:10.5px;color:#7a8290;}
+  .wd-spico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .wd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .wd-pcard{background:#fff;border:1px solid #eceef1;border-radius:12px;padding:12px;opacity:0;transform:scale(.9) translateY(8px);transition:opacity .4s,transform .45s cubic-bezier(.2,.8,.2,1);}
+  .wd-app[data-step="2"] .wd-pcard{opacity:1;transform:scale(1) translateY(0);}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(2){transition-delay:.06s;}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(3){transition-delay:.12s;}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(4){transition-delay:.18s;}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(5){transition-delay:.24s;}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(6){transition-delay:.3s;}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(7){transition-delay:.36s;}
+  .wd-app[data-step="2"] .wd-pcard:nth-child(8){transition-delay:.42s;}
+  .wd-prow{display:flex;align-items:center;gap:9px;margin-bottom:9px;}
+  .wd-pico{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;}
+  .wd-pico svg{width:17px;height:17px;}
+  .wd-pname{font-size:12px;font-weight:700;}
+  .wd-pconn{font-size:9.5px;font-weight:700;color:#16a34a;background:#eafaf0;padding:3px 9px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;}
+
+  /* ---- caption / progress / cta ---- */
+  .wd-prog{height:3px;background:#fff;}
+  .wd-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--primary-deep));}
+  .wd-cap{position:relative;background:#0b0b10;border-top:1px solid #1c1c26;min-height:52px;display:flex;align-items:center;justify-content:center;padding:14px 22px;}
+  .wd-capline{position:absolute;font-size:14px;font-weight:600;color:#fff;text-align:center;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s;padding:0 18px;}
+  body.ar .wd-capline{font-family:'Cairo',sans-serif;}
+  .wd-overlay .wd-app[data-step="0"] ~ .wd-prog ~ .wd-cap .wd-capline[data-c="0"],
+  .wd-overlay .wd-app[data-step="1"] ~ .wd-prog ~ .wd-cap .wd-capline[data-c="1"],
+  .wd-overlay .wd-app[data-step="2"] ~ .wd-prog ~ .wd-cap .wd-capline[data-c="2"]{opacity:1;transform:translateY(0);}
+  .wd-cta{display:flex;justify-content:center;gap:10px;padding:14px;background:#0b0b10;}
+  .wd-cta a{padding:11px 26px;border-radius:11px;font-size:13px;font-weight:700;text-decoration:none;font-family:'Syne',sans-serif;transition:transform .2s;}
+  body.ar .wd-cta a{font-family:'Cairo',sans-serif;}
+  .wd-cta .p{background:var(--primary);color:#000;box-shadow:0 0 30px rgba(125,211,252,.25);}
+  .wd-cta .g{background:transparent;color:#fff;border:1px solid #2a2a36;}
+  .wd-cta a:hover{transform:translateY(-2px);}
+
+  @media (max-width:720px){
+    .wd-side{display:none;}
+    .wd-app{height:486px;}
+    .wd-stats{grid-template-columns:1fr 1fr;}
+    .wd-charts{grid-template-columns:1fr;}
+    .wd-charts .wd-card:last-child{display:none;}
+    .wd-conv{grid-template-columns:1fr;}
+    .wd-clist{display:none;}
+    .wd-grid{grid-template-columns:1fr 1fr;}
+    .wd-spills{grid-template-columns:1fr 1fr 1fr;}
+    .wd-spill{flex-direction:column;text-align:center;gap:4px;padding:11px 6px;}
+    .wd-search{display:none;}
+  }
+</style>
+
+<div class="wd-overlay" id="wdOverlay" role="dialog" aria-modal="true" aria-label="Waslat product demo">
+  <div class="wd-backdrop" data-wd-close></div>
+  <div class="wd-dialog">
+    <button class="wd-close" data-wd-close aria-label="Close demo">&#10005;</button>
+    <div class="wd-window">
+      <div class="wd-bar">
+        <span class="wd-dot r"></span><span class="wd-dot y"></span><span class="wd-dot g"></span>
+        <span class="wd-urlpill">app.waslat.io</span>
+      </div>
+
+      <!-- APP FRAME -->
+      <div class="wd-app" data-step="0" id="wdApp">
+        <!-- SIDEBAR -->
+        <aside class="wd-side">
+          <div class="wd-brand"><div class="wd-brandlogo">W</div><div class="wd-brandtxt"><b>Waslat</b><span class="en-only">ACTIVE VIEW</span><span class="ar-only">العرض النشط</span></div></div>
+          <div class="wd-nav" data-nav="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="en-only">Dashboard</span><span class="ar-only">لوحة التحكم</span></div>
+          <div class="wd-nav" data-nav="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span class="en-only">CRM &amp; Conversations</span><span class="ar-only">المحادثات والعملاء</span></div>
+          <div class="wd-nav" data-nav="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span class="en-only">Marketing</span><span class="ar-only">التسويق</span></div>
+          <div class="wd-nav" data-nav="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span class="en-only">Calendar &amp; Bookings</span><span class="ar-only">التقويم والحجوزات</span></div>
+          <div class="wd-nav" data-nav="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span class="en-only">Operations</span><span class="ar-only">العمليات</span></div>
+          <div class="wd-nav" data-nav="5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 7h14M5 7l-2.5 6a3 3 0 0 0 5 0L5 7zm14 0l-2.5 6a3 3 0 0 0 5 0L19 7z"/></svg><span class="en-only">Legal</span><span class="ar-only">الشؤون القانونية</span></div>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="wd-main">
+          <div class="wd-top">
+            <span class="wd-ttl" data-ttl="0"><span class="en-only">Dashboard</span><span class="ar-only">لوحة التحكم</span></span>
+            <span class="wd-ttl" data-ttl="1" style="display:none"><span class="en-only">Conversations</span><span class="ar-only">المحادثات</span></span>
+            <span class="wd-ttl" data-ttl="2" style="display:none"><span class="en-only">Social Media</span><span class="ar-only">وسائل التواصل</span></span>
+            <span class="wd-search">🔍 <span class="en-only">Search…</span><span class="ar-only">بحث…</span></span>
+            <span class="wd-globe">🌐 <span class="en-only">العربية</span><span class="ar-only">English</span></span>
+            <span class="wd-bell">🔔</span>
+          </div>
+
+          <div class="wd-canvas">
+            <!-- PANE 0: DASHBOARD -->
+            <div class="wd-pane" data-p="0">
+              <div class="wd-hello"><span class="en-only">FRIDAY, JUNE 26, 2026</span><span class="ar-only">الجمعة، 26 يونيو 2026</span></div>
+              <div class="wd-greet"><span class="en-only">Good day, Elias 👋</span><span class="ar-only">يوم سعيد، إلياس 👋</span></div>
+              <div class="wd-greetsub"><span class="en-only">Here's what's happening with your business today.</span><span class="ar-only">إليك ما يحدث في عملك اليوم.</span></div>
+              <div class="wd-stats">
+                <div class="wd-card"><div class="wd-cico" style="background:#eef2ff">👥</div><div class="wd-clab"><span class="en-only">TOTAL CONTACTS</span><span class="ar-only">إجمالي العملاء</span></div><div class="wd-cnum" data-count="330">0</div></div>
+                <div class="wd-card"><div class="wd-cico" style="background:#ecfdf3">💬</div><div class="wd-clab"><span class="en-only">CONVERSATIONS</span><span class="ar-only">المحادثات</span></div><div class="wd-cnum" data-count="1135">0</div><div class="wd-csub"><span class="en-only">1,198 unread</span><span class="ar-only">1,198 غير مقروءة</span></div></div>
+                <div class="wd-card"><div class="wd-cico" style="background:#fef3f2">🎯</div><div class="wd-clab"><span class="en-only">OPEN OPPORTUNITIES</span><span class="ar-only">الفرص المفتوحة</span></div><div class="wd-cnum" data-count="33433" data-prefix="SAR ">0</div><div class="wd-csub"><span class="en-only">2 active</span><span class="ar-only">2 نشطة</span></div></div>
+                <div class="wd-card"><div class="wd-cico" style="background:#fff7ed">📅</div><div class="wd-clab"><span class="en-only">SCHEDULED POSTS</span><span class="ar-only">منشورات مجدولة</span></div><div class="wd-cnum" data-count="12">0</div><div class="wd-csub"><span class="en-only">Next 7 days</span><span class="ar-only">آخر 7 أيام</span></div></div>
+              </div>
+              <div class="wd-charts">
+                <div class="wd-card">
+                  <div class="wd-chartt"><span class="en-only">Conversations by Platform</span><span class="ar-only">المحادثات حسب المنصة</span></div>
+                  <div class="wd-charts2"><span class="en-only">Last 30 days</span><span class="ar-only">آخر 30 يوماً</span></div>
+                  <div class="wd-donutwrap">
+                    <div class="wd-donut"></div>
+                    <div class="wd-leg">
+                      <div class="wd-legi"><span class="wd-legd" style="background:#1877F2"></span>Facebook</div>
+                      <div class="wd-legi"><span class="wd-legd" style="background:#E4405F"></span>Instagram</div>
+                      <div class="wd-legi"><span class="wd-legd" style="background:#25D366"></span>WhatsApp</div>
+                      <div class="wd-legi"><span class="wd-legd" style="background:#cbd5e1"></span><span class="en-only">Email</span><span class="ar-only">البريد</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wd-card">
+                  <div class="wd-chartt"><span class="en-only">Contact Growth</span><span class="ar-only">نمو العملاء</span></div>
+                  <div class="wd-charts2"><span class="en-only">Last 12 months · 330 new</span><span class="ar-only">آخر 12 شهراً · 330 جديد</span></div>
+                  <div class="wd-bars">
+                    <div class="wd-bar" style="--h:18%"></div><div class="wd-bar" style="--h:26%"></div><div class="wd-bar" style="--h:22%"></div><div class="wd-bar" style="--h:34%"></div><div class="wd-bar" style="--h:30%"></div><div class="wd-bar" style="--h:44%"></div><div class="wd-bar" style="--h:40%"></div><div class="wd-bar" style="--h:56%"></div><div class="wd-bar" style="--h:52%"></div><div class="wd-bar" style="--h:66%"></div><div class="wd-bar" style="--h:60%"></div><div class="wd-bar tall" style="--h:100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANE 1: CONVERSATIONS -->
+            <div class="wd-pane" data-p="1">
+              <div class="wd-conv">
+                <div class="wd-clist">
+                  <div class="wd-chips"><span class="wd-chip on"><span class="en-only">All</span><span class="ar-only">الكل</span></span><span class="wd-chip">WhatsApp</span><span class="wd-chip">Facebook</span></div>
+                  <div class="wd-conv-item on">
+                    <div class="wd-cav">EH<span class="wd-cbadge" style="background:#1877F2"><svg viewBox="0 0 24 24" fill="#fff"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-1.9.9-1.9 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span></div>
+                    <div class="wd-cmeta"><div class="wd-cname"><span class="en-only">Elias Hamza</span><span class="ar-only">إلياس حمزة</span></div><div class="wd-cprev"><span class="en-only">Is the offer still available?</span><span class="ar-only">هل العرض لا يزال متاحاً؟</span></div></div>
+                  </div>
+                  <div class="wd-conv-item">
+                    <div class="wd-cav">TA<span class="wd-cbadge" style="background:#25D366"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg></span></div>
+                    <div class="wd-cmeta"><div class="wd-cname"><span class="en-only">Tariq Ali</span><span class="ar-only">طارق علي</span></div><div class="wd-cprev"><span class="en-only">Do you ship to Riyadh?</span><span class="ar-only">هل تشحنون إلى الرياض؟</span></div></div>
+                  </div>
+                  <div class="wd-conv-item">
+                    <div class="wd-cav">LH<span class="wd-cbadge" style="background:#E4405F"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="9"/></svg></span></div>
+                    <div class="wd-cmeta"><div class="wd-cname"><span class="en-only">Layla H.</span><span class="ar-only">ليلى حسن</span></div><div class="wd-cprev"><span class="en-only">Loved the new collection!</span><span class="ar-only">أحببت التشكيلة الجديدة!</span></div></div>
+                  </div>
+                  <div class="wd-conv-item">
+                    <div class="wd-cav">ZA<span class="wd-cbadge" style="background:#0088cc"><svg viewBox="0 0 24 24" fill="#fff"><path d="M22 3 2 11l6 2 2 6 3-4 5 4z"/></svg></span></div>
+                    <div class="wd-cmeta"><div class="wd-cname"><span class="en-only">Zaid A.</span><span class="ar-only">زيد أحمد</span></div><div class="wd-cprev"><span class="en-only">Thanks! 🙏</span><span class="ar-only">شكراً لك! 🙏</span></div></div>
+                  </div>
+                </div>
+                <div class="wd-chat">
+                  <div class="wd-chathdr">
+                    <div class="wd-cav" style="width:30px;height:30px">EH</div>
+                    <div><div class="wd-chatname"><span class="en-only">Elias Hamza</span><span class="ar-only">إلياس حمزة</span></div><div class="wd-chattag">f <span class="en-only">FACEBOOK</span><span class="ar-only">فيسبوك</span></div></div>
+                    <span class="wd-resolved"><span class="en-only">RESOLVED</span><span class="ar-only">تم الحل</span></span>
+                  </div>
+                  <div class="wd-cmsgs">
+                    <div class="wd-b wd-bi"><span class="en-only">Hi! Is the Ramadan offer still available? 🌙</span><span class="ar-only">مرحباً! هل عرض رمضان لا يزال متاحاً؟ 🌙</span></div>
+                    <div class="wd-b wd-bo"><span class="en-only">Yes! It runs until Friday — want me to reserve it for you? 🎉</span><span class="ar-only">نعم! مستمر حتى الجمعة — أحجزه لك؟ 🎉</span></div>
+                  </div>
+                  <div class="wd-ai">
+                    <div class="wd-ailab">✨ <span class="en-only">AI Suggested Replies</span><span class="ar-only">ردود مقترحة بالذكاء الاصطناعي</span></div>
+                    <div class="wd-aichips">
+                      <span class="wd-aichip"><span class="en-only">Welcome! 👋</span><span class="ar-only">أهلاً وسهلاً! 👋</span></span>
+                      <span class="wd-aichip"><span class="en-only">Sure, how can I help?</span><span class="ar-only">كيف يمكنني مساعدتك؟</span></span>
+                      <span class="wd-aichip"><span class="en-only">Thanks for reaching out! 🎉</span><span class="ar-only">شكراً لتواصلك! 🎉</span></span>
+                    </div>
+                  </div>
+                  <div class="wd-composer">
+                    <div class="wd-cinput"><span class="en-only">Type a reply…</span><span class="ar-only">اكتب رداً…</span></div>
+                    <div class="wd-csend"><svg viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANE 2: SOCIAL -->
+            <div class="wd-pane" data-p="2">
+              <div class="wd-spills">
+                <div class="wd-spill"><div class="wd-spico" style="background:#eafaf0;color:#16a34a">✓</div><div><div class="wd-spnum">8</div><div class="wd-splab"><span class="en-only">Connected</span><span class="ar-only">متصلة</span></div></div></div>
+                <div class="wd-spill"><div class="wd-spico" style="background:#eef2ff;color:#6366f1">📅</div><div><div class="wd-spnum">0</div><div class="wd-splab"><span class="en-only">Scheduled posts</span><span class="ar-only">منشورات مجدولة</span></div></div></div>
+                <div class="wd-spill"><div class="wd-spico" style="background:#fff7ed;color:#f59e0b">🌐</div><div><div class="wd-spnum">10</div><div class="wd-splab"><span class="en-only">Platforms</span><span class="ar-only">منصات</span></div></div></div>
+              </div>
+              <div class="wd-grid">
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(24,119,242,.12)"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-1.9.9-1.9 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span><span class="wd-pname">Facebook</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(228,64,95,.12)"><svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.2.1 4.7 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7C24 15.7 24 15.3 24 12s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></span><span class="wd-pname">Instagram</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(0,0,0,.06)"><svg viewBox="0 0 24 24" fill="#111"><path d="M12.5.02c1.3-.02 2.6-.01 3.9-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="wd-pname">TikTok</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(10,102,194,.12)"><svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.3v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.5V9H7v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.5C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></span><span class="wd-pname">LinkedIn</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(255,0,0,.1)"><svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></span><span class="wd-pname">YouTube</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(66,133,244,.12)"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.5 12.2c0-.8-.1-1.6-.2-2.3H12v4.5h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-2 3.2-4.9 3.2-8.2z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.6-2.7c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.1-1.9-6-4.4H2.3v2.8A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M6 14.4a6.6 6.6 0 0 1 0-4.2V7.4H2.3a11 11 0 0 0 0 9.8L6 14.4z"/><path fill="#EA4335" d="M12 5.5c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 0 0 12 1a11 11 0 0 0-9.7 6l3.7 2.8c.9-2.5 3.2-4.3 6-4.3z"/></svg></span><span class="wd-pname"><span class="en-only">Google</span><span class="ar-only">جوجل</span></span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(0,136,204,.12)"><svg viewBox="0 0 24 24" fill="#0088cc"><path d="M22 3 2 11l6 2 2 6 3-4 5 4z"/></svg></span><span class="wd-pname">Telegram</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+                <div class="wd-pcard"><div class="wd-prow"><span class="wd-pico" style="background:rgba(37,211,102,.12)"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg></span><span class="wd-pname">WhatsApp</span></div><span class="wd-pconn">✓ <span class="en-only">Connected</span><span class="ar-only">متصل</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wd-prog"><i id="wdProg"></i></div>
+      <div class="wd-cap">
+        <div class="wd-capline" data-c="0"><span class="en-only">Your whole business, one dashboard — contacts, conversations, sales.</span><span class="ar-only">كل عملك في لوحة واحدة — عملاء، محادثات، ومبيعات.</span></div>
+        <div class="wd-capline" data-c="1"><span class="en-only">Every message, every channel — one inbox, with AI replies.</span><span class="ar-only">كل رسالة، كل قناة — صندوق وارد واحد، بردود ذكية.</span></div>
+        <div class="wd-capline" data-c="2"><span class="en-only">Connect 10+ platforms. Every Channel. Zero Chaos.</span><span class="ar-only">اربط أكثر من 10 منصات. كل القنوات. بلا فوضى.</span></div>
+      </div>
+      <div class="wd-cta">
+        <a class="p" href="https://app.waslat.io/register"><span class="en-only">Start Free →</span><span class="ar-only">ابدأ مجاناً ←</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay=document.getElementById('wdOverlay');
+  if(!overlay) return;
+  var app=document.getElementById('wdApp');
+  var prog=document.getElementById('wdProg');
+  var btn=document.querySelector('[data-demo]');
+  var navs=app.querySelectorAll('.wd-nav');
+  var titles=app.querySelectorAll('.wd-ttl');
+  var NAVMAP=[0,1,2];
+  var DUR=[4600,5200,4400];
+  var step=0,timer=null;
+
+  function counters(){
+    app.querySelectorAll('[data-count]').forEach(function(el){
+      var target=+el.getAttribute('data-count'),pre=el.getAttribute('data-prefix')||'';
+      var t0=null,D=1400;
+      function tick(ts){
+        if(!t0)t0=ts;var p=Math.min((ts-t0)/D,1);
+        var e=1-Math.pow(1-p,3);
+        el.textContent=pre+Math.round(target*e).toLocaleString('en-US');
+        if(p<1)requestAnimationFrame(tick);
+      }
+      el.textContent=pre+'0';requestAnimationFrame(tick);
+    });
+  }
+  function setStep(n){
+    step=n;
+    app.setAttribute('data-step',n);
+    navs.forEach(function(el,i){el.classList.toggle('on',i===NAVMAP[n]);});
+    titles.forEach(function(el){el.style.display=(+el.getAttribute('data-ttl')===n)?'':'none';});
+    prog.style.transition='none';prog.style.width='0%';
+    void prog.offsetWidth;
+    prog.style.transition='width '+DUR[n]+'ms linear';
+    prog.style.width='100%';
+    if(n===0)counters();
+    timer=setTimeout(function(){setStep((n+1)%3);},DUR[n]);
+  }
+  function play(){clearTimeout(timer);setStep(0);}
+  function stop(){clearTimeout(timer);prog.style.transition='none';prog.style.width='0%';}
+  function open(){overlay.classList.add('open');document.body.style.overflow='hidden';play();}
+  function close(){overlay.classList.remove('open');document.body.style.overflow='';stop();}
+
+  if(btn)btn.addEventListener('click',function(e){e.preventDefault();open();});
+  overlay.querySelectorAll('[data-wd-close]').forEach(function(el){el.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('open'))close();});
+})();
+</script>
+<!-- ===== /WATCH DEMO MODAL ===== -->
+
 </body>
 </html>
