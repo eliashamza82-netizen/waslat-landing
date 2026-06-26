@@ -20,11 +20,13 @@ const T = AR ? {
   bubble: '💬', title: 'الدردشة مع واسلات', name: 'الاسم', contact: 'البريد الإلكتروني أو الهاتف',
   start: 'ابدأ المحادثة', placeholder: 'اكتب رسالتك…', send: 'إرسال',
   needName: 'الرجاء إدخال اسمك', needContact: 'الرجاء إدخال بريد إلكتروني أو رقم هاتف صحيح',
+  error: 'حدث خطأ ما. حاول مرة أخرى.',
   away: 'فريقنا غير متصل الآن — سنرد عليك عبر بريدك الإلكتروني.',
 } : {
   bubble: '💬', title: 'Chat with Waslat', name: 'Name', contact: 'Email or phone',
   start: 'Start chat', placeholder: 'Type your message…', send: 'Send',
   needName: 'Please enter your name', needContact: 'Please enter a valid email or phone',
+  error: 'Something went wrong. Please try again.',
   away: "We're away right now — we'll reply to your email.",
 };
 
@@ -61,6 +63,7 @@ function validContact(v) {
 }
 
 let convId = null;
+let unsubscribe = null;
 $('#wc-form').onsubmit = async (e) => {
   e.preventDefault();
   const name = $('#wc-name').value.trim();
@@ -87,14 +90,15 @@ $('#wc-form').onsubmit = async (e) => {
     $('#wc-body').appendChild(note);
     subscribe();
   } catch (e2) {
-    err.textContent = T.needContact; // generic retry hint
+    err.textContent = T.error;
     console.error('[webchat]', e2);
   }
 };
 
 function subscribe() {
+  if (unsubscribe) unsubscribe();
   const q = query(collection(db, 'webchatConversations', convId, 'messages'), orderBy('createdAt', 'asc'));
-  onSnapshot(q, (snap) => {
+  unsubscribe = onSnapshot(q, (snap) => {
     const body = $('#wc-body');
     body.querySelectorAll('.wc-msg').forEach((n) => n.remove());
     snap.docs.forEach((d) => {
@@ -113,12 +117,17 @@ async function sendMsg() {
   const text = input.value.trim();
   if (!text || !convId) return;
   input.value = '';
-  await addDoc(collection(db, 'webchatConversations', convId, 'messages'), {
-    sender: 'visitor', text, createdAt: serverTimestamp(),
-  });
-  await updateDoc(doc(db, 'webchatConversations', convId), {
-    lastMessageAt: serverTimestamp(), lastMessagePreview: text, unreadForAgent: true,
-  });
+  try {
+    await addDoc(collection(db, 'webchatConversations', convId, 'messages'), {
+      sender: 'visitor', text, createdAt: serverTimestamp(),
+    });
+    await updateDoc(doc(db, 'webchatConversations', convId), {
+      lastMessageAt: serverTimestamp(), lastMessagePreview: text, unreadForAgent: true,
+    });
+  } catch (e) {
+    console.error('[webchat] send failed', e);
+    input.value = text;
+  }
 }
 $('#wc-send').onclick = sendMsg;
 $('#wc-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMsg(); });
