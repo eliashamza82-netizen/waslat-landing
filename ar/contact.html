@@ -298,5 +298,22 @@
 </script>
 <link rel="stylesheet" href="/chat-widget.css">
 <script type="module" src="/chat-widget.js"></script>
+<style>.nav-dd.open .nav-dd-menu{opacity:1 !important;visibility:visible !important;transform:translateY(0) !important;}</style>
+<script>
+(function(){
+  var dds=document.querySelectorAll('.nav-dd');
+  dds.forEach(function(dd){
+    var t=dd.querySelector('[aria-haspopup]');
+    if(!t)return;
+    t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
+      dds.forEach(function(o){if(o!==dd)o.classList.remove('open');});
+      dd.classList.toggle('open');});
+  });
+  document.addEventListener('click',function(e){
+    document.querySelectorAll('.nav-dd.open').forEach(function(dd){if(!dd.contains(e.target))dd.classList.remove('open');});
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-dd.open').forEach(function(dd){dd.classList.remove('open');});});
+})();
+</script>
 </body>
 </html>
