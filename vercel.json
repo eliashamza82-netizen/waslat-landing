@@ -2,9 +2,33 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/docs", "destination": "/docs.html" },
-    { "source": "/support", "destination": "/support.html" }
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/docs",
+      "destination": "/docs.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/support.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/opportunities",
+      "destination": "/crm",
+      "permanent": true
+    },
+    {
+      "source": "/ar/opportunities",
+      "destination": "/ar/crm",
+      "permanent": true
+    }
   ]
 }

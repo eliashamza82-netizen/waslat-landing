@@ -12,7 +12,6 @@
 
 ### Sales
 - [CRM](https://waslat.io/crm): Arabic-first customer relationship management — contacts, pipeline and conversations.
-- [Opportunities & Deals](https://waslat.io/opportunities): Visual sales pipeline, forecasting and follow-ups.
 - [Point of Sale](https://waslat.io/pos): ZATCA-compliant cashier (POS) with inventory and multi-branch.
 
 ### Operations
@@ -25,6 +24,9 @@
 - [Accounting](https://waslat.io/accounting): Accounting and ZATCA e-invoicing — VAT and financial reports.
 - [Waslat HR](https://waslat.io/hr): HR and payroll for Saudi Arabia (GOSI, WPS, Qiwa, Mudad, end-of-service).
 - [AI Agents](https://waslat.io/ai-agents): AI agents that answer customers and automate work in Arabic, with full logs.
+
+## Free Tools
+- [End-of-Service Gratuity Calculator](https://waslat.io/end-of-service-calculator): Free Saudi end-of-service (مكافأة نهاية الخدمة) calculator per the Labor Law.
 
 ## Resources
 - [Blog](https://waslat.io/blog): Arabic-first guides on HR, WhatsApp, marketing, sales and Saudi compliance.
