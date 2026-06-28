@@ -26,6 +26,25 @@
   nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;background:rgba(5,5,8,0.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
   .nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text);}
   .nav-logo span{color:var(--primary);}
+  /* Products dropdown */
+  .nav-dd { position:relative; }
+  .nav-dd > a { display:inline-flex; align-items:center; gap:5px; cursor:pointer; color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color .2s; }
+  .nav-dd > a:hover { color:var(--text); }
+  .nav-dd > a::after { content:"\25BE"; font-size:9px; opacity:.65; }
+  .nav-dd::before { content:""; position:absolute; top:100%; left:0; right:0; height:18px; }
+  .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:16px; min-width:248px; background:rgba(12,12,18,0.98); backdrop-filter:blur(24px); border:1px solid var(--border); border-radius:14px; padding:8px; box-shadow:0 22px 54px rgba(0,0,0,0.55); opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .2s ease, transform .2s ease, visibility .2s; z-index:300; }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+  [dir="rtl"] .nav-dd-menu { left:auto; right:0; }
+  .nav-dd-menu a { display:flex; flex-direction:column; gap:3px; padding:11px 13px; border-radius:9px; color:var(--text)!important; font-size:13.5px; font-weight:600; text-decoration:none; }
+  .nav-dd-menu a:hover { background:rgba(125,211,252,0.10); }
+  .nav-dd-menu .dd-sub { font-size:11.5px; font-weight:400; color:var(--text-secondary); }
+  /* 3-col footer */
+  .foot-cols { display:flex; gap:48px; flex-wrap:wrap; }
+  .foot-col { display:flex; flex-direction:column; gap:11px; }
+  .foot-h { font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:.09em; margin-bottom:2px; }
+  [dir="rtl"] .foot-h { letter-spacing:0; }
+  .foot-col a { color:var(--text); text-decoration:none; font-size:13px; opacity:.82; transition:color .2s,opacity .2s; }
+  .foot-col a:hover { color:var(--primary); opacity:1; }
   .nav-right{display:flex;gap:12px;align-items:center;}
   .lang-toggle{display:flex;align-items:center;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:100px;padding:3px;gap:2px;}
   .lang-btn{padding:5px 14px;border-radius:100px;border:none;background:transparent;color:var(--text-secondary);font-size:12px;font-weight:700;cursor:none;transition:all 0.2s;font-family:inherit;text-decoration:none;display:inline-block;}
@@ -76,7 +95,7 @@
   .platform-card p{font-size:12.5px;margin:0;color:var(--text-secondary);line-height:1.6;}
   .alert{background:rgba(125,211,252,0.06);border:1px solid rgba(125,211,252,0.2);border-radius:12px;padding:16px 20px;margin:20px 0;}
   .alert p{margin:0;color:var(--primary);font-size:14px;}
-  footer{border-top:1px solid var(--border);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,13,20,0.7);backdrop-filter:blur(8px);position:relative;z-index:1;flex-wrap:wrap;gap:20px;}
+  footer{border-top:1px solid var(--border);padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;background:rgba(13,13,20,0.7);backdrop-filter:blur(8px);position:relative;z-index:1;flex-wrap:wrap;gap:20px;}
   .foot-logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;text-decoration:none;color:var(--text);}
   .foot-logo span{color:var(--primary);}
   .foot-links{display:flex;gap:24px;list-style:none;}
@@ -123,6 +142,14 @@
 <nav>
   <a href="https://waslat.io" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="eager"></a>
   <div class="nav-right">
+      <div class="nav-dd">
+        <a href="/hr" aria-haspopup="true">Products</a>
+        <div class="nav-dd-menu">
+          <a href="/">Social Media Management<span class="dd-sub">Schedule & manage every channel</span></a>
+          <a href="/hr">Waslat HR<span class="dd-sub">Payroll, attendance & Saudi compliance</span></a>
+        </div>
+      </div>
+      <a href="/blog" style="color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;">Blog</a>
     <div class="lang-toggle">
       <a class="lang-btn active" id="btnEn" href="/docs" hreflang="en" aria-label="English">EN</a>
       <a class="lang-btn" id="btnAr" href="/ar/docs" hreflang="ar" aria-label="العربية">ع</a>
@@ -293,12 +320,25 @@
 
 <footer>
   <a href="https://waslat.io" class="foot-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></a>
-  <ul class="foot-links">
-    <li><a href="/support">Support</a></li>
-    <li><a href="https://waslat.io/privacy">Privacy</a></li>
-    <li><a href="https://waslat.io/terms">Terms</a></li>
-    <li><a href="https://waslat.io">Home</a></li>
-  </ul>
+  <nav class="foot-cols" aria-label="Footer">
+    <div class="foot-col">
+      <h4 class="foot-h">Products</h4>
+      <a href="/">Social Media Management</a>
+      <a href="/hr">Waslat HR</a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h">Company</h4>
+      <a href="/contact">Contact</a>
+      <a href="/blog">Blog</a>
+      <a href="/docs.html">Docs</a>
+      <a href="/support.html">Support</a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h">Legal</h4>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+  </nav>
   <div class="foot-copy">© 2026 Waslat</div>
 </footer>
 

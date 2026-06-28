@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.className+=' js';</script>
 
 <!-- ══════════════════════════════════════════════
      PRIMARY SEO — Edit these for your brand
@@ -176,6 +177,24 @@
   .nav-links { display:flex; gap:32px; list-style:none; }
   .nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.2s; }
   .nav-links a:hover { color:var(--white); }
+  /* Products dropdown */
+  .nav-dd { position:relative; }
+  .nav-dd > a { display:inline-flex; align-items:center; gap:5px; cursor:pointer; }
+  .nav-dd > a::after { content:"\25BE"; font-size:9px; opacity:.65; }
+  .nav-dd::before { content:""; position:absolute; top:100%; left:0; right:0; height:18px; }
+  .nav-dd-menu {
+    position:absolute; top:100%; left:0; margin-top:16px; min-width:248px;
+    background:rgba(12,12,18,0.98); backdrop-filter:blur(24px);
+    border:1px solid var(--border); border-radius:14px; padding:8px;
+    box-shadow:0 22px 54px rgba(0,0,0,0.55);
+    opacity:0; visibility:hidden; transform:translateY(8px);
+    transition:opacity .2s ease, transform .2s ease, visibility .2s; z-index:300;
+  }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
+  [dir="rtl"] .nav-dd-menu { left:auto; right:0; }
+  .nav-dd-menu a { display:flex; flex-direction:column; gap:3px; padding:11px 13px; border-radius:9px; color:var(--white)!important; font-size:13.5px; font-weight:600; }
+  .nav-dd-menu a:hover { background:rgba(125,211,252,0.10); color:var(--white)!important; }
+  .nav-dd-menu .dd-sub { font-size:11.5px; font-weight:400; color:var(--text-secondary); }
   .nav-right { display:flex; gap:12px; align-items:center; }
 
   /* Language toggle */
@@ -456,13 +475,16 @@
   .cta-pill::before { content:'✓'; color:var(--primary); font-weight:800; }
 
   /* FOOTER */
-  footer { border-top:1px solid var(--border); padding:36px 60px; display:flex; align-items:center; justify-content:space-between; background:var(--bg-card); flex-wrap:wrap; gap:20px; }
+  footer { border-top:1px solid var(--border); padding:48px 60px 36px; display:flex; align-items:flex-start; justify-content:space-between; background:var(--bg-card); flex-wrap:wrap; gap:32px; }
   .foot-logo { display:inline-flex; align-items:center; }
   .foot-logo img { height:32px; width:auto; object-fit:contain; display:block; }
-  .foot-links { display:flex; gap:24px; list-style:none; }
-  .foot-links a { color:var(--white); text-decoration:none; font-size:12px; transition:color 0.2s; }
-  body.ar .foot-links a { font-family:'Cairo',sans-serif; }
-  .foot-links a:hover { color:var(--primary); }
+  .foot-cols { display:flex; gap:56px; flex-wrap:wrap; }
+  .foot-col { display:flex; flex-direction:column; gap:11px; }
+  .foot-h { font-size:11px; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:.09em; margin-bottom:2px; }
+  body.ar .foot-h, [dir="rtl"] .foot-h { font-family:'Cairo',sans-serif; letter-spacing:0; }
+  .foot-col a { color:var(--white); text-decoration:none; font-size:13px; opacity:.82; transition:color .2s,opacity .2s; }
+  .foot-col a:hover { color:var(--primary); opacity:1; }
+  body.ar .foot-col a, [dir="rtl"] .foot-col a { font-family:'Cairo',sans-serif; }
   .foot-copy { font-size:12px; color:var(--white); }
   body.ar .foot-copy { font-family:'Cairo',sans-serif; }
   .foot-powered { flex-basis:100%; width:100%; text-align:center; margin-top:4px; font-size:11px; color:var(--white); opacity:0.85; }
@@ -472,8 +494,13 @@
 
   /* ANIMATIONS */
   @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
-  .reveal { opacity:0; transform:translateY(36px); transition:opacity 0.7s ease,transform 0.7s ease; }
-  .reveal.visible { opacity:1; transform:translateY(0); }
+  /* Content is visible by default. The fade-in is only applied once JS is confirmed
+     running (html.js), so if JS is blocked/slow — common in in-app browsers like
+     Instagram/WhatsApp/Facebook — the page still shows everything (full visibility). */
+  .reveal { opacity:1; transform:none; transition:opacity 0.7s ease,transform 0.7s ease; }
+  html.js .reveal { opacity:0; transform:translateY(36px); }
+  html.js .reveal.visible { opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce) { html.js .reveal { opacity:1 !important; transform:none !important; } }
   .d1{transition-delay:0.1s} .d2{transition-delay:0.2s} .d3{transition-delay:0.3s}
 
   /* Mobile */
@@ -745,9 +772,16 @@
 <nav>
   <a href="/" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="eager"></a>
   <ul class="nav-links">
+    <li class="nav-dd">
+      <a href="/hr" aria-haspopup="true"><span class="en-only">Products</span><span class="ar-only">المنتجات</span></a>
+      <div class="nav-dd-menu">
+        <a href="/"><span class="en-only">Social Media Management</span><span class="ar-only">إدارة وسائل التواصل</span><span class="dd-sub en-only">Schedule & manage every channel</span><span class="dd-sub ar-only">جدولة وإدارة جميع قنواتك</span></a>
+        <a href="/hr"><span class="en-only">Waslat HR</span><span class="ar-only">نظام الموارد البشرية</span><span class="dd-sub en-only">Payroll, attendance & Saudi compliance</span><span class="dd-sub ar-only">الرواتب والحضور والامتثال السعودي</span></a>
+      </div>
+    </li>
     <li><a href="#features"><span class="en-only">Features</span><span class="ar-only">المميزات</span></a></li>
-    <li><a href="#platforms"><span class="en-only">Platforms</span><span class="ar-only">المنصات</span></a></li>
     <li><a href="#pricing"><span class="en-only">Pricing</span><span class="ar-only">الأسعار</span></a></li>
+    <li><a href="/blog"><span class="en-only">Blog</span><span class="ar-only">المدونة</span></a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -1086,13 +1120,25 @@
 <!-- FOOTER -->
 <footer>
   <div class="foot-logo"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></div>
-  <ul class="foot-links">
-    <li><a href="/contact"><span class="en-only">Contact</span><span class="ar-only">تواصل معنا</span></a></li>
-    <li><a href="/privacy.html"><span class="en-only">Privacy</span><span class="ar-only">الخصوصية</span></a></li>
-    <li><a href="/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a></li>
-    <li><a href="/docs.html"><span class="en-only">Docs</span><span class="ar-only">التوثيق</span></a></li>
-    <li><a href="/support.html"><span class="en-only">Support</span><span class="ar-only">الدعم</span></a></li>
-  </ul>
+  <nav class="foot-cols" aria-label="Footer">
+    <div class="foot-col">
+      <h4 class="foot-h"><span class="en-only">Products</span><span class="ar-only">المنتجات</span></h4>
+      <a href="/"><span class="en-only">Social Media Management</span><span class="ar-only">إدارة وسائل التواصل</span></a>
+      <a href="/hr"><span class="en-only">Waslat HR</span><span class="ar-only">نظام الموارد البشرية</span></a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h"><span class="en-only">Company</span><span class="ar-only">الشركة</span></h4>
+      <a href="/contact"><span class="en-only">Contact</span><span class="ar-only">تواصل معنا</span></a>
+      <a href="/blog"><span class="en-only">Blog</span><span class="ar-only">المدونة</span></a>
+      <a href="/docs.html"><span class="en-only">Docs</span><span class="ar-only">التوثيق</span></a>
+      <a href="/support.html"><span class="en-only">Support</span><span class="ar-only">الدعم</span></a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h"><span class="en-only">Legal</span><span class="ar-only">القانونية</span></h4>
+      <a href="/privacy.html"><span class="en-only">Privacy</span><span class="ar-only">الخصوصية</span></a>
+      <a href="/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a>
+    </div>
+  </nav>
   <div class="foot-copy"><span class="en-only">© 2026 Waslat</span><span class="ar-only">© 2026 وصلات</span></div>
   <div class="foot-powered"><span class="en-only">Powered by <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span><span class="ar-only">مدعوم من <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span></div>
 </footer>
@@ -1131,8 +1177,16 @@
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
-  reveals.forEach(r=>obs.observe(r));
+  // Last-resort safety net (registered first): if the observer never fires, show
+  // everything anyway so no content is ever stuck invisible on mobile.
+  const revealAll = ()=>reveals.forEach(r=>r.classList.add('visible'));
+  setTimeout(revealAll, 2500);
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+    reveals.forEach(r=>obs.observe(r));
+  } else {
+    revealAll();
+  }
 
   // Counter
   const statObs = new IntersectionObserver(entries=>{
