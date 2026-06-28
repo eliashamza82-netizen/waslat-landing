@@ -238,4 +238,204 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- New product suite (CRM, Inbox, Marketing, Booking, Operations, Accounting, Opportunities, Automation, POS, Projects, AI Agents) -->
+  <url>
+    <loc>https://waslat.io/crm</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/crm"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/crm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/crm"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/crm</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/crm"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/crm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/crm"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/inbox</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/inbox"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/inbox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/inbox"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/inbox</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/inbox"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/inbox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/inbox"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/marketing</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/marketing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/marketing"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/marketing</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/marketing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/marketing"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/booking</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/booking"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/booking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/booking"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/booking</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/booking"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/booking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/booking"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/operations</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/operations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/operations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/operations"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/operations</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/operations"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/operations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/operations"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/accounting</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/accounting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/accounting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/accounting"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/accounting</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/accounting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/accounting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/accounting"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/opportunities</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/opportunities"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/opportunities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/opportunities"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/opportunities</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/opportunities"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/opportunities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/opportunities"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/automation</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/automation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/automation"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/automation</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/automation"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/automation"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/pos</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/pos"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/pos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/pos"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/pos</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/pos"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/pos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/pos"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/projects</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/projects"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/projects"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/projects</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/projects"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/projects"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ai-agents</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/ai-agents"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/ai-agents</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/ai-agents"/>
+  </url>
+
 </urlset>

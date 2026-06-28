@@ -123,6 +123,14 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
 .cursor,.cursor-ring{display:none !important;}
 </style>
 <style id="nav-zfix">nav{z-index:9000 !important;} .nav-dd-menu{z-index:9001 !important;}</style>
+<style id="mega-css">
+  .nav-mega-menu{min-width:680px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px 12px;padding:16px;}
+  .nav-mega-menu .mega-col{display:flex;flex-direction:column;gap:1px;}
+  .nav-mega-menu .mega-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-muted);padding:8px 10px 4px;}
+  body.ar .nav-mega-menu .mega-h,[dir="rtl"] .nav-mega-menu .mega-h{letter-spacing:0;font-family:'Cairo',sans-serif;}
+  .nav-mega-menu a{flex-direction:row;font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:8px;}
+  @media(max-width:900px){.nav-mega-menu{min-width:520px;grid-template-columns:repeat(2,1fr);}}
+</style>
 </head>
 <body class="ar" dir="rtl">
 <div class="page-bg">
@@ -145,11 +153,34 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
   <div class="nav-right">
       <div class="nav-dd">
         <a role="button" tabindex="0" aria-haspopup="true">المنتجات</a>
-        <div class="nav-dd-menu">
-          <a href="/ar/social">إدارة وسائل التواصل<span class="dd-sub">جدولة وإدارة جميع قنواتك</span></a>
-          <a href="/ar/whatsapp">واتساب بيزنس API<span class="dd-sub">API رسمي، رسائل جماعية وشات بوت</span></a>
-        <a href="/ar/hr">نظام الموارد البشرية<span class="dd-sub">الرواتب والحضور والامتثال السعودي</span></a>
+        <div class="nav-dd-menu nav-mega-menu">
+        <div class="mega-col">
+          <div class="mega-h"><span class="en-only">Communication</span><span class="ar-only">التواصل</span></div>
+          <a href="/ar/inbox"><span class="en-only">Omnichannel Inbox</span><span class="ar-only">المحادثات الموحّدة</span></a>
+          <a href="/ar/whatsapp"><span class="en-only">WhatsApp Business API</span><span class="ar-only">واتساب بيزنس API</span></a>
+          <a href="/ar/social"><span class="en-only">Social Media</span><span class="ar-only">وسائل التواصل</span></a>
+          <a href="/ar/marketing"><span class="en-only">Marketing</span><span class="ar-only">التسويق</span></a>
         </div>
+        <div class="mega-col">
+          <div class="mega-h"><span class="en-only">Sales</span><span class="ar-only">المبيعات</span></div>
+          <a href="/ar/crm"><span class="en-only">CRM</span><span class="ar-only">إدارة العملاء</span></a>
+          <a href="/ar/opportunities"><span class="en-only">Opportunities</span><span class="ar-only">الفرص والصفقات</span></a>
+          <a href="/ar/pos"><span class="en-only">Point of Sale</span><span class="ar-only">نقاط البيع</span></a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h"><span class="en-only">Operations</span><span class="ar-only">العمليات</span></div>
+          <a href="/ar/projects"><span class="en-only">Projects</span><span class="ar-only">المشاريع</span></a>
+          <a href="/ar/operations"><span class="en-only">Operations</span><span class="ar-only">إدارة العمليات</span></a>
+          <a href="/ar/booking"><span class="en-only">Calendar & Booking</span><span class="ar-only">الحجوزات والمواعيد</span></a>
+          <a href="/ar/automation"><span class="en-only">Automation</span><span class="ar-only">الأتمتة</span></a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-h"><span class="en-only">Business & AI</span><span class="ar-only">الأعمال والذكاء</span></div>
+          <a href="/ar/accounting"><span class="en-only">Accounting</span><span class="ar-only">المحاسبة</span></a>
+          <a href="/ar/hr"><span class="en-only">Waslat HR</span><span class="ar-only">الموارد البشرية</span></a>
+          <a href="/ar/ai-agents"><span class="en-only">AI Agents</span><span class="ar-only">وكلاء الذكاء الاصطناعي</span></a>
+        </div>
+      </div>
       </div>
       <a href="/ar/blog" style="color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;">المدونة</a>
     <div class="lang-toggle">
@@ -258,22 +289,42 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
   <a href="https://waslat.io/ar" class="foot-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></a>
   <div class="foot-cols" aria-label="Footer" role="navigation">
     <div class="foot-col">
-      <h4 class="foot-h">المنتجات</h4>
-      <a href="/ar/social">إدارة وسائل التواصل</a>
-      <a href="/ar/whatsapp">واتساب بيزنس API</a>
-      <a href="/ar/hr">نظام الموارد البشرية</a>
+      <h4 class="foot-h"><span class="en-only">Communication</span><span class="ar-only">التواصل</span></h4>
+      <a href="/ar/inbox"><span class="en-only">Omnichannel Inbox</span><span class="ar-only">المحادثات الموحّدة</span></a>
+      <a href="/ar/whatsapp"><span class="en-only">WhatsApp Business API</span><span class="ar-only">واتساب بيزنس API</span></a>
+      <a href="/ar/social"><span class="en-only">Social Media</span><span class="ar-only">وسائل التواصل</span></a>
+      <a href="/ar/marketing"><span class="en-only">Marketing</span><span class="ar-only">التسويق</span></a>
     </div>
     <div class="foot-col">
-      <h4 class="foot-h">الشركة</h4>
-      <a href="/ar/contact">تواصل معنا</a>
-      <a href="/ar/blog">المدونة</a>
-      <a href="/ar/docs.html">التوثيق</a>
-      <a href="/ar/support.html">الدعم</a>
+      <h4 class="foot-h"><span class="en-only">Sales</span><span class="ar-only">المبيعات</span></h4>
+      <a href="/ar/crm"><span class="en-only">CRM</span><span class="ar-only">إدارة العملاء</span></a>
+      <a href="/ar/opportunities"><span class="en-only">Opportunities</span><span class="ar-only">الفرص والصفقات</span></a>
+      <a href="/ar/pos"><span class="en-only">Point of Sale</span><span class="ar-only">نقاط البيع</span></a>
     </div>
     <div class="foot-col">
-      <h4 class="foot-h">القانونية</h4>
-      <a href="/ar/privacy.html">الخصوصية</a>
-      <a href="/ar/terms.html">الشروط</a>
+      <h4 class="foot-h"><span class="en-only">Operations</span><span class="ar-only">العمليات</span></h4>
+      <a href="/ar/projects"><span class="en-only">Projects</span><span class="ar-only">المشاريع</span></a>
+      <a href="/ar/operations"><span class="en-only">Operations</span><span class="ar-only">إدارة العمليات</span></a>
+      <a href="/ar/booking"><span class="en-only">Calendar & Booking</span><span class="ar-only">الحجوزات</span></a>
+      <a href="/ar/automation"><span class="en-only">Automation</span><span class="ar-only">الأتمتة</span></a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h"><span class="en-only">Business & AI</span><span class="ar-only">الأعمال والذكاء</span></h4>
+      <a href="/ar/accounting"><span class="en-only">Accounting</span><span class="ar-only">المحاسبة</span></a>
+      <a href="/ar/hr"><span class="en-only">Waslat HR</span><span class="ar-only">الموارد البشرية</span></a>
+      <a href="/ar/ai-agents"><span class="en-only">AI Agents</span><span class="ar-only">وكلاء الذكاء الاصطناعي</span></a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h"><span class="en-only">Company</span><span class="ar-only">الشركة</span></h4>
+      <a href="/ar/contact"><span class="en-only">Contact</span><span class="ar-only">تواصل معنا</span></a>
+      <a href="/ar/blog"><span class="en-only">Blog</span><span class="ar-only">المدونة</span></a>
+      <a href="/ar/docs.html"><span class="en-only">Docs</span><span class="ar-only">التوثيق</span></a>
+      <a href="/ar/support.html"><span class="en-only">Support</span><span class="ar-only">الدعم</span></a>
+    </div>
+    <div class="foot-col">
+      <h4 class="foot-h"><span class="en-only">Legal</span><span class="ar-only">القانونية</span></h4>
+      <a href="/ar/privacy.html"><span class="en-only">Privacy</span><span class="ar-only">الخصوصية</span></a>
+      <a href="/ar/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a>
     </div>
   </div>
   <div class="foot-copy">© 2026 وصلات</div>

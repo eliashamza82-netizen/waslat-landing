@@ -1,0 +1,36 @@
+# Waslat (وصلات)
+
+> Waslat is an all-in-one business platform for Saudi Arabia and the MENA region. It brings sales, communication, operations, finance and AI into one bilingual (Arabic/English) suite — built for Saudi compliance (ZATCA e-invoicing, GOSI, WPS, Qiwa, Mudad). Sign up at https://app.waslat.io/register.
+
+## Products
+
+### Communication & Marketing
+- [Omnichannel Inbox](https://waslat.io/inbox): One shared inbox for WhatsApp, Instagram, Messenger, email and live chat.
+- [WhatsApp Business API](https://waslat.io/whatsapp): Official WhatsApp Business API — broadcasts, chatbots and shared inbox (Meta Tech Provider).
+- [Social Media Management](https://waslat.io/social): Schedule, publish and analyze every social channel.
+- [Marketing](https://waslat.io/marketing): Multichannel campaigns (WhatsApp, email, SMS) and marketing automation.
+
+### Sales
+- [CRM](https://waslat.io/crm): Arabic-first customer relationship management — contacts, pipeline and conversations.
+- [Opportunities & Deals](https://waslat.io/opportunities): Visual sales pipeline, forecasting and follow-ups.
+- [Point of Sale](https://waslat.io/pos): ZATCA-compliant cashier (POS) with inventory and multi-branch.
+
+### Operations
+- [Projects](https://waslat.io/projects): Tasks, Kanban, Gantt and team collaboration.
+- [Operations](https://waslat.io/operations): Workflows, approvals and back-office process management.
+- [Calendar & Booking](https://waslat.io/booking): Online appointment booking with reminders and payments.
+- [Automation](https://waslat.io/automation): No-code workflow automation across every app.
+
+### Finance, People & AI
+- [Accounting](https://waslat.io/accounting): Accounting and ZATCA e-invoicing — VAT and financial reports.
+- [Waslat HR](https://waslat.io/hr): HR and payroll for Saudi Arabia (GOSI, WPS, Qiwa, Mudad, end-of-service).
+- [AI Agents](https://waslat.io/ai-agents): AI agents that answer customers and automate work in Arabic, with full logs.
+
+## Resources
+- [Blog](https://waslat.io/blog): Arabic-first guides on HR, WhatsApp, marketing, sales and Saudi compliance.
+- [Documentation](https://waslat.io/docs): Product documentation.
+- [Contact](https://waslat.io/contact): Talk to sales or book a demo.
+
+## Notes
+- Arabic versions of every page live under https://waslat.io/ar/ (e.g. https://waslat.io/ar/crm).
+- Sitemap: https://waslat.io/sitemap.xml
