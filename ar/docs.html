@@ -32,7 +32,7 @@
   .nav-dd > a:hover { color:var(--text); }
   .nav-dd > a::after { content:"\25BE"; font-size:9px; opacity:.65; }
   .nav-dd::before { content:""; position:absolute; top:100%; left:0; right:0; height:18px; }
-  .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:16px; min-width:248px; background:rgba(12,12,18,0.98); backdrop-filter:blur(24px); border:1px solid var(--border); border-radius:14px; padding:8px; box-shadow:0 22px 54px rgba(0,0,0,0.55); opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .2s ease, transform .2s ease, visibility .2s; z-index:300; }
+  .nav-dd-menu { position:absolute; top:100%; left:0; margin-top:2px; min-width:248px; background:rgba(12,12,18,0.98); backdrop-filter:blur(24px); border:1px solid var(--border); border-radius:14px; padding:8px; box-shadow:0 22px 54px rgba(0,0,0,0.55); opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .2s ease, transform .2s ease, visibility .2s; z-index:300; }
   .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity:1; visibility:visible; transform:translateY(0); }
   [dir="rtl"] .nav-dd-menu { left:auto; right:0; }
   .nav-dd-menu a { display:flex; flex-direction:column; gap:3px; padding:11px 13px; border-radius:9px; color:var(--text)!important; font-size:13.5px; font-weight:600; text-decoration:none; }
@@ -143,7 +143,7 @@
   <a href="https://waslat.io/ar" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="eager"></a>
   <div class="nav-right">
       <div class="nav-dd">
-        <a href="/ar/hr" aria-haspopup="true">المنتجات</a>
+        <a role="button" tabindex="0" aria-haspopup="true">المنتجات</a>
         <div class="nav-dd-menu">
           <a href="/ar">إدارة وسائل التواصل<span class="dd-sub">جدولة وإدارة جميع قنواتك</span></a>
           <a href="/ar/hr">نظام الموارد البشرية<span class="dd-sub">الرواتب والحضور والامتثال السعودي</span></a>
@@ -320,7 +320,7 @@
 
 <footer>
   <a href="https://waslat.io/ar" class="foot-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat" loading="lazy"></a>
-  <nav class="foot-cols" aria-label="Footer">
+  <div class="foot-cols" aria-label="Footer" role="navigation">
     <div class="foot-col">
       <h4 class="foot-h">المنتجات</h4>
       <a href="/ar">إدارة وسائل التواصل</a>
@@ -338,7 +338,7 @@
       <a href="/ar/privacy.html">الخصوصية</a>
       <a href="/ar/terms.html">الشروط</a>
     </div>
-  </nav>
+  </div>
   <div class="foot-copy">© 2026 وصلات</div>
 </footer>
 

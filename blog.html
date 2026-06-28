@@ -55,7 +55,7 @@
   .nav-dd>a{display:inline-flex;align-items:center;gap:5px;cursor:pointer;}
   .nav-dd>a::after{content:"\25BE";font-size:9px;opacity:.65;}
   .nav-dd::before{content:"";position:absolute;top:100%;left:0;right:0;height:18px;}
-  .nav-dd-menu{position:absolute;top:100%;left:0;margin-top:16px;min-width:248px;background:rgba(12,12,18,0.98);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:0 22px 54px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;}
+  .nav-dd-menu{position:absolute;top:100%;left:0;margin-top:2px;min-width:248px;background:rgba(12,12,18,0.98);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:0 22px 54px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;}
   .nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:translateY(0);}
   [dir="rtl"] .nav-dd-menu{left:auto;right:0;}
   .nav-dd-menu a{display:flex;flex-direction:column;gap:3px;padding:11px 13px;border-radius:9px;color:var(--white)!important;font-size:13.5px;font-weight:600;}
@@ -99,7 +99,7 @@
   <a href="/" class="nav-logo" aria-label="Waslat"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat"></a>
   <ul class="nav-links">
     <li class="nav-dd">
-      <a href="/hr" aria-haspopup="true"><span class="en-only">Products</span><span class="ar-only">المنتجات</span></a>
+      <a role="button" tabindex="0" aria-haspopup="true"><span class="en-only">Products</span><span class="ar-only">المنتجات</span></a>
       <div class="nav-dd-menu">
         <a href="/"><span class="en-only">Social Media Management</span><span class="ar-only">إدارة وسائل التواصل</span><span class="dd-sub en-only">Schedule & manage every channel</span><span class="dd-sub ar-only">جدولة وإدارة جميع قنواتك</span></a>
         <a href="/hr"><span class="en-only">Waslat HR</span><span class="ar-only">نظام الموارد البشرية</span><span class="dd-sub en-only">Payroll, attendance & Saudi compliance</span><span class="dd-sub ar-only">الرواتب والحضور والامتثال السعودي</span></a>
@@ -146,7 +146,7 @@
 
 <footer>
   <div class="foot-logo"><img src="https://res.cloudinary.com/dit4pez6a/image/upload/v1782330357/waslat_logo_transparent_bzcyyg.png" alt="Waslat"></div>
-  <nav class="foot-cols" aria-label="Footer">
+  <div class="foot-cols" aria-label="Footer" role="navigation">
     <div class="foot-col">
       <h4 class="foot-h"><span class="en-only">Products</span><span class="ar-only">المنتجات</span></h4>
       <a href="/"><span class="en-only">Social Media Management</span><span class="ar-only">إدارة وسائل التواصل</span></a>
@@ -164,7 +164,7 @@
       <a href="/privacy.html"><span class="en-only">Privacy</span><span class="ar-only">الخصوصية</span></a>
       <a href="/terms.html"><span class="en-only">Terms</span><span class="ar-only">الشروط</span></a>
     </div>
-  </nav>
+  </div>
   <div class="foot-copy"><span class="en-only">© 2026 Waslat</span><span class="ar-only">© 2026 وصلات</span></div>
   <div class="foot-powered"><span class="en-only">Powered by <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span><span class="ar-only">مدعوم من <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span></div>
 </footer>
