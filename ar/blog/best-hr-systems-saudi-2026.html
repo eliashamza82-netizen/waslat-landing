@@ -204,5 +204,22 @@
 <footer>© 2026 وصلات · مدعوم من <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></footer>
 <link rel="stylesheet" href="/chat-widget.css">
 <script type="module" src="/chat-widget.js"></script>
+<style>
+html.js .anim{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
+html.js .anim.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){html.js .anim{opacity:1!important;transform:none!important;}}
+</style>
+<script>
+(function(){
+  var d=document.documentElement; if(!d.classList.contains('js'))d.classList.add('js');
+  var sel='.feat-row,.section-head,.comp-card,.faq-item,.post-card,.hr-hero>*,.blog-head>*,.cta-sec>*,.compliance-strip,.comp-band .section-head,.cta-box,article>*,.wrap>.crumb,.wrap>h1,.wrap>.meta,.wrap>.post-cat';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  if(!els.length)return;
+  els.forEach(function(e){e.classList.add('anim');});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
 </body>
 </html>
