@@ -222,6 +222,53 @@
 </style>
 </head>
 <body>
+<style>
+/* ===== full-page animated background (matches front page) ===== */
+.page-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-hero,.blog-head,.blog-grid{position:relative;z-index:1;}
+.pg-aurora{position:absolute;border-radius:50%;filter:blur(90px);animation:pgAurora ease-in-out infinite;opacity:0;}
+.pg-a1{width:800px;height:500px;background:radial-gradient(ellipse,rgba(125,211,252,.16) 0%,rgba(56,189,248,.06) 50%,transparent 70%);top:-5%;left:-10%;animation-duration:20s;animation-delay:0s;}
+.pg-a2{width:600px;height:600px;background:radial-gradient(ellipse,rgba(14,165,233,.14) 0%,rgba(125,211,252,.05) 50%,transparent 70%);top:15%;right:-8%;animation-duration:25s;animation-delay:-8s;}
+.pg-a3{width:700px;height:400px;background:radial-gradient(ellipse,rgba(56,189,248,.13) 0%,rgba(125,211,252,.04) 50%,transparent 70%);top:40%;left:15%;animation-duration:22s;animation-delay:-14s;}
+.pg-a4{width:500px;height:500px;background:radial-gradient(ellipse,rgba(125,211,252,.12) 0%,transparent 70%);top:60%;right:5%;animation-duration:18s;animation-delay:-5s;}
+.pg-a5{width:650px;height:350px;background:radial-gradient(ellipse,rgba(14,165,233,.11) 0%,rgba(56,189,248,.04) 50%,transparent 70%);top:78%;left:-5%;animation-duration:28s;animation-delay:-10s;}
+.pg-a6{width:400px;height:400px;background:radial-gradient(ellipse,rgba(125,211,252,.1) 0%,transparent 70%);top:25%;left:45%;animation-duration:16s;animation-delay:-3s;}
+@keyframes pgAurora{0%{opacity:0;transform:translate(0,0) scale(1) rotate(0)}15%{opacity:1}40%{transform:translate(50px,-40px) scale(1.18) rotate(3deg);opacity:.9}70%{transform:translate(-30px,25px) scale(.92) rotate(-2deg);opacity:.75}85%{opacity:1}100%{opacity:0;transform:translate(0,0) scale(1) rotate(0)}}
+.pg-orb{position:absolute;border-radius:50%;filter:blur(60px);animation:pgOrb ease-in-out infinite;}
+.pg-o1{width:400px;height:400px;background:rgba(125,211,252,.07);top:10%;left:5%;animation-duration:16s;animation-delay:0s;}
+.pg-o2{width:280px;height:280px;background:rgba(56,189,248,.09);top:45%;right:6%;animation-duration:20s;animation-delay:-7s;}
+.pg-o3{width:350px;height:350px;background:rgba(14,165,233,.07);top:70%;left:25%;animation-duration:14s;animation-delay:-4s;}
+.pg-o4{width:200px;height:200px;background:rgba(125,211,252,.08);top:30%;left:60%;animation-duration:18s;animation-delay:-9s;}
+@keyframes pgOrb{0%,100%{transform:translate(0,0) scale(1);opacity:.4}33%{transform:translate(35px,-25px) scale(1.12);opacity:.75}66%{transform:translate(-25px,20px) scale(.93);opacity:.55}}
+.pg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(125,211,252,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(125,211,252,.055) 1px,transparent 1px);background-size:64px 64px;animation:pgGridScroll 24s linear infinite,pgGridFade 8s ease-in-out infinite;}
+@keyframes pgGridScroll{from{background-position:0 0}to{background-position:64px 64px}}
+@keyframes pgGridFade{0%,100%{opacity:.45}50%{opacity:.85}}
+.pg-scan{position:absolute;inset:0;background:linear-gradient(135deg,transparent 35%,rgba(125,211,252,.035) 50%,transparent 65%);background-size:300% 300%;animation:pgScan 10s linear infinite;}
+@keyframes pgScan{0%{background-position:300% 300%}100%{background-position:-300% -300%}}
+.pg-star{position:absolute;height:1.5px;background:linear-gradient(90deg,rgba(125,211,252,.9),rgba(125,211,252,.3),transparent);border-radius:2px;animation:pgStar linear infinite;opacity:0;}
+@keyframes pgStar{0%{opacity:0;transform:translateX(0)}8%{opacity:1}92%{opacity:.8}100%{opacity:0;transform:translateX(500px)}}
+.pg-ripple-group{position:absolute;transform:translate(-50%,-50%);}
+.pg-ripple{position:absolute;border:1px solid rgba(125,211,252,.12);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);animation:pgRipple 7s ease-out infinite;}
+.pg-ripple:nth-child(1){width:200px;height:200px;}
+.pg-ripple:nth-child(2){width:380px;height:380px;}
+.pg-ripple:nth-child(3){width:560px;height:560px;}
+@keyframes pgRipple{0%{transform:translate(-50%,-50%) scale(0);opacity:.7}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.page-bg *{animation:none!important;}}
+</style>
+<div class="page-bg" aria-hidden="true">
+<div class="pg-aurora pg-a1"></div><div class="pg-aurora pg-a2"></div><div class="pg-aurora pg-a3"></div><div class="pg-aurora pg-a4"></div><div class="pg-aurora pg-a5"></div><div class="pg-aurora pg-a6"></div>
+<div class="pg-orb pg-o1"></div><div class="pg-orb pg-o2"></div><div class="pg-orb pg-o3"></div><div class="pg-orb pg-o4"></div>
+<div class="pg-grid"></div><div class="pg-scan"></div>
+<div class="pg-star" style="top:8%;left:15%;width:140px;animation-duration:7s;animation-delay:0s"></div>
+<div class="pg-star" style="top:18%;left:65%;width:90px;animation-duration:10s;animation-delay:-3s"></div>
+<div class="pg-star" style="top:35%;left:40%;width:70px;animation-duration:12s;animation-delay:-6s"></div>
+<div class="pg-star" style="top:55%;left:80%;width:110px;animation-duration:9s;animation-delay:-1.5s"></div>
+<div class="pg-star" style="top:70%;left:10%;width:80px;animation-duration:11s;animation-delay:-4s"></div>
+<div class="pg-star" style="top:85%;left:50%;width:120px;animation-duration:8s;animation-delay:-7s"></div>
+<div class="pg-ripple-group" style="top:15%;left:20%"><div class="pg-ripple" style="animation-delay:0s"></div><div class="pg-ripple" style="animation-delay:2s"></div><div class="pg-ripple" style="animation-delay:4s"></div></div>
+<div class="pg-ripple-group" style="top:60%;right:15%;left:auto"><div class="pg-ripple" style="animation-delay:1s"></div><div class="pg-ripple" style="animation-delay:3s"></div><div class="pg-ripple" style="animation-delay:5s"></div></div>
+<div class="pg-ripple-group" style="top:85%;left:50%"><div class="pg-ripple" style="animation-delay:.5s"></div><div class="pg-ripple" style="animation-delay:2.5s"></div></div>
+</div>
 
 <!-- NAV -->
 <nav>
