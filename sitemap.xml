@@ -440,4 +440,70 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/end-of-service-calculator"/>
   </url>
 
+  <url>
+    <loc>https://waslat.io/ar/blog/best-crm-saudi-2026</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/what-is-crm</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/zatca-e-invoicing-guide</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/best-accounting-software-saudi-2026</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/best-pos-system-saudi-2026</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/vat-calculator</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/vat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/vat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/vat-calculator"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/vat-calculator</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/vat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/vat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/vat-calculator"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/nitaqat-calculator</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/nitaqat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/nitaqat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/nitaqat-calculator"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/nitaqat-calculator</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/nitaqat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/nitaqat-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/nitaqat-calculator"/>
+  </url>
 </urlset>

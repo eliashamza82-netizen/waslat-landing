@@ -27,6 +27,8 @@
 
 ## Free Tools
 - [End-of-Service Gratuity Calculator](https://waslat.io/end-of-service-calculator): Free Saudi end-of-service (مكافأة نهاية الخدمة) calculator per the Labor Law.
+- [VAT Calculator](https://waslat.io/vat-calculator): Free 15% Saudi VAT (ضريبة القيمة المضافة) add/extract calculator.
+- [Saudization (Nitaqat) Calculator](https://waslat.io/nitaqat-calculator): Calculate your Saudization percentage (نسبة السعودة) and target hiring gap.
 
 ## Resources
 - [Blog](https://waslat.io/blog): Arabic-first guides on HR, WhatsApp, marketing, sales and Saudi compliance.
