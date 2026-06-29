@@ -506,4 +506,34 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/nitaqat-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/nitaqat-calculator"/>
   </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/waslat-vs-qoyod</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/waslat-vs-wafeq</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/waslat-vs-zoho-crm</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/waslat-vs-wati</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/blog/waslat-vs-unifonic</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
