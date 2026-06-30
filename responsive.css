@@ -1,0 +1,227 @@
+/* ============================================================
+   Waslat — shared responsive layer
+   Loaded after each page's inline <style> so it can refine
+   behaviour across phone / tablet / desktop / webview.
+   Pure additive overrides — safe to remove without breaking pages.
+   ============================================================ */
+
+/* ---- Fluid media: nothing wider than its container ---- */
+img, svg, video, canvas, iframe { max-width: 100%; }
+img, video { height: auto; }
+
+/* ---- Global horizontal-overflow guard ---- */
+html, body { overflow-x: hidden; max-width: 100%; }
+*, *::before, *::after { min-width: 0; }
+
+/* ---- Bilingual visibility fallback ----
+   A few pages (contact / support / docs) ship without the base
+   .en-only/.ar-only rules, so both languages render at once.
+   These defaults fix them; pages that set their own (incl. the
+   display:block !important variants) are unaffected. */
+.en-only { display: inline; }
+.ar-only { display: none; }
+body.ar .en-only, [dir="rtl"] .en-only { display: none; }
+body.ar .ar-only, [dir="rtl"] .ar-only { display: inline; }
+
+/* ============================================================
+   MEGA / PRODUCTS DROPDOWN — never exceed the viewport
+   (min-width:680px was overflowing small screens on the
+   contact / docs / support / privacy / terms layouts)
+   ============================================================ */
+/* Anchor with left+right (not transform) so the page's late
+   `.nav-dd.open .nav-dd-menu{transform:translateY(0)!important}`
+   rule can't push the menu off-screen. Works whether the fixed
+   menu resolves against the viewport or the backdrop-filtered nav. */
+@media (max-width: 768px) {
+  .nav-mega-menu {
+    position: fixed !important;
+    top: 64px !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    grid-template-columns: 1fr 1fr !important;
+    max-height: 72vh;
+    overflow-y: auto;
+  }
+}
+@media (max-width: 480px) {
+  .nav-mega-menu { grid-template-columns: 1fr !important; }
+}
+
+/* ---- Calculator input rows stack on phones ---- */
+@media (max-width: 560px) {
+  .calc-row { grid-template-columns: 1fr !important; }
+}
+
+/* ---- Blog header link group: wrap instead of overflow ---- */
+@media (max-width: 560px) {
+  .nav-cta { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav-cta a { font-size: 13px; }
+}
+
+/* ============================================================
+   MOBILE NAV — hamburger + slide-in drawer
+   (markup injected by /mobile-nav.js on pages that have
+   a full .nav-links menu, which is otherwise hidden ≤768px)
+   ============================================================ */
+.nav-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border-light, #252538);
+  border-radius: 10px;
+  color: var(--text, #fff);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.nav-burger:hover { border-color: var(--primary, #7DD3FC); }
+.nav-burger span {
+  position: relative;
+  display: block;
+  width: 18px; height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav-burger span::before,
+.nav-burger span::after {
+  content: ""; position: absolute; left: 0;
+  width: 18px; height: 2px; background: currentColor; border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav-burger span::before { top: -6px; }
+.nav-burger span::after  { top: 6px; }
+.nav-burger[aria-expanded="true"] span { background: transparent; }
+.nav-burger[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span::after  { transform: translateY(-6px) rotate(-45deg); }
+
+/* Overlay */
+.nav-drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(4,4,8,0.6);
+  backdrop-filter: blur(2px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+  z-index: 9500;
+}
+.nav-drawer-overlay.open { opacity: 1; visibility: visible; }
+
+/* Drawer panel — slides in from the inline-end edge */
+.nav-drawer {
+  position: fixed; top: 0; bottom: 0; right: 0;
+  width: min(86vw, 340px);
+  background: rgba(10,10,16,0.98);
+  backdrop-filter: blur(28px);
+  border-left: 1px solid var(--border, #1E1E30);
+  box-shadow: -24px 0 60px rgba(0,0,0,0.5);
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  z-index: 9600;
+  display: flex; flex-direction: column;
+  padding: 22px 20px calc(28px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-drawer.open { transform: translateX(0); }
+[dir="rtl"] .nav-drawer {
+  right: auto; left: 0;
+  border-left: none; border-right: 1px solid var(--border, #1E1E30);
+  box-shadow: 24px 0 60px rgba(0,0,0,0.5);
+  transform: translateX(-100%);
+}
+[dir="rtl"] .nav-drawer.open { transform: translateX(0); }
+
+.nav-drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 18px;
+}
+.nav-drawer-close {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: transparent; border: 1px solid var(--border-light, #252538);
+  color: var(--text, #fff); font-size: 20px; line-height: 1; cursor: pointer;
+}
+.nav-drawer-close:hover { border-color: var(--primary, #7DD3FC); }
+
+/* Links rendered inside the drawer (cloned from the page nav) */
+.nav-drawer a {
+  display: block;
+  padding: 12px 12px;
+  border-radius: 10px;
+  color: var(--off-white, #E8E8F0) !important;
+  text-decoration: none;
+  font-size: 15px; font-weight: 600;
+}
+.nav-drawer a:hover { background: rgba(125,211,252,0.10); }
+
+/* Force every cloned nav item into a single vertical column */
+.nav-drawer > nav { display: block; width: 100%; }
+.nav-drawer ul,
+.nav-drawer li,
+.nav-drawer .nav-dd {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+  position: static !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Flatten any nested dropdown / mega menu inside the drawer */
+.nav-drawer .nav-dd-menu,
+.nav-drawer .nav-mega-menu {
+  position: static !important;
+  display: block !important;
+  opacity: 1 !important; visibility: visible !important;
+  transform: none !important;
+  width: 100% !important; min-width: 0 !important; max-height: none !important;
+  grid-template-columns: 1fr !important;
+  background: transparent !important; border: none !important;
+  box-shadow: none !important; padding: 0 0 6px !important; margin: 0 !important;
+}
+.nav-drawer .mega-col { margin-top: 6px; }
+.nav-drawer .mega-h {
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-muted, #4A5568); padding: 12px 12px 4px; font-weight: 700;
+}
+.nav-drawer .nav-dd > a::after { content: "" !important; }
+
+/* Section labels + action area inside drawer */
+.nav-drawer-section-label {
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-muted, #4A5568); padding: 14px 12px 4px; font-weight: 700;
+}
+.nav-drawer-actions {
+  margin-top: auto; padding-top: 18px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.nav-drawer-actions a {
+  text-align: center; padding: 13px 18px; border-radius: 12px; font-weight: 700;
+}
+.nav-drawer-actions .btn-primary,
+.nav-drawer-actions .d-cta {
+  background: var(--primary, #7DD3FC); color: #000 !important;
+}
+.nav-drawer-actions .btn-ghost,
+.nav-drawer-actions .d-secondary {
+  border: 1px solid var(--border-light, #252538); color: var(--text, #fff) !important;
+}
+
+/* Show the burger only where the inline menu is hidden */
+@media (max-width: 768px) {
+  .nav-burger { display: inline-flex; }
+}
+@media (min-width: 769px) {
+  .nav-burger, .nav-drawer, .nav-drawer-overlay { display: none !important; }
+}
+
+/* Lock body scroll when drawer is open */
+body.nav-drawer-locked { overflow: hidden; }
+
+/* Keep the chat-widget bubble from covering the open drawer */
+body.nav-drawer-locked #wc-bubble,
+body.nav-drawer-locked #wc-panel { display: none !important; }

@@ -229,6 +229,7 @@
   .nav-mega-menu a{flex-direction:row;font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:8px;}
   @media(max-width:900px){.nav-mega-menu{min-width:520px;grid-template-columns:repeat(2,1fr);}}
 </style>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 <style>
@@ -541,5 +542,6 @@ html.js .anim.in{opacity:1;transform:none;}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.querySelectorAll('.nav-dd.open');for(var k=0;k<o.length;k++)o[k].classList.remove('open');}});
 })();
 </script>
+  <script src="/mobile-nav.js" defer></script>
 </body>
 </html>
