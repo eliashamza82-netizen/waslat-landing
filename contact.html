@@ -81,10 +81,6 @@
   .promo .bullets{list-style:none;display:flex;flex-direction:column;gap:20px;margin-bottom:48px;}
   .promo .bullets li{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:var(--text);max-width:440px;}
   .b-check{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(125,211,252,0.12);border:1px solid rgba(125,211,252,0.3);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:12px;font-weight:700;margin-top:1px;}
-  .trusted{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px;}
-  .trusted-logos{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;}
-  .trusted-logos span{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--text-muted);opacity:0.75;transition:color 0.2s,opacity 0.2s;}
-  .trusted-logos span:hover{color:var(--primary);opacity:1;}
   /* wizard card */
   .card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:40px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:fadeUp 0.7s 0.1s ease both;min-height:520px;display:flex;flex-direction:column;}
   .wiz-top{display:flex;align-items:center;gap:16px;margin-bottom:8px;}
@@ -128,7 +124,7 @@
   .success .tick{width:72px;height:72px;border-radius:50%;background:rgba(125,211,252,0.12);border:1.5px solid var(--primary);display:flex;align-items:center;justify-content:center;font-size:34px;color:var(--primary);margin-bottom:24px;box-shadow:0 0 50px rgba(125,211,252,0.3);}
   .success h2{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;letter-spacing:-1px;margin-bottom:12px;}
   .success p{color:var(--text-secondary);font-size:15px;max-width:340px;}
-  @media(max-width:960px){.wrap{grid-template-columns:1fr;gap:36px;padding:104px 22px 60px;}.promo{text-align:center;}.promo .lead,.promo .bullets li{margin-left:auto;margin-right:auto;}.promo .bullets li{text-align:left;}.trusted-logos{justify-content:center;}.card{padding:28px 22px;}}
+  @media(max-width:960px){.wrap{grid-template-columns:1fr;gap:36px;padding:104px 22px 60px;}.promo{text-align:center;}.promo .lead,.promo .bullets li{margin-left:auto;margin-right:auto;}.promo .bullets li{text-align:left;}.card{padding:28px 22px;}}
   @media(max-width:768px){nav{padding:14px 18px;}.nav-right .btn-ghost{display:none;}.nav-logo img{height:28px;}.opt-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:430px){.opt-grid{grid-template-columns:1fr 1fr;}.opt{min-height:80px;font-size:13px;}}
 </style>
@@ -146,6 +142,7 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
   .nav-mega-menu a{flex-direction:row;font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:8px;}
   @media(max-width:900px){.nav-mega-menu{min-width:520px;grid-template-columns:repeat(2,1fr);}}
 </style>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 <div class="page-bg">
@@ -207,10 +204,6 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
       <li><span class="b-check">✓</span> Accelerate sales with seamless, targeted communication.</li>
       <li><span class="b-check">✓</span> Improve engagement across every stage of the customer journey.</li>
     </ul>
-    <div class="trusted">Trusted by</div>
-    <div class="trusted-logos">
-      <span>BAZIL</span><span>barq</span><span>bima</span><span>JAWAHR</span><span>Careem</span><span>BSF</span><span>D360</span>
-    </div>
   </div>
 
   <div class="card">
@@ -381,5 +374,6 @@ html.js .anim.in{opacity:1;transform:none;}
   els.forEach(function(e){io.observe(e);});
 })();
 </script>
+  <script src="/mobile-nav.js" defer></script>
 </body>
 </html>

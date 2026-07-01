@@ -720,7 +720,7 @@
 </style>
 <style id="normal-cursor">
 html,body{cursor:auto !important;}
-a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.nav-dd>a,.price-toggle,.bill-opt,label,summary,select{cursor:pointer !important;}
+a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.nav-dd>a,.price-toggle,.bill-opt,.mod,.su-stepper button,.sum-setup a,label,summary,select{cursor:pointer !important;}
 .cursor,.cursor-ring{display:none !important;}
 </style>
 <style id="nav-zfix">nav{z-index:9000 !important;} .nav-dd-menu{z-index:9001 !important;}</style>
@@ -754,6 +754,7 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
   ]
 }
 </script>
+  <link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 
@@ -1826,5 +1827,6 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.querySelectorAll('.nav-dd.open');for(var k=0;k<o.length;k++)o[k].classList.remove('open');}});
 })();
 </script>
+  <script src="/mobile-nav.js" defer></script>
 </body>
 </html>
