@@ -5,4 +5,40 @@ Allow: /
 # Block nothing public — this is a marketing site.
 # (App/auth pages live on a separate host.)
 
+# --- AI / answer engines (explicitly welcomed) ---
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+# Apple / Amazon / Meta / Bytedance AI
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Bytespider
+Allow: /
+# Common Crawl (feeds many LLM training sets)
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://waslat.io/sitemap.xml
