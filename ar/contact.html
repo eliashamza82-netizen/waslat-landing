@@ -122,8 +122,9 @@
   @media(max-width:430px){.opt-grid{grid-template-columns:1fr 1fr;}.opt{min-height:80px;font-size:13px;}}
 </style>
 <style id="normal-cursor">
-html,body{cursor:auto !important;}
-a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.nav-dd>a,.price-toggle,.bill-opt,label,summary,select{cursor:pointer !important;}
+html,body,*{cursor:auto !important;}
+a,button,[role="button"],.opt,.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.nav-dd>a,.price-toggle,.bill-opt,.btn-next,.btn-prev,label,summary,select{cursor:pointer !important;}
+input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]),textarea{cursor:text !important;}
 .cursor,.cursor-ring{display:none !important;}
 </style>
 <style id="nav-zfix">nav{z-index:9000 !important;} .nav-dd-menu{z-index:9001 !important;}</style>
