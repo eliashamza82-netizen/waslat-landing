@@ -610,4 +610,22 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/best-whatsapp-api-provider-saudi"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/best-whatsapp-api-provider-saudi"/>
   </url>
+  <url>
+    <loc>https://waslat.io/whatsapp-unified-number</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/whatsapp-unified-number"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/whatsapp-unified-number"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/whatsapp-unified-number"/>
+  </url>
+  <url>
+    <loc>https://waslat.io/ar/whatsapp-unified-number</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waslat.io/whatsapp-unified-number"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://waslat.io/ar/whatsapp-unified-number"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waslat.io/whatsapp-unified-number"/>
+  </url>
 </urlset>
