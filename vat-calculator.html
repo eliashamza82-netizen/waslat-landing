@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('waslat_lang')==='en')return;var p=location.pathname;if(p==='/ar'||p.indexOf('/ar/')===0)return;location.replace((p==='/'||p==='')?'/ar':'/ar'+p);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.className+=' js';</script>
 
@@ -15,7 +16,7 @@
 
 <link rel="alternate" hreflang="en" href="https://waslat.io/vat-calculator">
 <link rel="alternate" hreflang="ar" href="https://waslat.io/ar/vat-calculator">
-<link rel="alternate" hreflang="x-default" href="https://waslat.io/vat-calculator">
+<link rel="alternate" hreflang="x-default" href="https://waslat.io/ar/vat-calculator">
 
 <!-- OPEN GRAPH -->
 <meta property="og:type" content="website">
@@ -79,7 +80,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -90,7 +91,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-  body.ar{font-family:'Cairo',sans-serif;}
+  body.ar{font-family:'Tajawal',sans-serif;}
   a{color:inherit;}
   .en-only{display:inline;} .ar-only{display:none;}
   body.ar .en-only{display:none;} body.ar .ar-only{display:inline;}
@@ -102,7 +103,7 @@
   .nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
   .nav-links>li>a{color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
   .nav-links>li>a:hover,.nav-links>li>a.active{color:var(--white);}
-  body.ar .nav-links a{font-family:'Cairo',sans-serif;}
+  body.ar .nav-links a{font-family:'Tajawal',sans-serif;}
   /* Products dropdown / mega-menu */
   .nav-dd{position:relative;}
   .nav-dd>a{display:inline-flex;align-items:center;gap:5px;cursor:pointer;}
@@ -118,7 +119,7 @@
   .nav-mega-menu{min-width:680px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px 12px;padding:16px;}
   .nav-mega-menu .mega-col{display:flex;flex-direction:column;gap:1px;}
   .nav-mega-menu .mega-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-muted);padding:8px 10px 4px;}
-  body.ar .nav-mega-menu .mega-h{letter-spacing:0;font-family:'Cairo',sans-serif;}
+  body.ar .nav-mega-menu .mega-h{letter-spacing:0;font-family:'Tajawal',sans-serif;}
   .nav-mega-menu a{flex-direction:row;font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:8px;}
   .nav-right{display:flex;gap:12px;align-items:center;}
   .lang-toggle{display:flex;align-items:center;border:1px solid var(--border-light);border-radius:9px;overflow:hidden;}
@@ -132,9 +133,9 @@
   /* HERO */
   .hr-hero{padding:170px 60px 80px;max-width:1100px;margin:0 auto;text-align:center;}
   .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);border:1px solid var(--border-light);border-radius:999px;padding:7px 16px;margin-bottom:26px;}
-  body.ar .eyebrow{letter-spacing:0;font-family:'Cairo',sans-serif;}
-  .hr-hero h1{font-family:'Syne',sans-serif;font-size:clamp(38px,6vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:22px;}
-  body.ar .hr-hero h1{font-family:'Cairo',sans-serif;letter-spacing:0;line-height:1.25;}
+  body.ar .eyebrow{letter-spacing:0;font-family:'Tajawal',sans-serif;}
+  .hr-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4.6vw,52px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:22px;}
+  body.ar .hr-hero h1{font-family:'Tajawal',sans-serif;letter-spacing:0;line-height:1.25;}
   .hr-hero h1 .accent{color:var(--primary);}
   .hr-hero p.sub{font-size:clamp(16px,2vw,20px);color:var(--text-secondary);max-width:720px;margin:0 auto 34px;}
   .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
@@ -149,7 +150,7 @@
   .compliance-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-card);padding:26px 24px;}
   .compliance-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:center;}
   .compliance-inner .lbl{font-size:12px;color:var(--text-muted);font-weight:600;width:100%;text-align:center;margin-bottom:4px;text-transform:uppercase;letter-spacing:.1em;}
-  body.ar .compliance-inner .lbl{letter-spacing:0;font-family:'Cairo',sans-serif;}
+  body.ar .compliance-inner .lbl{letter-spacing:0;font-family:'Tajawal',sans-serif;}
   .gov-chip{font-size:14px;font-weight:700;color:var(--off-white);display:inline-flex;align-items:center;gap:7px;}
   .gov-chip b{color:var(--primary);}
 
@@ -157,9 +158,9 @@
   .section{padding:96px 60px;max-width:1180px;margin:0 auto;}
   .section-head{text-align:center;max-width:760px;margin:0 auto 56px;}
   .section-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:14px;}
-  body.ar .section-tag{letter-spacing:0;font-family:'Cairo',sans-serif;}
-  .section-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
-  body.ar .section-title{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  body.ar .section-tag{letter-spacing:0;font-family:'Tajawal',sans-serif;}
+  .section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(23px,3vw,36px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+  body.ar .section-title{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .section-sub{font-size:17px;color:var(--text-secondary);}
 
   /* FEATURE ROWS */
@@ -168,13 +169,13 @@
   body.ar .feat-row:nth-child(even) .feat-visual{order:0;}
   body.ar .feat-row:nth-child(odd) .feat-visual{order:-1;}
   .feat-ico{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(125,211,252,.16),rgba(56,189,248,.06));border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;}
-  .feat-row h3{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:12px;}
-  body.ar .feat-row h3{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .feat-row h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:12px;}
+  body.ar .feat-row h3{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .feat-row p{color:var(--text-secondary);margin-bottom:18px;font-size:15.5px;}
   .feat-list{list-style:none;display:flex;flex-direction:column;gap:11px;}
   .feat-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--off-white);}
   .feat-list li::before{content:"✓";color:var(--primary);font-weight:800;flex-shrink:0;}
-  body.ar .feat-list li{font-family:'Cairo',sans-serif;}
+  body.ar .feat-list li{font-family:'Tajawal',sans-serif;}
   .feat-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;min-height:240px;display:flex;align-items:center;justify-content:center;padding:30px;}
   .feat-visual .big-emoji{font-size:88px;filter:drop-shadow(0 14px 40px rgba(125,211,252,.25));}
 
@@ -183,23 +184,23 @@
   .comp-grid{max-width:1100px;margin:0 auto;padding:84px 60px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;}
   .comp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
   a.comp-card:hover{border-color:var(--primary);transform:translateY(-3px);}
-  .comp-card h4{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;color:var(--primary);}
-  body.ar .comp-card h4{font-family:'Cairo',sans-serif;}
+  .comp-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;color:var(--primary);}
+  body.ar .comp-card h4{font-family:'Tajawal',sans-serif;}
   .comp-card p{font-size:14px;color:var(--text-secondary);}
-  body.ar .comp-card p{font-family:'Cairo',sans-serif;}
+  body.ar .comp-card p{font-family:'Tajawal',sans-serif;}
 
   /* FAQ */
   .faq-wrap{max-width:840px;margin:0 auto;}
   .faq-item{border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:14px;background:var(--bg-card);}
   .faq-item h4{font-size:17px;font-weight:700;margin-bottom:9px;}
-  body.ar .faq-item h4{font-family:'Cairo',sans-serif;}
+  body.ar .faq-item h4{font-family:'Tajawal',sans-serif;}
   .faq-item p{color:var(--text-secondary);font-size:15px;}
-  body.ar .faq-item p{font-family:'Cairo',sans-serif;}
+  body.ar .faq-item p{font-family:'Tajawal',sans-serif;}
 
   /* CTA */
   .cta-sec{text-align:center;padding:100px 60px;max-width:900px;margin:0 auto;}
-  .cta-sec h2{font-family:'Syne',sans-serif;font-size:clamp(32px,4.5vw,56px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;}
-  body.ar .cta-sec h2{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .cta-sec h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(25px,3.4vw,40px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;}
+  body.ar .cta-sec h2{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .cta-sec p{color:var(--text-secondary);font-size:18px;margin-bottom:30px;}
 
   /* FOOTER */
@@ -209,10 +210,10 @@
   .foot-cols{display:flex;gap:40px;flex-wrap:wrap;}
   .foot-col{display:flex;flex-direction:column;gap:11px;}
   .foot-h{font-size:11px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.09em;margin-bottom:2px;}
-  body.ar .foot-h,[dir="rtl"] .foot-h{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  body.ar .foot-h,[dir="rtl"] .foot-h{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .foot-col a{color:var(--white);text-decoration:none;font-size:13px;opacity:.82;transition:color .2s,opacity .2s;}
   .foot-col a:hover{color:var(--primary);opacity:1;}
-  body.ar .foot-col a,[dir="rtl"] .foot-col a{font-family:'Cairo',sans-serif;}
+  body.ar .foot-col a,[dir="rtl"] .foot-col a{font-family:'Tajawal',sans-serif;}
   .foot-copy{font-size:12px;color:var(--white);}
   .foot-powered{flex-basis:100%;width:100%;text-align:center;margin-top:4px;font-size:11px;color:var(--white);opacity:.85;}
   .foot-powered a{color:var(--white);text-decoration:none;}
@@ -244,7 +245,7 @@
   .calc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:30px;}
   .calc-field{margin-bottom:18px;}
   .calc-field label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--off-white);}
-  body.ar .calc-field label{font-family:'Cairo',sans-serif;}
+  body.ar .calc-field label{font-family:'Tajawal',sans-serif;}
   .calc-field input,.calc-field select{width:100%;padding:13px 14px;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:11px;color:var(--white);font-size:15px;font-family:inherit;}
   .calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--primary);}
   .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -254,17 +255,17 @@
   .calc-result.show{display:block;}
   .calc-line{display:flex;justify-content:space-between;gap:12px;padding:9px 0;font-size:14.5px;color:var(--text-secondary);border-bottom:1px solid var(--border);}
   .calc-line b{color:var(--white);font-weight:700;}
-  body.ar .calc-line{font-family:'Cairo',sans-serif;}
+  body.ar .calc-line{font-family:'Tajawal',sans-serif;}
   .calc-total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:18px;}
   .calc-total .lbl{font-size:15px;font-weight:700;}
-  .calc-total .amt{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,38px);font-weight:800;color:var(--primary);}
-  body.ar .calc-total .amt,body.ar .calc-total .lbl{font-family:'Cairo',sans-serif;}
+  .calc-total .amt{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,5vw,38px);font-weight:800;color:var(--primary);}
+  body.ar .calc-total .amt,body.ar .calc-total .lbl{font-family:'Tajawal',sans-serif;}
   .calc-note{font-size:12.5px;color:var(--text-muted);margin-top:18px;line-height:1.8;}
-  body.ar .calc-note{font-family:'Cairo',sans-serif;}
+  body.ar .calc-note{font-family:'Tajawal',sans-serif;}
   .rules-list{list-style:none;display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto;}
   .rules-list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--off-white);background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
   .rules-list li::before{content:"\00A7";color:var(--primary);font-weight:800;flex-shrink:0;}
-  body.ar .rules-list li{font-family:'Cairo',sans-serif;}
+  body.ar .rules-list li{font-family:'Tajawal',sans-serif;}
 </style>
   <link rel="stylesheet" href="/responsive.css">
 </head>
@@ -357,8 +358,8 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
-      <a class="lang-btn active" href="/vat-calculator" hreflang="en" aria-label="English">EN</a>
-      <a class="lang-btn" href="/ar/vat-calculator" hreflang="ar" aria-label="العربية">ع</a>
+      <a class="lang-btn active" href="/vat-calculator" hreflang="en" aria-label="English" onclick="try{localStorage.setItem('waslat_lang','en')}catch(e){}">EN</a>
+      <a class="lang-btn" href="/ar/vat-calculator" hreflang="ar" aria-label="العربية" onclick="try{localStorage.setItem('waslat_lang','ar')}catch(e){}">ع</a>
     </div>
     <a href="https://app.waslat.io/login" class="btn-ghost"><span class="en-only">Sign In</span><span class="ar-only">تسجيل الدخول</span></a>
     <a href="https://app.waslat.io/register" class="btn-primary"><span class="en-only">Start Free Trial</span><span class="ar-only">ابدأ مجاناً</span></a>

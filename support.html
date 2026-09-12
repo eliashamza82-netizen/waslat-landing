@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8"/>
+<script>(function(){try{if(localStorage.getItem('waslat_lang')==='en')return;var p=location.pathname;if(p==='/ar'||p.indexOf('/ar/')===0)return;location.replace((p==='/'||p==='')?'/ar':'/ar'+p);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Waslat Support — Help &amp; Contact</title>
 <meta name="description" content="Get help with Waslat. Contact our support team, browse answers to common issues, and reach us — we typically respond within 24 hours."/>
@@ -9,23 +10,23 @@
 <link rel="canonical" href="https://waslat.io/support"/>
 <link rel="alternate" hreflang="en" href="https://waslat.io/support"/>
 <link rel="alternate" hreflang="ar" href="https://waslat.io/ar/support"/>
-<link rel="alternate" hreflang="x-default" href="https://waslat.io/support"/>
+<link rel="alternate" hreflang="x-default" href="https://waslat.io/ar/support"/>
 <link rel="icon" type="image/png" href="/favicon.png"/>
 <meta name="theme-color" content="#050508"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#050508;--bg-card:#0D0D14;--bg-surface:#13131E;--border:#1E1E30;--border-light:#252538;--primary:#7DD3FC;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#4A5568;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.7;}
-  body.ar{font-family:'Cairo',sans-serif;direction:rtl;}
+  body.ar{font-family:'Tajawal',sans-serif;direction:rtl;}
   .cursor{position:fixed;width:10px;height:10px;background:var(--primary);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.1s;mix-blend-mode:screen;}
   .cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(125,211,252,0.35);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.3s,height 0.3s,border-color 0.3s;}
   @media(hover:none){.cursor,.cursor-ring{display:none;}body{cursor:auto;}}
   nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;background:rgba(5,5,8,0.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
-  .nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text);}
+  .nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text);}
   .nav-logo span{color:var(--primary);}
   /* Products dropdown */
   .nav-dd { position:relative; }
@@ -63,22 +64,22 @@
   @keyframes pgGridFade{0%,100%{opacity:0.4}50%{opacity:0.7}}
   .hero{padding:140px 60px 60px;text-align:center;position:relative;z-index:1;}
   .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.2);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:700;color:var(--primary);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;}
-  .hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;}
-  body.ar .hero h1{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;}
+  body.ar .hero h1{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .hero p{font-size:15px;color:var(--text-secondary);max-width:520px;margin:0 auto;}
   .content{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px 60px 100px;}
   .help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:56px;}
   .help-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:border-color 0.2s,transform 0.2s;}
   .help-card:hover{border-color:rgba(125,211,252,0.3);transform:translateY(-2px);}
   .help-card .icon{font-size:1.8rem;margin-bottom:14px;}
-  .help-card h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;}
-  body.ar .help-card h3{font-family:'Cairo',sans-serif;}
+  .help-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;}
+  body.ar .help-card h3{font-family:'Tajawal',sans-serif;}
   .help-card p{color:var(--text-secondary);font-size:13.5px;line-height:1.7;margin-bottom:16px;}
   .help-card a{color:var(--primary);text-decoration:none;font-weight:600;font-size:13.5px;}
   .help-card a:hover{text-decoration:underline;}
   .panel{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px;margin-bottom:56px;}
-  .panel h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:8px;}
-  body.ar .panel h2{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .panel h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:8px;}
+  body.ar .panel h2{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .panel .sub{color:var(--text-secondary);font-size:14px;margin-bottom:28px;}
   .form-group{margin-bottom:18px;}
   label{display:block;color:var(--text);font-size:13px;margin-bottom:8px;font-weight:500;}
@@ -90,16 +91,16 @@
   select option{background:var(--bg-surface);}
   .btn-submit{background:var(--primary);color:#000;font-weight:700;padding:14px 32px;border-radius:12px;border:none;font-size:15px;cursor:none;width:100%;margin-top:8px;font-family:inherit;transition:transform 0.2s;}
   .btn-submit:hover{transform:translateY(-1px);}
-  .section-head{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:24px;}
-  body.ar .section-head{font-family:'Cairo',sans-serif;letter-spacing:0;}
+  .section-head{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:24px;}
+  body.ar .section-head{font-family:'Tajawal',sans-serif;letter-spacing:0;}
   .faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;transition:border-color 0.2s;}
   .faq-item:hover{border-color:rgba(125,211,252,0.25);}
   .faq-item h4{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--text);}
-  body.ar .faq-item h4{font-family:'Cairo',sans-serif;}
+  body.ar .faq-item h4{font-family:'Tajawal',sans-serif;}
   .faq-item p{color:var(--text-secondary);font-size:13.5px;line-height:1.8;margin:0;}
   .faq-item a{color:var(--primary);text-decoration:none;}
   footer{border-top:1px solid var(--border);padding:36px 60px;display:flex;align-items:flex-start;justify-content:space-between;background:rgba(13,13,20,0.7);backdrop-filter:blur(8px);position:relative;z-index:1;flex-wrap:wrap;gap:20px;}
-  .foot-logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;text-decoration:none;color:var(--text);}
+  .foot-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:800;text-decoration:none;color:var(--text);}
   .foot-logo span{color:var(--primary);}
   .foot-links{display:flex;gap:24px;list-style:none;}
   .foot-links a{color:var(--text-muted);text-decoration:none;font-size:12px;transition:color 0.2s;}
@@ -134,7 +135,7 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
   .nav-mega-menu{min-width:680px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px 12px;padding:16px;}
   .nav-mega-menu .mega-col{display:flex;flex-direction:column;gap:1px;}
   .nav-mega-menu .mega-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-muted);padding:8px 10px 4px;}
-  body.ar .nav-mega-menu .mega-h,[dir="rtl"] .nav-mega-menu .mega-h{letter-spacing:0;font-family:'Cairo',sans-serif;}
+  body.ar .nav-mega-menu .mega-h,[dir="rtl"] .nav-mega-menu .mega-h{letter-spacing:0;font-family:'Tajawal',sans-serif;}
   .nav-mega-menu a{flex-direction:row;font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:8px;}
   @media(max-width:900px){.nav-mega-menu{min-width:520px;grid-template-columns:repeat(2,1fr);}}
 </style>
@@ -191,8 +192,8 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
       </div>
       <a href="/blog" style="color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;">Blog</a>
     <div class="lang-toggle">
-      <a class="lang-btn active" id="btnEn" href="/support" hreflang="en" aria-label="English">EN</a>
-      <a class="lang-btn" id="btnAr" href="/ar/support" hreflang="ar" aria-label="العربية">ع</a>
+      <a class="lang-btn active" id="btnEn" href="/support" hreflang="en" aria-label="English" onclick="try{localStorage.setItem('waslat_lang','en')}catch(e){}">EN</a>
+      <a class="lang-btn" id="btnAr" href="/ar/support" hreflang="ar" aria-label="العربية" onclick="try{localStorage.setItem('waslat_lang','ar')}catch(e){}">ع</a>
     </div>
     <a href="https://app.waslat.io/login" class="btn-ghost">Sign In</a>
     <a href="https://app.waslat.io/register" class="btn-primary">Register Now →</a>
