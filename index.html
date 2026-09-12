@@ -140,7 +140,7 @@
      ══════════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #050508;
@@ -785,6 +785,7 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
 }
 </script>
   <link rel="stylesheet" href="/responsive.css">
+<style id="perf-mobile">@media(max-width:768px){.page-bg{display:none!important}.orbit-ring{animation:none!important}}</style>
 </head>
 <body>
 
@@ -1173,7 +1174,7 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
         <div class="su-label"><span class="en-only">Users</span><span class="ar-only">المستخدمون</span></div>
         <div class="su-stepper">
           <button type="button" id="uMinus" aria-label="-">−</button>
-          <input id="uCount" value="15" readonly>
+          <input id="uCount" value="15" readonly aria-label="عدد المستخدمين">
           <button type="button" id="uPlus" aria-label="+">+</button>
         </div>
         <div class="su-note"><span class="en-only">15 included · +99 SAR per extra user</span><span class="ar-only">15 مشمولين · +99 ريال لكل مستخدم إضافي</span></div>
