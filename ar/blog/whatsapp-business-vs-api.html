@@ -57,9 +57,9 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap"></noscript>
 <style>
-  :root{--bg:#050508;--bg-card:#0D0D14;--border:#1E1E30;--border-light:#252538;--primary:#7DD3FC;--white:#FFFFFF;--off-white:#E8E8F0;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#4A5568;--success:#34D399;}
+  :root{--bg:#050508;--bg-card:#0D0D14;--border:#1E1E30;--border-light:#252538;--primary:#7DD3FC;--white:#FFFFFF;--off-white:#E8E8F0;--text:#FFFFFF;--text-secondary:#94A3B8;--text-muted:#828EA3;--success:#34D399;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--text);font-family:'Tajawal',sans-serif;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
@@ -152,7 +152,7 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
 <div class="pg-ripple-group" style="top:85%;left:50%"><div class="pg-ripple" style="animation-delay:.5s"></div><div class="pg-ripple" style="animation-delay:2.5s"></div></div>
 </div>
 <nav>
-  <a href="/ar" class="nav-logo" aria-label="Waslat"><img src="/logo.png" alt="Waslat"></a>
+  <a href="/ar" class="nav-logo" aria-label="Waslat"><img src="/logo.png" alt="Waslat" width="731" height="357"></a>
   <div class="nav-cta">
     <a href="/ar/blog">المدونة</a>
     <a href="/ar/whatsapp">واتساب بيزنس API</a>
@@ -160,7 +160,7 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
   </div>
 </nav>
 
-<div class="wrap">
+<div class="wrap" role="main">
   <div class="crumb"><a href="/ar">الرئيسية</a> ← <a href="/ar/blog">المدونة</a> ← الفرق بين واتساب بيزنس و API</div>
   <span class="post-cat">واتساب بيزنس API</span>
   <h1>الفرق بين واتساب بيزنس و واتساب بيزنس API: أيهما يناسب شركتك؟</h1>
@@ -222,8 +222,8 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
 </div>
 
 <footer>© 2026 وصلات · مدعوم من <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></footer>
-<link rel="stylesheet" href="/chat-widget.css">
-<script type="module" src="/chat-widget.js"></script>
+
+<script>(function(){var d=document,done=0;function L(){if(done)return;done=1;var c=d.createElement('link');c.rel='stylesheet';c.href='/chat-widget.css';d.head.appendChild(c);var s=d.createElement('script');s.type='module';s.src='/chat-widget.js';d.body.appendChild(s);}function arm(){if('requestIdleCallback' in window){requestIdleCallback(L,{timeout:5000});}else{setTimeout(L,3000);}}if(d.readyState==='complete'){arm();}else{addEventListener('load',arm);}['click','keydown','touchstart','scroll','mousemove'].forEach(function(e){addEventListener(e,L,{once:true,passive:true});});})();</script>
 <style>
 html.js .anim{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
 html.js .anim.in{opacity:1;transform:none;}

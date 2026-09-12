@@ -81,13 +81,13 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Tajawal:wght@400;500;700;800;900&display=swap"></noscript>
 
 <style>
   :root {
     --bg:#050508; --bg-card:#0D0D14; --bg-surface:#13131E; --border:#1E1E30; --border-light:#252538;
     --primary:#7DD3FC; --primary-dark:#38BDF8; --white:#FFFFFF; --off-white:#E8E8F0;
-    --text:#FFFFFF; --text-secondary:#94A3B8; --text-muted:#4A5568; --success:#34D399;
+    --text:#FFFFFF; --text-secondary:#94A3B8; --text-muted:#828EA3; --success:#34D399;
     --wa:#25D366; --fb:#1877F2; --ig:#E4405F; --tt:#ff0050; --li:#0A66C2; --tw:#1DA1F2; --yt:#FF0000; --gmb:#4285F4; --tg:#26A6E1;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -282,7 +282,7 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
 
 <!-- NAV -->
 <nav>
-  <a href="/ar" class="nav-logo" aria-label="Waslat"><img src="/logo.png" alt="Waslat" loading="eager"></a>
+  <a href="/ar" class="nav-logo" aria-label="Waslat"><img src="/logo.png" alt="Waslat" width="731" height="357" loading="eager"></a>
   <ul class="nav-links">
     <li class="nav-dd">
       <a role="button" tabindex="0" class="active" aria-haspopup="true"><span class="en-only">Products</span><span class="ar-only">المنتجات</span></a>
@@ -327,6 +327,7 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
     <a href="https://app.waslat.io/register" class="btn-primary"><span class="en-only">Start Free Trial</span><span class="ar-only">ابدأ مجاناً</span></a>
   </div>
 </nav>
+<main>
 
 <!-- HERO -->
 <header class="hr-hero">
@@ -462,9 +463,10 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
-  <div class="foot-logo"><img src="/logo.png" alt="Waslat" loading="lazy"></div>
+  <div class="foot-logo"><img src="/logo.png" alt="Waslat" width="731" height="357" loading="lazy"></div>
   <div class="foot-cols" aria-label="Footer" role="navigation">
     <div class="foot-col">
       <h4 class="foot-h"><span class="en-only">Communication</span><span class="ar-only">التواصل</span></h4>
@@ -508,8 +510,8 @@ nav,header,section,footer,main,.wrap,.compliance-strip,.comp-band,.cta-sec,.hr-h
   <div class="foot-powered"><span class="en-only">Powered by <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span><span class="ar-only">مدعوم من <a href="https://ecolor.com.sa" target="_blank" rel="noopener noreferrer">Ecolor Technologies</a></span></div>
 </footer>
 
-<link rel="stylesheet" href="/chat-widget.css">
-<script type="module" src="/chat-widget.js"></script>
+
+<script>(function(){var d=document,done=0;function L(){if(done)return;done=1;var c=d.createElement('link');c.rel='stylesheet';c.href='/chat-widget.css';d.head.appendChild(c);var s=d.createElement('script');s.type='module';s.src='/chat-widget.js';d.body.appendChild(s);}function arm(){if('requestIdleCallback' in window){requestIdleCallback(L,{timeout:5000});}else{setTimeout(L,3000);}}if(d.readyState==='complete'){arm();}else{addEventListener('load',arm);}['click','keydown','touchstart','scroll','mousemove'].forEach(function(e){addEventListener(e,L,{once:true,passive:true});});})();</script>
 <style>
 html.js .anim{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
 html.js .anim.in{opacity:1;transform:none;}
