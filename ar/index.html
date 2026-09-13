@@ -596,6 +596,8 @@
 
   /* MINI INBOX */
   .mini-inbox { background:var(--bg-surface); border:1px solid var(--border-light); border-radius:14px; padding:16px; min-width:200px; flex:1; }
+  /* Fade the stacked preview rows via a mask (keeps text at full contrast for a11y) */
+  .mini-inbox .mini-list { -webkit-mask-image:linear-gradient(180deg,#000 40%,rgba(0,0,0,0.18) 100%); mask-image:linear-gradient(180deg,#000 40%,rgba(0,0,0,0.18) 100%); }
   .mini-msg { display:flex; gap:10px; align-items:center; padding:10px; border-radius:10px; transition:background 0.2s; }
   .mini-msg:hover { background:var(--bg-card); }
   .mini-avatar { width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
@@ -633,7 +635,7 @@
   .chat-msg { max-width:78%; padding:10px 14px; border-radius:14px; font-size:13px; line-height:1.5; }
   .chat-in { background:var(--bg-surface); border:1px solid var(--border); align-self:flex-start; }
   .chat-out { background:var(--primary); color:#000; font-weight:500; align-self:flex-end; }
-  .chat-time { font-size:10px; margin-top:3px; opacity:0.5; }
+  .chat-time { font-size:10px; margin-top:3px; opacity:0.7; }
   .typing { display:flex; align-items:center; gap:4px; padding:10px 14px; background:var(--bg-surface); border:1px solid var(--border); border-radius:14px; width:fit-content; align-self:flex-start; }
   .td { width:5px; height:5px; background:var(--text-muted); border-radius:50%; animation:typeBounce 1.2s ease-in-out infinite; }
   .td:nth-child(2){animation-delay:0.2s} .td:nth-child(3){animation-delay:0.4s}
@@ -1153,18 +1155,20 @@ a,button,[role="button"],.btn-primary,.btn-hero,.btn-ghost,.btn-demo,.lang-btn,.
       </div>
       <div class="mini-inbox">
         <div style="font-size:10px;color:var(--text-muted);margin-bottom:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em"><span class="en-only">Live Messages</span><span class="ar-only">رسائل مباشرة</span></div>
+        <div class="mini-list">
         <div class="mini-msg">
           <div class="mini-avatar" style="background:rgba(37,211,102,0.12)">💬</div>
           <div style="flex:1"><div class="mini-name">Ahmed K.</div><div class="mini-text"><span class="en-only">What are your prices?</span><span class="ar-only">ما هي أسعاركم؟</span></div></div>
           <div class="mini-badge">2</div>
         </div>
-        <div class="mini-msg" style="opacity:0.55">
+        <div class="mini-msg" aria-hidden="true">
           <div class="mini-avatar" style="background:rgba(228,64,95,0.12)">📸</div>
           <div style="flex:1"><div class="mini-name">Sara M.</div><div class="mini-text"><span class="en-only">Love your content! 🔥</span><span class="ar-only">محتواكم رائع! 🔥</span></div></div>
         </div>
-        <div class="mini-msg" style="opacity:0.3">
+        <div class="mini-msg" aria-hidden="true">
           <div class="mini-avatar" style="background:rgba(24,119,242,0.12)">𝐟</div>
           <div style="flex:1"><div class="mini-name">Omar A.</div><div class="mini-text"><span class="en-only">Can I get a quote?</span><span class="ar-only">هل يمكنني الحصول على عرض؟</span></div></div>
+        </div>
         </div>
       </div>
     </div>

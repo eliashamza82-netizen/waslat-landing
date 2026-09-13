@@ -40,6 +40,7 @@
     var drawer = document.createElement("aside");
     drawer.className = "nav-drawer";
     drawer.setAttribute("aria-hidden", "true");
+    drawer.inert = true; // closed: keep links/close-button out of the tab order
     drawer.setAttribute("role", "dialog");
     drawer.setAttribute("aria-modal", "true");
 
@@ -98,6 +99,7 @@
       document.body.classList.add("nav-drawer-locked");
       burger.setAttribute("aria-expanded", "true");
       drawer.setAttribute("aria-hidden", "false");
+      drawer.inert = false;
     }
     function close() {
       overlay.classList.remove("open");
@@ -105,6 +107,7 @@
       document.body.classList.remove("nav-drawer-locked");
       burger.setAttribute("aria-expanded", "false");
       drawer.setAttribute("aria-hidden", "true");
+      drawer.inert = true;
     }
     function toggle() {
       drawer.classList.contains("open") ? close() : open();
